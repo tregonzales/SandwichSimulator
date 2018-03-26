@@ -255,6 +255,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &669971116 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4462910207521434, guid: 57b7fccb8c3604653b47d5f06faa483c,
+    type: 2}
+  m_PrefabInternal: {fileID: 328170351}
 --- !u!1 &1112450893
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +336,7 @@ GameObject:
   - component: {fileID: 1534713707}
   - component: {fileID: 1534713706}
   - component: {fileID: 1534713705}
+  - component: {fileID: 1534713709}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -401,6 +407,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 22.15, y: 0, z: 0}
+--- !u!114 &1534713709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1534713704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e0847b4f7d9aa44b85aef7b90264b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: 0
+  target: {fileID: 669971116}
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  distance: 1
+  minVerticalAngle: -80
+  maxVerticalAngle: 80
+  verticalSpeed: 100
+  horizontalSpeed: 200
 --- !u!1001 &1854928961
 Prefab:
   m_ObjectHideFlags: 0
