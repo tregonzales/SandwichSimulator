@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 65071553379857870}
   - component: {fileID: 23426106438632486}
   - component: {fileID: 54316007428460204}
-  - component: {fileID: 114025314944410514}
+  - component: {fileID: 114324559790523634}
   - component: {fileID: 153890014684033064}
   - component: {fileID: 153110359033174328}
   - component: {fileID: 153621972709347424}
@@ -533,26 +533,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114025314944410514
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1963411776009436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 023e6afb00019472fb7ee1ed5ad522f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RBforcePoint: {fileID: 1281227024973972}
-  LBforcePoint: {fileID: 1809387224696042}
-  RTforcePoint: {fileID: 1521683582937218}
-  LTforcePoint: {fileID: 1184281358434180}
-  RBgrabbing: 0
-  LBgrabbing: 0
-  RTgrabbing: 0
-  LTgrabbing: 0
-  force: 10
 --- !u!114 &114142233739301926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -566,6 +546,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canGrab: 0
   grabbableBody: {fileID: 0}
+--- !u!114 &114324559790523634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1963411776009436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98aacef78d021466f8e721a70d231739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RBforcePoint: {fileID: 1281227024973972}
+  LBforcePoint: {fileID: 1809387224696042}
+  RTforcePoint: {fileID: 1521683582937218}
+  LTforcePoint: {fileID: 1184281358434180}
+  RBgrabbing: 0
+  LBgrabbing: 0
+  RTgrabbing: 0
+  LTgrabbing: 0
+  force: 0
 --- !u!114 &114547223717622044
 MonoBehaviour:
   m_ObjectHideFlags: 1
