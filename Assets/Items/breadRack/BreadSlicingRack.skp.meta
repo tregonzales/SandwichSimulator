@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: 4ce50e5918ffd4e1987426b4b184d72b
+timeCreated: 1521819963
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c00000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f0000002000000021000000220000002300000024000000
+  assetHash:
+    serializedVersion: 2
+    Hash: abe19886d4733d0eb3eab4d0540290a0
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 0.35868657, y: 0.3540496, z: 0.4909066}
+      lookAt: {x: -0.047109216, y: -0.06652024, z: 0.006950812}
+      up: {x: -0.3561238, y: 0.83234113, z: -0.42471653}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes:
+    - camera:
+        position: {x: -0.12821975, y: 0.23303589, z: 0.48476565}
+        lookAt: {x: 0.25606227, y: -0.14751932, z: -0.0474631}
+        up: {x: 0.29358757, y: 0.86514086, z: -0.40661734}
+        fov: 35
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: SIDES STORED
+    - camera:
+        position: {x: -0.15091549, y: 0.24830897, z: 0.5956803}
+        lookAt: {x: 0.1640304, y: -0.022087814, z: -0.03950237}
+        up: {x: 0.15830109, y: 0.9343516, z: -0.31926152}
+        fov: 35
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: SIDES UP Narrow
+    - camera:
+        position: {x: 0.35868657, y: 0.3540496, z: 0.4909066}
+        lookAt: {x: -0.047109216, y: -0.06652024, z: 0.006950812}
+        up: {x: -0.3561238, y: 0.83234113, z: -0.42471653}
+        fov: 35
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: SIDE UP Wide
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ENDPIECE
+    100004: ENDPIECE 1
+    100006: Group 1
+    100008: Group 26
+    100010: Group 28
+    100012: Group 3
+    100014: Group 31
+    100016: Group 33
+    100018: Group 35
+    100020: Group 5
+    100022: Group 7
+    100024: knife
+    100026: knife, chopping board and bread; by "henry stone london"
+    100028: Side
+    100030: Side 1
+    400000: //RootNode
+    400002: ENDPIECE
+    400004: ENDPIECE 1
+    400006: Group 1
+    400008: Group 26
+    400010: Group 28
+    400012: Group 3
+    400014: Group 31
+    400016: Group 33
+    400018: Group 35
+    400020: Group 5
+    400022: Group 7
+    400024: knife
+    400026: knife, chopping board and bread; by "henry stone london"
+    400028: Side
+    400030: Side 1
+    2100000: '[Wood_Bamboo_Medium]'
+    2100002: '[Metal_Aluminum_Anodized]'
+    2100004: '[Wood_OSB]'
+    2100006: Groundcover_Granite_Decomp1
+    2100008: _Peru_
+    2100010: _Wood-cherry_1
+    2100012: _Silver_
+    2100014: _Black_
+    2300000: ENDPIECE
+    2300002: ENDPIECE 1
+    2300004: Group 1
+    2300006: Group 26
+    2300008: Group 28
+    2300010: Group 3
+    2300012: Group 31
+    2300014: Group 33
+    2300016: Group 35
+    2300018: Group 5
+    2300020: Group 7
+    2300022: Side
+    2300024: Side 1
+    3300000: ENDPIECE
+    3300002: ENDPIECE 1
+    3300004: Group 1
+    3300006: Group 26
+    3300008: Group 28
+    3300010: Group 3
+    3300012: Group 31
+    3300014: Group 33
+    3300016: Group 35
+    3300018: Group 5
+    3300020: Group 7
+    3300022: Side
+    3300024: Side 1
+    4300000: Mesh Group 1
+    4300002: Mesh Group 3
+    4300004: Mesh Group 5
+    4300006: Mesh Group 7
+    4300008: Mesh ENDPIECE
+    4300010: Mesh Side
+    4300012: Mesh Group 26
+    4300014: Mesh Group 28
+    4300016: Mesh Group 31
+    4300018: Mesh Group 33
+    4300020: Mesh Group 35
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Groundcover_Granite_Decomp1
+    second: {fileID: 2100000, guid: 0810c4415dcd64276bdfed414c761217, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Metal_Aluminum_Anodized]'
+    second: {fileID: 2100000, guid: 0f18fb8bce8f544b5a0cf6b5794c43c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Wood_Bamboo_Medium]'
+    second: {fileID: 2100000, guid: 1f5017b5edf3a4275bdd2d6884d8430a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Wood_OSB]'
+    second: {fileID: 2100000, guid: 11f61f711fc6a4a359b4e0391b35c83b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Black_
+    second: {fileID: 2100000, guid: e0daed749869f434699c17f4911c5507, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Peru_
+    second: {fileID: 2100000, guid: dc8d15185637d4d3dbcc6b6b9d31e1bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Silver_
+    second: {fileID: 2100000, guid: ce4bf5c949ffd4c398ec2c13e1901cda, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Henry_Desktop_bread inside
+    second: {fileID: 2800000, guid: 4b3530d5cfdbd4658a9a93ab4d609128, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Groundcover_Granite_Decomp1
+    second: {fileID: 2800000, guid: df1328569ef714d3ab751db7b2c1be35, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Aluminum_Anodized
+    second: {fileID: 2800000, guid: 3b54bca45bae747eca49ab21beae0fe2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood_Bamboo_Medium
+    second: {fileID: 2800000, guid: 1fafacfebb2f140a996fa43351688c2f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood_OSB
+    second: {fileID: 2800000, guid: 5f68846ef4279458eb7646b7f2582734, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
