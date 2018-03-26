@@ -209,9 +209,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1001 &328170351
 Prefab:
@@ -252,25 +252,57 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 135692150343615436, guid: 57b7fccb8c3604653b47d5f06faa483c,
+    - target: {fileID: 153890014684033064, guid: 57b7fccb8c3604653b47d5f06faa483c,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_EnableCollision
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 135119732142614506, guid: 57b7fccb8c3604653b47d5f06faa483c,
+    - target: {fileID: 153110359033174328, guid: 57b7fccb8c3604653b47d5f06faa483c,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_EnableCollision
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 135467660927533402, guid: 57b7fccb8c3604653b47d5f06faa483c,
+    - target: {fileID: 153621972709347424, guid: 57b7fccb8c3604653b47d5f06faa483c,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_EnableCollision
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 135748045385083866, guid: 57b7fccb8c3604653b47d5f06faa483c,
+    - target: {fileID: 153817758114368062, guid: 57b7fccb8c3604653b47d5f06faa483c,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695744080109378, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695744080109378, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242656439995940, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242656439995940, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732778724506038, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732778724506038, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990370257713754, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990370257713754, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57b7fccb8c3604653b47d5f06faa483c, type: 2}
@@ -586,7 +618,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 0
   m_CollisionDetection: 0
