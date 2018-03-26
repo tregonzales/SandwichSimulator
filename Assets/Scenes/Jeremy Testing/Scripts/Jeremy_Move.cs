@@ -114,8 +114,8 @@ public class Jeremy_Move : MonoBehaviour {
             Debug.Log(Vector3.Cross(first, second).z * XCI.GetAxis(XboxAxis.LeftStickY, controller) * 8);
 
 
-
-            rb.AddForceAtPosition(Vector3.Cross(first, second) * XCI.GetAxis(XboxAxis.LeftStickY, controller) * 8, rotate_around_point);
+            // Vector3.Cross(first, second) * XCI.GetAxis(XboxAxis.LeftStickY, controller)
+            rb.AddForceAtPosition(transform.up * 8 * XCI.GetAxis(XboxAxis.LeftStickY, controller), rotate_around_point);
 
             yield return null;
         }
