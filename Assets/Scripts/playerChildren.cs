@@ -9,7 +9,7 @@ public class playerChildren : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Physics.IgnoreCollision(transform.GetComponent<Collider>(), transform.parent.GetComponent<Collider>());
+		Physics.IgnoreCollision(transform.GetComponent<Collider>(), transform.parent.GetComponent<Collider>(), true);
 		canGrab = false;
 	}
 	
@@ -18,14 +18,23 @@ public class playerChildren : MonoBehaviour {
 		
 	}
 	
-	void OnTriggerEnter(Collider other) {
+	// private void OnTriggerEnter(Collider other) {
+	// 	canGrab = true;
+	// 	grabbableBody = other.GetComponent<Rigidbody>();
+	// 	Debug.Log(gameObject);
+	// 	Debug.Log("enter");
+
+	// }
+
+	// private void OnTriggerExit(Collider other) {
+	// 	canGrab = false;
+	// 	grabbableBody = null;
+	// 	Debug.Log(gameObject);
+	// 	Debug.Log("enter");
+	// }
+
+	private void OnCollisionEnter(Collision collision) {
 		canGrab = true;
-		grabbableBody = other.GetComponent<Rigidbody>();
-
-	}
-
-	void OnTriggerExit(Collider other) {
-		canGrab = false;
-		grabbableBody = null;
+		grabbableBody = collision.transform.GetComponent<Rigidbody>();
 	}
 }

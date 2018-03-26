@@ -120,7 +120,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 				LTjoint.zMotion = ConfigurableJointMotion.Locked;
 			}
 			if (LTgrabbing) {
-				forcePointApply(LTforcePoint.transform.position ,-1);
+				forcePointApply(LTforcePoint.transform.position, -1);
 			}
 		}
 		else {
