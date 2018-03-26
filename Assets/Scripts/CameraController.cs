@@ -6,8 +6,12 @@
 
 using UnityEngine;
 using System.Collections;
+using XboxCtrlrInput;		// Be sure to include this if you want an object to have Xbox input
+
 
 public class CameraController : MonoBehaviour {
+
+    public XboxController controller;
 
     public Transform target;
 
@@ -29,8 +33,8 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	void Update () {
-	    angleX += Input.GetAxis("Mouse Y") * Time.deltaTime * verticalSpeed;
-        angleY += Input.GetAxis("Mouse X") * Time.deltaTime * verticalSpeed;
+	    angleX += XCI.GetAxis(XboxAxis.RightStickY, controller) * Time.deltaTime * verticalSpeed * -1;
+        angleY += XCI.GetAxis(XboxAxis.RightStickX, controller) * Time.deltaTime * verticalSpeed * -1;
 
         angleX = Mathf.Clamp(angleX, minVerticalAngle, maxVerticalAngle);
         angleY %= 360;

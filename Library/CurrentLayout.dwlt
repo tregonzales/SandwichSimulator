@@ -107,8 +107,8 @@ MonoBehaviour:
     y: 30
     width: 1500
     height: 867
-  m_MinSize: {x: 711, y: 492}
-  m_MaxSize: {x: 18006, y: 14042}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
   controlID: 9
 --- !u!114 &6
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 86
+  controlID: 50
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -229,8 +229,8 @@ MonoBehaviour:
     y: 0
     width: 331
     height: 867
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -376,14 +376,14 @@ MonoBehaviour:
     height: 846
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 22087.72997484856
+  lastFramingTime: 36.116059257660105
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.1858343, y: 2.9942749, z: 4.7852445}
+    m_Target: {x: 0.7200061, y: 2.99, z: 4.314}
     speed: 2
-    m_Value: {x: 1.1858343, y: 2.9942749, z: 4.7852445}
+    m_Value: {x: 0.7200061, y: 2.99, z: 4.314}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -407,13 +407,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.015802339, y: 0.87976885, z: -0.029315205, w: 0.47423378}
+    m_Target: {x: 0.01580234, y: 0.87976885, z: -0.029315205, w: 0.4742338}
     speed: 2
-    m_Value: {x: 0.015802339, y: 0.87976885, z: -0.029315205, w: 0.47423378}
+    m_Value: {x: 0.01580234, y: 0.87976885, z: -0.029315205, w: 0.4742338}
   m_Size:
-    m_Target: 0.2857886
+    m_Target: 4.813023
     speed: 2
-    m_Value: 0.2857886
+    m_Value: 4.813023
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -454,9 +454,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8c5cfeff
-    m_LastClickedID: -107380
-    m_ExpandedIDs: 8e5cfeff5ca1ffffcaa1ffff9efbffff000000004e2d00007c350000
+    m_SelectedIDs: ba2d0000
+    m_LastClickedID: 11706
+    m_ExpandedIDs: 96fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -518,7 +518,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes/Jeremy Testing
+    - Assets/Scripts
   m_ViewMode: 0
   m_StartGridSize: 16
   m_LastFolders: []
@@ -529,7 +529,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 00ca9a3b
     m_LastClickedID: 1000000000
-    m_ExpandedIDs: 000000009227000098270000a4270000a6270000b2270000542c00009a2c00009c2c0000a42c0000fc2c0000b42d0000
+    m_ExpandedIDs: 00000000f02700000628000012280000402d0000422d0000322e0000342e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -557,7 +557,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000092270000a6270000b22700009a2c00009c2c0000fc2c0000b42d0000
+    m_ExpandedIDs: 00000000f02700000628000012280000402d0000422d0000642d0000322e0000342e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
