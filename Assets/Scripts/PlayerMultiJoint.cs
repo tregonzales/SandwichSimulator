@@ -162,6 +162,8 @@ public class PlayerMultiJoint : MonoBehaviour {
 		
 		float xForce = XCI.GetAxis(XboxAxis.LeftStickX);
 		float yForce = XCI.GetAxis(XboxAxis.LeftStickY);
+		//idk why this almost worked
+		// Vector3 movement = new Vector3(xForce, xForce+yForce*YaxisFix, 0.0f);
 		Vector3 movement = new Vector3(xForce, yForce*YaxisFix, 0.0f);
 		Vector3 worldForce = transform.TransformDirection(movement);
 		body.AddForceAtPosition(worldForce*force, position);
