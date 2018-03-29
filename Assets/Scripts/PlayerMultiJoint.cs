@@ -36,6 +36,8 @@ public class PlayerMultiJoint : MonoBehaviour {
 	
 	//force to apply on body
 	public float force;
+	//velocity to apply to body
+	public float maxVelocity;
 
 	// Use this for initialization
 	void Start () {
@@ -99,6 +101,9 @@ public class PlayerMultiJoint : MonoBehaviour {
 
 	private void updateJointAndForce(bool pressed, ref bool grab, ref playerChildren obj, ref ConfigurableJoint joint, ref GameObject forcePoint, int YaxisFix = 1) {
 
+		bool run = true;
+		bool sideGrabL = false;
+		bool sideGrabR = false;
 		if (!pressed && grab) {
 				grab = false;
 				joint.connectedBody = null;
@@ -114,28 +119,91 @@ public class PlayerMultiJoint : MonoBehaviour {
 				joint.zMotion = ConfigurableJointMotion.Locked;
 			}
 		else if (grab) {
-			forcePointApply(forcePoint.transform.position, YaxisFix);
+			if (LTjoint == joint || LBjoint == joint) {
+				if (LTgrabbing && LBgrabbing) {
+					run = checkGrab(joint);
+					sideGrabL = checkGrab(LTjoint) && checkGrab(LBjoint);
+				}
+			}
+			else if (RTjoint == joint || RBjoint == joint) {
+				if (RTgrabbing && RBgrabbing) {
+					run = checkGrab(joint);
+					sideGrabR = checkGrab(RTjoint) && checkGrab(RBjoint);
+				}
+			}
+			else if (LBjoint == joint || RBjoint == joint) {
+				if (LBgrabbing && RBgrabbing) {
+					run = checkGrab(joint);
+				}
+			}
+			else if (LTjoint == joint || RTjoint == joint) {
+				if (LTgrabbing && RTgrabbing) {
+					run = checkGrab(joint);
+				}
+			}
+			//original way that worked but very long and not clean
+			// if (LTjoint == joint || LBjoint == joint) {
+			// 	if (LTgrabbing && LBgrabbing) {
+			// 		if (LTjoint.connectedBody.gameObject.CompareTag("item") && LBjoint.connectedBody.gameObject.CompareTag("Surface")) {
+			// 			if (joint == LTjoint) {
+			// 				run = false;
+			// 			}
+			// 		}
+			// 		else if (LTjoint.connectedBody.gameObject.CompareTag("Surface") && LBjoint.connectedBody.gameObject.CompareTag("item")) {
+			// 			if (joint == LBjoint) {
+			// 				run = false;
+			// 			}
+			// 		}
+			// 		else {
+			// 			sideGrabL = true;
+			// 		}
+			// 	}
+			// }
+			
+			if (run) {
+				forcePointApply(forcePoint.transform.position, sideGrabL, sideGrabR, YaxisFix);
+			}
 		}
 	}
 
-	public void forcePointApply(Vector3 position, int YaxisFix = 1) {
+	public bool checkGrab(ConfigurableJoint curJoint) {
+		if (curJoint.connectedBody.gameObject.CompareTag("item")){
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+
+	public void forcePointApply(Vector3 position, bool sideGrabL, bool sideGrabR, int YaxisFix = 1) {
 		
 		float xForce = XCI.GetAxis(XboxAxis.LeftStickX);
 		float yForce = XCI.GetAxis(XboxAxis.LeftStickY);
 		Vector3 movement;
-		if ((LTgrabbing && LBgrabbing) || (RTgrabbing && RBgrabbing)) {
-			if (LTgrabbing || LBgrabbing) {
-				YaxisFix = -1;
-			}
-			else {
-				YaxisFix = 1;
-			}
+
+		if (sideGrabL) {
+			YaxisFix = -1;
+			movement = new Vector3(0.0f, xForce*YaxisFix, yForce);
+		}
+		else if (sideGrabR) {
+			YaxisFix = 1;
 			movement = new Vector3(0.0f, xForce*YaxisFix, yForce);
 		}
 		else {
 			movement = new Vector3(xForce, yForce*YaxisFix, 0.0f);
 		}
-		Vector3 worldForce = transform.TransformDirection(movement);
-		body.AddForceAtPosition(worldForce*force, position);
+
+		//just a direction for force or velocity
+		Vector3 worldForce = transform.TransformDirection(movement).normalized;
+
+		//1)
+		// body.AddForceAtPosition(worldForce*force, position);
+
+		//2)
+		// body.AddForce(worldForce*force); //looks the same as at position
+		
+		//3)
+		Vector3 newVelocity = Vector3.ClampMagnitude(body.velocity + worldForce, maxVelocity);
+		body.velocity = newVelocity;
 	}
 }

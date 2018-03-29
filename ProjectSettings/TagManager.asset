@@ -11,6 +11,7 @@ TagManager:
   - LB
   - RB
   - Surface
+  - item
   layers:
   - Default
   - TransparentFX
