@@ -141,25 +141,6 @@ public class PlayerMultiJoint : MonoBehaviour {
 					run = checkGrab(joint);
 				}
 			}
-			//original way that worked but very long and not clean
-			// if (LTjoint == joint || LBjoint == joint) {
-			// 	if (LTgrabbing && LBgrabbing) {
-			// 		if (LTjoint.connectedBody.gameObject.CompareTag("item") && LBjoint.connectedBody.gameObject.CompareTag("Surface")) {
-			// 			if (joint == LTjoint) {
-			// 				run = false;
-			// 			}
-			// 		}
-			// 		else if (LTjoint.connectedBody.gameObject.CompareTag("Surface") && LBjoint.connectedBody.gameObject.CompareTag("item")) {
-			// 			if (joint == LBjoint) {
-			// 				run = false;
-			// 			}
-			// 		}
-			// 		else {
-			// 			sideGrabL = true;
-			// 		}
-			// 	}
-			// }
-			
 			if (run) {
 				forcePointApply(forcePoint.transform.position, sideGrabL, sideGrabR, YaxisFix);
 			}

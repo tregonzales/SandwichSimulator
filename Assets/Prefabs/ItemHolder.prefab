@@ -153,15 +153,15 @@ GameObject:
   - component: {fileID: 33099506951191650}
   - component: {fileID: 23185939086487120}
   - component: {fileID: 114439797779891892}
+  - component: {fileID: 65577969499666114}
   - component: {fileID: 54304863389735810}
   - component: {fileID: 153863531029972680}
   - component: {fileID: 153256602907340440}
   - component: {fileID: 153842847052261284}
   - component: {fileID: 153661454929207668}
-  - component: {fileID: 65577969499666114}
   m_Layer: 0
   m_Name: cheeseFather
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 153569719711450384}
   m_Layer: 0
   m_Name: breadFatherMultiJoint
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1884534104024630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98aacef78d021466f8e721a70d231739, type: 3}
   m_Name: 
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1684307941531560}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98aacef78d021466f8e721a70d231739, type: 3}
   m_Name: 

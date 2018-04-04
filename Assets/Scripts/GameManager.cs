@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
 	private int curItemIndex;
 	private int childCount;
 	private bool changing;
+	public Transform UI;
+	int oldInd;
 
 	// Use this for initialization
 	void Start () {
@@ -20,23 +22,35 @@ public class GameManager : MonoBehaviour {
 		curIngredient = itemHolder.GetChild(curItemIndex);
 		childCount = itemHolder.childCount;
 		curIngredient.GetComponent<PlayerMultiJoint>().enabled = true;
+		UI.GetChild(curItemIndex).GetComponent<SpriteRenderer>().enabled = true;
+
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (XCI.GetDPadDown(XboxDPad.Right)) {
+			oldInd = curItemIndex;
 			curIngredient.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = (curItemIndex + 1) % childCount;
 			curIngredient = itemHolder.GetChild(curItemIndex);
 			mainCamera.target = curIngredient;
 			curIngredient.GetComponent<PlayerMultiJoint>().enabled = true;
+			updateBar(oldInd);
 		}
 		else if (XCI.GetDPadDown(XboxDPad.Left)) {
+			oldInd = curItemIndex;
 			curIngredient.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = curItemIndex == 0 ? childCount - 1 : (curItemIndex - 1) % childCount;
 			curIngredient = itemHolder.GetChild(curItemIndex);
 			mainCamera.target = curIngredient;
 			curIngredient.GetComponent<PlayerMultiJoint>().enabled = true;
+			updateBar(oldInd);
 		}
+	}
+
+	private void updateBar(int oldInd) {
+		UI.GetChild(oldInd).GetComponent<SpriteRenderer>().enabled = false;
+		UI.GetChild(curItemIndex).GetComponent<SpriteRenderer>().enabled = true;
 	}
 }
