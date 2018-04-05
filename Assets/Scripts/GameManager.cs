@@ -11,18 +11,19 @@ public class GameManager : MonoBehaviour {
 	private int curItemIndex;
 	private int childCount;
 	private bool changing;
-	public Transform UI;
+	public Transform UIbar;
+	public Transform UIbuttons;
 	int oldInd;
 
 	// Use this for initialization
 	void Start () {
 		mainCamera = Camera.main.GetComponent<CameraController>();
 		curItemIndex = 0;
-		// itemHolder = GameObject.Find("itemHolder").transform;
 		curIngredient = itemHolder.GetChild(curItemIndex);
 		childCount = itemHolder.childCount;
 		curIngredient.GetComponent<PlayerMultiJoint>().enabled = true;
-		UI.GetChild(curItemIndex).GetComponent<SpriteRenderer>().enabled = true;
+		UIbar.GetChild(curItemIndex).GetComponent<SpriteRenderer>().enabled = true;
+		
 
 		
 	}
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void updateBar(int oldInd) {
-		UI.GetChild(oldInd).GetComponent<SpriteRenderer>().enabled = false;
-		UI.GetChild(curItemIndex).GetComponent<SpriteRenderer>().enabled = true;
+		UIbar.GetChild(oldInd).GetComponent<SpriteRenderer>().enabled = false;
+		UIbar.GetChild(curItemIndex).GetComponent<SpriteRenderer>().enabled = true;
 	}
 }
