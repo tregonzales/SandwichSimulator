@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33493236635722190}
   - component: {fileID: 23657023744733270}
   m_Layer: 0
-  m_Name: caisson 2.002
+  m_Name: CupboardClearLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
