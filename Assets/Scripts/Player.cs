@@ -5,13 +5,9 @@ using XboxCtrlrInput;
 
 public class Player : MonoBehaviour {
 
-	private GameObject RB;
 	public GameObject RBforcePoint;
-	private GameObject LB;
 	public GameObject LBforcePoint;
-	private GameObject RT;
 	public GameObject RTforcePoint;
-	private GameObject LT;
 	public GameObject LTforcePoint;
 	private Rigidbody body;
 	private ConfigurableJoint joint;
@@ -24,10 +20,6 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		RB = gameObject.transform.Find("RB").gameObject;
-		LB = gameObject.transform.Find("LB").gameObject;
-		RT = gameObject.transform.Find("RT").gameObject;
-		LT = gameObject.transform.Find("LT").gameObject;
 		body = gameObject.transform.GetComponent<Rigidbody>();
 		joint = gameObject.transform.GetComponent<ConfigurableJoint>();
 		lockedOrientation = false;

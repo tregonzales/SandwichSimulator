@@ -1,0 +1,514 @@
+fileFormatVersion: 2
+guid: 5eccd2618bc5245bdb01071d7b0571c9
+timeCreated: 1523009452
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d000000
+  assetHash:
+    serializedVersion: 2
+    Hash: ddc339c8ea65c5e570308d63c144d5b4
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 1.9977458, y: 0.38348213, z: 0.19415283}
+      lookAt: {x: -0.85044134, y: -8.219948, z: 12.026738}
+      up: {x: -0.13508756, y: 0.816574, z: 0.5612114}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bacon & Eggs
+    100002: //RootNode
+    100004: Coffee Mug 11-18-2012
+    100006: Group 10
+    100008: Group 101
+    100010: Group 104
+    100012: Group 108
+    100014: Group 12
+    100016: Group 14
+    100018: Group 16
+    100020: Group 18
+    100022: Group 2
+    100024: Group 20
+    100026: Group 22
+    100028: Group 24
+    100030: Group 26
+    100032: Group 28
+    100034: Group 30
+    100036: Group 32
+    100038: Group 34
+    100040: Group 36
+    100042: Group 38
+    100044: Group 40
+    100046: Group 42
+    100048: Group 44
+    100050: Group 46
+    100052: Group 48
+    100054: Group 5
+    100056: Group 50
+    100058: Group 52
+    100060: Group 54
+    100062: Group 56
+    100064: Group 58
+    100066: Group 60
+    100068: Group 62
+    100070: Group 64
+    100072: Group 66
+    100074: Group 68
+    100076: Group 7
+    100078: Group 70
+    100080: Group 72
+    100082: Group 74
+    100084: Group 76
+    100086: Group 78
+    100088: Group 8
+    100090: Group 80
+    100092: Group 82
+    100094: Group 84
+    100096: Group 86
+    100098: Group 88
+    100100: Group 90
+    100102: Group 92
+    100104: Group 94
+    100106: Group 96
+    100108: Ketchup Puddle
+    100110: Silverware - Butter Knife
+    100112: Silverware - Fork
+    400000: Bacon & Eggs
+    400002: //RootNode
+    400004: Coffee Mug 11-18-2012
+    400006: Group 10
+    400008: Group 101
+    400010: Group 104
+    400012: Group 108
+    400014: Group 12
+    400016: Group 14
+    400018: Group 16
+    400020: Group 18
+    400022: Group 2
+    400024: Group 20
+    400026: Group 22
+    400028: Group 24
+    400030: Group 26
+    400032: Group 28
+    400034: Group 30
+    400036: Group 32
+    400038: Group 34
+    400040: Group 36
+    400042: Group 38
+    400044: Group 40
+    400046: Group 42
+    400048: Group 44
+    400050: Group 46
+    400052: Group 48
+    400054: Group 5
+    400056: Group 50
+    400058: Group 52
+    400060: Group 54
+    400062: Group 56
+    400064: Group 58
+    400066: Group 60
+    400068: Group 62
+    400070: Group 64
+    400072: Group 66
+    400074: Group 68
+    400076: Group 7
+    400078: Group 70
+    400080: Group 72
+    400082: Group 74
+    400084: Group 76
+    400086: Group 78
+    400088: Group 8
+    400090: Group 80
+    400092: Group 82
+    400094: Group 84
+    400096: Group 86
+    400098: Group 88
+    400100: Group 90
+    400102: Group 92
+    400104: Group 94
+    400106: Group 96
+    400108: Ketchup Puddle
+    400110: Silverware - Butter Knife
+    400112: Silverware - Fork
+    2100000: _defaultMat
+    2100002: Placemat Texture
+    2100004: Dinner Napkin Texture
+    2100006: Dinner Plate
+    2100008: Egg fried texture
+    2100010: '[Stone_Vein_Gray]'
+    2100012: Bacon cooked
+    2100014: Home fries Texture
+    2100016: Ketchup Blob
+    2100018: Butter Knife texture
+    2100020: Fork Texture1
+    2100022: '[Metal_Corrogated_Shiny]'
+    2100024: '[Metal_Rough]'
+    2100026: '[Color_002]'
+    2100028: Coffee Texture2
+    2300000: //RootNode
+    2300002: Coffee Mug 11-18-2012
+    2300004: Group 10
+    2300006: Group 101
+    2300008: Group 104
+    2300010: Group 108
+    2300012: Group 12
+    2300014: Group 14
+    2300016: Group 16
+    2300018: Group 18
+    2300020: Group 2
+    2300022: Group 20
+    2300024: Group 22
+    2300026: Group 24
+    2300028: Group 26
+    2300030: Group 28
+    2300032: Group 30
+    2300034: Group 32
+    2300036: Group 34
+    2300038: Group 36
+    2300040: Group 38
+    2300042: Group 40
+    2300044: Group 42
+    2300046: Group 44
+    2300048: Group 46
+    2300050: Group 48
+    2300052: Group 5
+    2300054: Group 50
+    2300056: Group 52
+    2300058: Group 54
+    2300060: Group 56
+    2300062: Group 58
+    2300064: Group 60
+    2300066: Group 62
+    2300068: Group 64
+    2300070: Group 66
+    2300072: Group 68
+    2300074: Group 70
+    2300076: Group 72
+    2300078: Group 74
+    2300080: Group 76
+    2300082: Group 78
+    2300084: Group 8
+    2300086: Group 80
+    2300088: Group 82
+    2300090: Group 84
+    2300092: Group 86
+    2300094: Group 88
+    2300096: Group 90
+    2300098: Group 92
+    2300100: Group 94
+    2300102: Group 96
+    2300104: Ketchup Puddle
+    3300000: //RootNode
+    3300002: Coffee Mug 11-18-2012
+    3300004: Group 10
+    3300006: Group 101
+    3300008: Group 104
+    3300010: Group 108
+    3300012: Group 12
+    3300014: Group 14
+    3300016: Group 16
+    3300018: Group 18
+    3300020: Group 2
+    3300022: Group 20
+    3300024: Group 22
+    3300026: Group 24
+    3300028: Group 26
+    3300030: Group 28
+    3300032: Group 30
+    3300034: Group 32
+    3300036: Group 34
+    3300038: Group 36
+    3300040: Group 38
+    3300042: Group 40
+    3300044: Group 42
+    3300046: Group 44
+    3300048: Group 46
+    3300050: Group 48
+    3300052: Group 5
+    3300054: Group 50
+    3300056: Group 52
+    3300058: Group 54
+    3300060: Group 56
+    3300062: Group 58
+    3300064: Group 60
+    3300066: Group 62
+    3300068: Group 64
+    3300070: Group 66
+    3300072: Group 68
+    3300074: Group 70
+    3300076: Group 72
+    3300078: Group 74
+    3300080: Group 76
+    3300082: Group 78
+    3300084: Group 8
+    3300086: Group 80
+    3300088: Group 82
+    3300090: Group 84
+    3300092: Group 86
+    3300094: Group 88
+    3300096: Group 90
+    3300098: Group 92
+    3300100: Group 94
+    3300102: Group 96
+    3300104: Ketchup Puddle
+    4300000: Mesh Breakfast
+    4300002: Mesh Group 2
+    4300004: Mesh Group 5
+    4300006: Mesh Group 8
+    4300008: Mesh Group 14
+    4300010: Mesh Group 18
+    4300012: Mesh Group 20
+    4300014: Mesh Group 22
+    4300016: Mesh Group 26
+    4300018: Mesh Group 30
+    4300020: Mesh Group 32
+    4300022: Mesh Group 36
+    4300024: Mesh Group 40
+    4300026: Mesh Group 48
+    4300028: Mesh Group 50
+    4300030: Mesh Group 68
+    4300032: Mesh Group 76
+    4300034: Mesh Group 80
+    4300036: Mesh Group 84
+    4300038: Mesh Ketchup Puddle
+    4300040: Mesh Group 101
+    4300042: Mesh Group 104
+    4300044: Mesh Coffee Mug 11-18-2012
+    4300046: Mesh Group 108
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bacon cooked
+    second: {fileID: 2100000, guid: 3c55a34469d9c430c9f5778b9fb20551, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Butter Knife texture
+    second: {fileID: 2100000, guid: 7d2cebb31b23648d9b0a46fb82dab9bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coffee Texture2
+    second: {fileID: 2100000, guid: 5d31f5456e14b490a93a22c7e9e3189d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dinner Napkin Texture
+    second: {fileID: 2100000, guid: a6a9cb779d8ba492cab3ef6cb4fba9f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dinner Plate
+    second: {fileID: 2100000, guid: 6153093da11d540a58a06eb1006822f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Egg fried texture
+    second: {fileID: 2100000, guid: 7ed79310cbbbb4bc6be50ce43377983a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fork Texture1
+    second: {fileID: 2100000, guid: 98865a18c54564400ab0b41bc4e17bdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Home fries Texture
+    second: {fileID: 2100000, guid: d7be9736edc004c0192b06d400a84a41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ketchup Blob
+    second: {fileID: 2100000, guid: 1ee6130fbf0db46d7be463c3f3518706, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Placemat Texture
+    second: {fileID: 2100000, guid: 1813cdc4aa63a4db5a0e90398fc5e6df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color_002]'
+    second: {fileID: 2100000, guid: afc04757f82eb47eba974b24009b8428, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Metal_Corrogated_Shiny]'
+    second: {fileID: 2100000, guid: 296189aa63e6345c9a5ffe85670d474b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Metal_Rough]'
+    second: {fileID: 2100000, guid: 880dc16738a564bd7b7f7858509d48e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Stone_Vein_Gray]'
+    second: {fileID: 2100000, guid: 34f1885d0a910423e80ebaab7327d402, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 41041f44501384884871c1cb98a43de6, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Bacon cooked
+    second: {fileID: 2800000, guid: 78c4909a9ad3548f89d20f643fe553c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Butter
+        Knife texture
+    second: {fileID: 2800000, guid: 43166e9259dfd4242bb0fdeb70d0331f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Coffee
+        Texture
+    second: {fileID: 2800000, guid: 5c22130d080164e2da94803c50a031b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Dinner
+        Napkin Texture
+    second: {fileID: 2800000, guid: ab1c450c4d580457d90190d9506f79a8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Dinner
+        Plate
+    second: {fileID: 2800000, guid: b410587c20415434db11ee4649782381, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Egg fried
+        texture
+    second: {fileID: 2800000, guid: 68bfe60e98ba4417e84e7240559e19a4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Fork Texture
+    second: {fileID: 2800000, guid: 8e22beaeb901a4e13bdf8f4ac6f5a584, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Home fries
+        Texture
+    second: {fileID: 2800000, guid: 42fb5e2b68cd5466a847b79a20592826, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Ketchup
+        Blob
+    second: {fileID: 2800000, guid: 48a08fc4c5e5a4ff998f42dc17a1bcef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Documents and Settings_Roger_My Documents_Sketchup Projects_Placemat
+        Texture
+    second: {fileID: 2800000, guid: dc4009b6708d0422ea89a8abde55d7c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Corrogated_Shiny
+    second: {fileID: 2800000, guid: a89dffdda460c40b49fa9b57d54921a3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Rough
+    second: {fileID: 2800000, guid: 0fe1e8020133e42548ca2a89834aac69, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Stone_Vein_Gray
+    second: {fileID: 2800000, guid: 9d91c76dabf49463093c8f0614e92875, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.025
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
