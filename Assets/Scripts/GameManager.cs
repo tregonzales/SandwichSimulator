@@ -7,51 +7,48 @@ public class GameManager : MonoBehaviour {
 
 	CameraController mainCamera;
 	public Transform itemHolder;
-	private Transform curIngredient;
+	private Transform curItem;
 	private int curItemIndex;
 	private int childCount;
 	private bool changing;
-	public Transform UIbar;
-	public Transform UIbuttons;
+	public Transform itemBarTrans;
+	itemBarController itemBar;
+	buttonController buttons;
+	public Transform buttonsTrans;
 	int oldInd;
 
 	// Use this for initialization
 	void Start () {
 		mainCamera = Camera.main.GetComponent<CameraController>();
 		curItemIndex = 0;
-		curIngredient = itemHolder.GetChild(curItemIndex);
+		curItem = itemHolder.GetChild(curItemIndex);
 		childCount = itemHolder.childCount;
-		curIngredient.GetComponent<PlayerMultiJoint>().enabled = true;
-		UIbar.GetChild(curItemIndex).GetComponent<SpriteRenderer>().enabled = true;
-		
-
-		
+		curItem.GetComponent<PlayerMultiJoint>().enabled = true;
+		itemBar = itemBarTrans.GetComponent<itemBarController>();
+		buttons = buttonsTrans.GetComponent<buttonController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		buttons.updatePositions(curItem.GetChild(1).transform.position, curItem.GetChild(2).transform.position, 
+		curItem.GetChild(3).transform.position, curItem.GetChild(4).transform.position);
 		if (XCI.GetDPadDown(XboxDPad.Right)) {
 			oldInd = curItemIndex;
-			curIngredient.GetComponent<PlayerMultiJoint>().enabled = false;
+			curItem.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = (curItemIndex + 1) % childCount;
-			curIngredient = itemHolder.GetChild(curItemIndex);
-			mainCamera.target = curIngredient;
-			curIngredient.GetComponent<PlayerMultiJoint>().enabled = true;
-			updateBar(oldInd);
+			curItem = itemHolder.GetChild(curItemIndex);
+			mainCamera.target = curItem;
+			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
+			itemBar.updateBar(oldInd, curItemIndex);
 		}
 		else if (XCI.GetDPadDown(XboxDPad.Left)) {
 			oldInd = curItemIndex;
-			curIngredient.GetComponent<PlayerMultiJoint>().enabled = false;
+			curItem.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = curItemIndex == 0 ? childCount - 1 : (curItemIndex - 1) % childCount;
-			curIngredient = itemHolder.GetChild(curItemIndex);
-			mainCamera.target = curIngredient;
-			curIngredient.GetComponent<PlayerMultiJoint>().enabled = true;
-			updateBar(oldInd);
+			curItem = itemHolder.GetChild(curItemIndex);
+			mainCamera.target = curItem;
+			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
+			itemBar.updateBar(oldInd, curItemIndex);
 		}
-	}
-
-	private void updateBar(int oldInd) {
-		UIbar.GetChild(oldInd).GetComponent<SpriteRenderer>().enabled = false;
-		UIbar.GetChild(curItemIndex).GetComponent<SpriteRenderer>().enabled = true;
 	}
 }
