@@ -170,7 +170,6 @@ public class PlayerMultiJoint : MonoBehaviour {
 	}
 
 	public bool checkGrab(ConfigurableJoint curJoint) {
-		Debug.Log(curJoint.connectedBody.tag);
 		if (curJoint.connectedBody.gameObject.CompareTag("item")){
 			return false;
 		}

@@ -818,6 +818,14 @@ Prefab:
       propertyPath: m_TagString
       value: item
       objectReference: {fileID: 0}
+    - target: {fileID: 4133211529319926, guid: f95a5fbe28b6641538a00902f29455a0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.183
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133211529319926, guid: f95a5fbe28b6641538a00902f29455a0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.245
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f95a5fbe28b6641538a00902f29455a0, type: 2}
   m_IsPrefabParent: 0
