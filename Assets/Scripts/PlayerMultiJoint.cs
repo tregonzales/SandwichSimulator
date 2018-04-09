@@ -74,6 +74,8 @@ public class PlayerMultiJoint : MonoBehaviour {
 	void Update () {
 
 		buttons.updatePositions(RB.transform.position, LB.transform.position, LT.transform.position, RT.transform.position);
+		buttons.colorCanGrab(RBobj.canGrab, LBobj.canGrab, LTobj.canGrab, RTobj.canGrab);
+		buttons.colorGrabbing(RBgrabbing, LBgrabbing, LTgrabbing, RTgrabbing);
 
 		if (XCI.GetButton(XboxButton.RightBumper)) {
 			updateJointAndForce(true, ref RBgrabbing, ref RBobj, ref RBjoint, ref RBforcePoint);
@@ -126,6 +128,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 				joint.zMotion = ConfigurableJointMotion.Locked;
 			}
 		else if (grab) {
+			//first check top, bottom, and side grabs
 			if (LTjoint == joint || LBjoint == joint) {
 				if (LTgrabbing && LBgrabbing) {
 					run = checkGrab(joint);
@@ -148,6 +151,18 @@ public class PlayerMultiJoint : MonoBehaviour {
 					run = checkGrab(joint);
 				}
 			}
+			
+			//next check diagonal grabs
+			if (RBjoint == joint || LTjoint == joint) {
+				if (RBgrabbing && LTgrabbing) {
+					run = checkGrab(joint);
+				}
+			}
+			else if (LBjoint == joint || RTjoint == joint) {
+				if (LBgrabbing && RTgrabbing) {
+					run = checkGrab(joint);
+				}
+			}
 			if (run) {
 				forcePointApply(forcePoint.transform.position, sideGrabL, sideGrabR, YaxisFix);
 			}
@@ -155,6 +170,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 	}
 
 	public bool checkGrab(ConfigurableJoint curJoint) {
+		Debug.Log(curJoint.connectedBody.tag);
 		if (curJoint.connectedBody.gameObject.CompareTag("item")){
 			return false;
 		}
