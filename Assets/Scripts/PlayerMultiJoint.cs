@@ -191,7 +191,10 @@ public class PlayerMultiJoint : MonoBehaviour {
 		// body.AddForce(worldForce*force); //looks the same as at position
 		
 		//3)
-		Vector3 newVelocity = Vector3.ClampMagnitude(body.velocity + worldForce, maxVelocity);
-		body.velocity = newVelocity;
+		// Vector3 newVelocity = Vector3.ClampMagnitude(body.velocity + worldForce, maxVelocity);
+		// body.velocity = newVelocity;
+		
+		//now regular velocity changing with bigger items
+		body.velocity += worldForce*maxVelocity;
 	}
 }
