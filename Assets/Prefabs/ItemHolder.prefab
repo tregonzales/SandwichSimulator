@@ -1979,6 +1979,7 @@ MonoBehaviour:
   LBforcePoint: {fileID: 1802157984955244}
   RTforcePoint: {fileID: 1259525055778650}
   LTforcePoint: {fileID: 1907462863386548}
+  buttonsTrans: {fileID: 0}
   RBgrabbing: 0
   LBgrabbing: 0
   RTgrabbing: 0
@@ -2000,6 +2001,7 @@ MonoBehaviour:
   LBforcePoint: {fileID: 1799274802185968}
   RTforcePoint: {fileID: 1073794338046786}
   LTforcePoint: {fileID: 1749812613598380}
+  buttonsTrans: {fileID: 0}
   RBgrabbing: 0
   LBgrabbing: 0
   RTgrabbing: 0
@@ -2112,6 +2114,7 @@ MonoBehaviour:
   LBforcePoint: {fileID: 1407392518540074}
   RTforcePoint: {fileID: 1518253638542476}
   LTforcePoint: {fileID: 1003807732277900}
+  buttonsTrans: {fileID: 0}
   RBgrabbing: 0
   LBgrabbing: 0
   RTgrabbing: 0
@@ -2211,6 +2214,7 @@ MonoBehaviour:
   LBforcePoint: {fileID: 1662112919315250}
   RTforcePoint: {fileID: 1207965357197838}
   LTforcePoint: {fileID: 1294425419592588}
+  buttonsTrans: {fileID: 0}
   RBgrabbing: 0
   LBgrabbing: 0
   RTgrabbing: 0

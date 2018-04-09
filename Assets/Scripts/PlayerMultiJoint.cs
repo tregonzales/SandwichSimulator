@@ -16,6 +16,9 @@ public class PlayerMultiJoint : MonoBehaviour {
 	public GameObject LTforcePoint;
 	private Rigidbody body;
 
+	buttonController buttons;
+	public Transform buttonsTrans;
+
 	//the children colliders
 	playerChildren RBobj;
 	playerChildren LBobj;
@@ -63,10 +66,14 @@ public class PlayerMultiJoint : MonoBehaviour {
 		LBgrabbing = false;
 		RTgrabbing = false;
 		LTgrabbing = false;
+
+		buttons = buttonsTrans.GetComponent<buttonController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		buttons.updatePositions(RB.transform.position, LB.transform.position, LT.transform.position, RT.transform.position);
 
 		if (XCI.GetButton(XboxButton.RightBumper)) {
 			updateJointAndForce(true, ref RBgrabbing, ref RBobj, ref RBjoint, ref RBforcePoint);

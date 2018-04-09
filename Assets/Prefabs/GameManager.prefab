@@ -52,4 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemHolder: {fileID: 0}
-  UI: {fileID: 0}
+  itemBarTrans: {fileID: 0}
