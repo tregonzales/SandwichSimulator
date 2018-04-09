@@ -8,7 +8,7 @@ SketchUpImporter:
   selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: 57c58470c7752dbb1b85c71dfbc77b33
+    Hash: c334ef5dc059a5b94304c9a4642455c0
   longitude: -105.283
   latitude: 40.017
   northCorrection: -0
@@ -82,7 +82,7 @@ SketchUpImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0254
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
