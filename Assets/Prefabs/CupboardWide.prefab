@@ -39,7 +39,8 @@ GameObject:
   - component: {fileID: 4669207585407590}
   - component: {fileID: 33980502069998132}
   - component: {fileID: 23587026025376822}
-  - component: {fileID: 64077355861581710}
+  - component: {fileID: 54515411739526982}
+  - component: {fileID: 65903419326769434}
   m_Layer: 0
   m_Name: CupboardWide
   m_TagString: Surface
@@ -85,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1521072717708566}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 27.289824, y: 46.975033, z: 83.93979}
+  m_LocalPosition: {x: 1.85, y: 12.16, z: -25.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4563246304385026}
@@ -231,20 +232,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1521072717708566}
   m_Mesh: {fileID: 4300062, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
---- !u!64 &64077355861581710
-MeshCollider:
+--- !u!54 &54515411739526982
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1521072717708566}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300062, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!64 &64392575969327742
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -273,3 +275,15 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300066, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
+--- !u!65 &65903419326769434
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521072717708566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.951377, y: 1.9999998, z: 3.4108353}
+  m_Center: {x: 0, y: -1.0106953, z: 1.7150071}

@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4962560811868852}
+  - component: {fileID: 54533597609133452}
+  - component: {fileID: 65807627241718962}
   m_Layer: 0
   m_Name: Fridge
   m_TagString: Surface
@@ -37,7 +39,6 @@ GameObject:
   - component: {fileID: 33489754350746428}
   - component: {fileID: 23375018772205534}
   - component: {fileID: 54065307640196694}
-  - component: {fileID: 64835024552257478}
   - component: {fileID: 64075755298118198}
   m_Layer: 0
   m_Name: Cube.003
@@ -57,7 +58,6 @@ GameObject:
   - component: {fileID: 33905694660414046}
   - component: {fileID: 23910736881610438}
   - component: {fileID: 54160868527515354}
-  - component: {fileID: 64802006180009296}
   - component: {fileID: 64986387346900654}
   m_Layer: 0
   m_Name: Cube.006
@@ -77,7 +77,6 @@ GameObject:
   - component: {fileID: 33880976080840692}
   - component: {fileID: 23350811638048282}
   - component: {fileID: 54307037287839796}
-  - component: {fileID: 64653840715569798}
   - component: {fileID: 64369200131200102}
   m_Layer: 0
   m_Name: Cube.010
@@ -98,7 +97,6 @@ GameObject:
   - component: {fileID: 23233266508119368}
   - component: {fileID: 54750987744123842}
   - component: {fileID: 65224950399349710}
-  - component: {fileID: 64702253622580348}
   m_Layer: 0
   m_Name: Cube.008
   m_TagString: Surface
@@ -117,7 +115,6 @@ GameObject:
   - component: {fileID: 33788113022314164}
   - component: {fileID: 23485083200866874}
   - component: {fileID: 54432991237208588}
-  - component: {fileID: 64050236823760944}
   - component: {fileID: 64387473836257182}
   m_Layer: 0
   m_Name: Cube.009
@@ -137,7 +134,6 @@ GameObject:
   - component: {fileID: 33816678205071518}
   - component: {fileID: 23720926081062674}
   - component: {fileID: 54722162068744038}
-  - component: {fileID: 64972344991166590}
   - component: {fileID: 64389272675966236}
   m_Layer: 0
   m_Name: Cube.007
@@ -218,7 +214,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019339975604292}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 41.095486, y: 49.466244, z: 62.494473}
+  m_LocalPosition: {x: -1.1362233, y: 7.5756154, z: -20.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4380887065527614}
@@ -553,6 +549,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!54 &54533597609133452
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019339975604292}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!54 &54722162068744038
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -583,20 +594,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &64050236823760944
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1862822185566206}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300122, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
 --- !u!64 &64075755298118198
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -653,76 +650,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300126, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
---- !u!64 &64653840715569798
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1643219724938850}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300124, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
---- !u!64 &64702253622580348
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1823535369655782}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300094, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
---- !u!64 &64802006180009296
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1629893595746738}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300070, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
---- !u!64 &64835024552257478
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1385557168021926}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300068, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
---- !u!64 &64972344991166590
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1871989684107698}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300126, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
 --- !u!64 &64986387346900654
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -749,3 +676,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.969874, y: 4.3667383, z: 11.939751}
   m_Center: {x: 0, y: 0.31663004, z: 5.9698734}
+--- !u!65 &65807627241718962
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019339975604292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.248069, y: 4.945465, z: 11.935302}
+  m_Center: {x: 2.940126, y: 1.9091525, z: -1.5821216}
