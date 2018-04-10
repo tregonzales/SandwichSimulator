@@ -5,17 +5,16 @@ using XboxCtrlrInput;
 
 public class PlayerMultiJoint : MonoBehaviour {
 
-	//the corner points and their respective force points
+	//the corner points 
 	private GameObject RB;
-	public GameObject RBforcePoint;
 	private GameObject LB;
-	public GameObject LBforcePoint;
 	private GameObject RT;
-	public GameObject RTforcePoint;
 	private GameObject LT;
-	public GameObject LTforcePoint;
+
+	//body of the item
 	private Rigidbody body;
 
+	//button ui that represents corners
 	buttonController buttons;
 	public Transform buttonsTrans;
 
@@ -32,15 +31,14 @@ public class PlayerMultiJoint : MonoBehaviour {
 	private ConfigurableJoint RTjoint;
 	private ConfigurableJoint LTjoint;
 
+	//bools to check if a corner is grabbing
 	public bool RBgrabbing;
 	public bool LBgrabbing;
 	public bool RTgrabbing;
 	public bool LTgrabbing;
-	
-	//force to apply on body
-	public float force;
+
 	//velocity to apply to body
-	public float maxVelocity;
+	public float velocity;
 
 	// Use this for initialization
 	void Start () {
@@ -77,38 +75,38 @@ public class PlayerMultiJoint : MonoBehaviour {
 		buttons.colorCanGrab(RBobj.canGrab, LBobj.canGrab, LTobj.canGrab, RTobj.canGrab);
 		buttons.colorGrabbing(RBgrabbing, LBgrabbing, LTgrabbing, RTgrabbing);
 
-		if (XCI.GetButton(XboxButton.RightBumper)) {
-			updateJointAndForce(true, ref RBgrabbing, ref RBobj, ref RBjoint, ref RBforcePoint);
+		if (XCI.GetButton(XboxButton.RightBumper) || Input.GetKey(KeyCode.W)) {
+			updateJointAndVelocity(true, ref RBgrabbing, ref RBobj, ref RBjoint);
 		}
 		else {
-			updateJointAndForce(false, ref RBgrabbing, ref RBobj, ref RBjoint, ref RBforcePoint);
+			updateJointAndVelocity(false, ref RBgrabbing, ref RBobj, ref RBjoint);
 		}
 
-		if (XCI.GetButton(XboxButton.LeftBumper)) {
-			updateJointAndForce(true, ref LBgrabbing, ref LBobj, ref LBjoint, ref LBforcePoint);
+		if (XCI.GetButton(XboxButton.LeftBumper) || Input.GetKey(KeyCode.Q)) {
+			updateJointAndVelocity(true, ref LBgrabbing, ref LBobj, ref LBjoint);
 		}
 		else {
-			updateJointAndForce(false, ref LBgrabbing, ref LBobj, ref LBjoint, ref LBforcePoint);
+			updateJointAndVelocity(false, ref LBgrabbing, ref LBobj, ref LBjoint);
 		}
 
 		
-		if (XCI.GetAxis(XboxAxis.LeftTrigger) != 0) {
-			updateJointAndForce(true, ref LTgrabbing, ref LTobj, ref LTjoint, ref LTforcePoint, -1);
+		if (XCI.GetAxis(XboxAxis.LeftTrigger) != 0 || Input.GetKey(KeyCode.A)) {
+			updateJointAndVelocity(true, ref LTgrabbing, ref LTobj, ref LTjoint, -1);
 		}
 		else {
-			updateJointAndForce(false, ref LTgrabbing, ref LTobj, ref LTjoint, ref LTforcePoint, -1);
+			updateJointAndVelocity(false, ref LTgrabbing, ref LTobj, ref LTjoint, -1);
 		}
 		
-		if (XCI.GetAxis(XboxAxis.RightTrigger) != 0) {
-			updateJointAndForce(true, ref RTgrabbing, ref RTobj, ref RTjoint, ref RTforcePoint, -1);
+		if (XCI.GetAxis(XboxAxis.RightTrigger) != 0 || Input.GetKey(KeyCode.S)) {
+			updateJointAndVelocity(true, ref RTgrabbing, ref RTobj, ref RTjoint, -1);
 		}
 		else {
-			updateJointAndForce(false, ref RTgrabbing, ref RTobj, ref RTjoint, ref RTforcePoint, -1);
+			updateJointAndVelocity(false, ref RTgrabbing, ref RTobj, ref RTjoint, -1);
 		}
 		
 	}
 
-	private void updateJointAndForce(bool pressed, ref bool grab, ref playerChildren obj, ref ConfigurableJoint joint, ref GameObject forcePoint, int YaxisFix = 1) {
+	private void updateJointAndVelocity(bool pressed, ref bool grab, ref playerChildren obj, ref ConfigurableJoint joint, int YaxisFix = 1) {
 
 		bool run = true;
 		bool sideGrabL = false;
@@ -164,7 +162,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 				}
 			}
 			if (run) {
-				forcePointApply(forcePoint.transform.position, sideGrabL, sideGrabR, YaxisFix);
+				applyMovement(sideGrabL, sideGrabR, YaxisFix);
 			}
 		}
 	}
@@ -178,10 +176,31 @@ public class PlayerMultiJoint : MonoBehaviour {
 		}
 	}
 
-	public void forcePointApply(Vector3 position, bool sideGrabL, bool sideGrabR, int YaxisFix = 1) {
+	public void applyMovement(bool sideGrabL, bool sideGrabR, int YaxisFix = 1) {
 		
-		float xForce = XCI.GetAxis(XboxAxis.LeftStickX);
-		float yForce = XCI.GetAxis(XboxAxis.LeftStickY);
+		float xForce = 0;
+		float yForce = 0;
+		if (XCI.GetNumPluggedCtrlrs() > 0) {
+			xForce = XCI.GetAxis(XboxAxis.LeftStickX);
+			yForce = XCI.GetAxis(XboxAxis.LeftStickY);
+		}
+		else {
+			if (Input.GetKey(KeyCode.RightArrow)) {
+				xForce = 1;
+			}
+			else if (Input.GetKey(KeyCode.LeftArrow)) {
+				xForce = -1;
+			}
+
+			if (Input.GetKey(KeyCode.UpArrow)) {
+				yForce = 1;
+			}
+			else if (Input.GetKey(KeyCode.DownArrow)) {
+				yForce = -1;
+			}
+		}
+		
+		Debug.Log(yForce);
 		Vector3 movement;
 
 		if (sideGrabL) {
@@ -196,20 +215,12 @@ public class PlayerMultiJoint : MonoBehaviour {
 			movement = new Vector3(xForce, yForce*YaxisFix, 0.0f);
 		}
 
-		//just a direction for force or velocity
-		Vector3 worldForce = transform.TransformDirection(movement).normalized;
-
-		//1)
-		// body.AddForceAtPosition(worldForce*force, position);
-
-		//2)
-		// body.AddForce(worldForce*force); //looks the same as at position
-		
-		//3)
-		// Vector3 newVelocity = Vector3.ClampMagnitude(body.velocity + worldForce, maxVelocity);
+		//just a direction for velocity
+		Vector3 worldVelocity = transform.TransformDirection(movement).normalized;
+		// Vector3 newVelocity = Vector3.ClampMagnitude(body.velocity + worldForce, velocity);
 		// body.velocity = newVelocity;
 		
 		//now regular velocity changing with bigger items
-		body.velocity += worldForce*maxVelocity;
+		body.velocity += worldVelocity*velocity;
 	}
 }

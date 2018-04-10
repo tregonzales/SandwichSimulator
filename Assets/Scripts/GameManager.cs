@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (XCI.GetDPadDown(XboxDPad.Right)) {
+		if (XCI.GetDPadDown(XboxDPad.Right) || Input.GetKeyDown(KeyCode.Space)) {
 			oldInd = curItemIndex;
 			curItem.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = (curItemIndex + 1) % childCount;
