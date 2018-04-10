@@ -17,9 +17,9 @@ public class CameraController : MonoBehaviour {
 
 	public LayerMask obstacleLayerMask;
 
-    public float distance = 10;
-    public float minVerticalAngle = -80;
-    public float maxVerticalAngle = 80;
+	public float distance;
+    public float minVerticalAngle;
+	public float maxVerticalAngle;
 
     public float verticalSpeed = 150;
     public float horizontalSpeed = 300;
@@ -48,7 +48,12 @@ public class CameraController : MonoBehaviour {
 
 		offset = AddObstacleAvoidance (offset);
 
-        transform.position = target.position + offset;
+//        transform.position = offset;
+		//		transform.position = Vector3.MoveTowards(transform.position, target.position + offset,Time.deltaTime);
+
+		//smooths the movement, has some momentum after
+		transform.position = Vector3.Slerp(transform.position, offset, Time.deltaTime);
+
         transform.rotation = Quaternion.LookRotation(target.position - transform.position, new Vector3(0,1,0));
 	}
 
@@ -58,6 +63,6 @@ public class CameraController : MonoBehaviour {
 			// if we hit an object between camera and target position the camera at (in front of) the hit object.
 			return hit.point;
 		}
-		return targetToCamera;
+		return target.position + targetToCamera;
 	}
 }
