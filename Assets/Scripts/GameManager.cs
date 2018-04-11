@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XboxCtrlrInput;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	private bool changing;
 	public Transform itemBarTrans;
 	itemBarController itemBar;
+	GameInputManager gameInputManager;
 	
 	int oldInd;
 
@@ -24,12 +24,12 @@ public class GameManager : MonoBehaviour {
 		childCount = itemHolder.childCount;
 		curItem.GetComponent<PlayerMultiJoint>().enabled = true;
 		itemBar = itemBarTrans.GetComponent<itemBarController>();
-		
+		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (XCI.GetDPadDown(XboxDPad.Right) || Input.GetKeyDown(KeyCode.Space)) {
+		if (gameInputManager.getButton("DpadRight") || Input.GetKeyDown(KeyCode.Space)) {
 			oldInd = curItemIndex;
 			curItem.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = (curItemIndex + 1) % childCount;
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour {
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
 			itemBar.updateBar(oldInd, curItemIndex);
 		}
-		else if (XCI.GetDPadDown(XboxDPad.Left)) {
+		else if (gameInputManager.getButton("DpadLeft")) {
 			oldInd = curItemIndex;
 			curItem.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = curItemIndex == 0 ? childCount - 1 : (curItemIndex - 1) % childCount;

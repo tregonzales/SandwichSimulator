@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XboxCtrlrInput;
 
 public class PlayerMultiJoint : MonoBehaviour {
 
+	GameInputManager gameInputManager;
 	//the corner points 
 	private GameObject RB;
 	private GameObject LB;
@@ -66,6 +66,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		LTgrabbing = false;
 
 		buttons = buttonsTrans.GetComponent<buttonController>();
+		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
 	}
 	
 	// Update is called once per frame
@@ -75,14 +76,14 @@ public class PlayerMultiJoint : MonoBehaviour {
 		buttons.colorCanGrab(RBobj.canGrab, LBobj.canGrab, LTobj.canGrab, RTobj.canGrab);
 		buttons.colorGrabbing(RBgrabbing, LBgrabbing, LTgrabbing, RTgrabbing);
 
-		if (XCI.GetButton(XboxButton.RightBumper) || Input.GetKey(KeyCode.W)) {
+		if (gameInputManager.getButton("RB") || Input.GetKey(KeyCode.W)) {
 			updateJointAndVelocity(true, ref RBgrabbing, ref RBobj, ref RBjoint);
 		}
 		else {
 			updateJointAndVelocity(false, ref RBgrabbing, ref RBobj, ref RBjoint);
 		}
 
-		if (XCI.GetButton(XboxButton.LeftBumper) || Input.GetKey(KeyCode.Q)) {
+		if (gameInputManager.getButton("LB") || Input.GetKey(KeyCode.Q)) {
 			updateJointAndVelocity(true, ref LBgrabbing, ref LBobj, ref LBjoint);
 		}
 		else {
@@ -90,14 +91,14 @@ public class PlayerMultiJoint : MonoBehaviour {
 		}
 
 		
-		if (XCI.GetAxis(XboxAxis.LeftTrigger) != 0 || Input.GetKey(KeyCode.A)) {
+		if (gameInputManager.getButton("LT") || Input.GetKey(KeyCode.A)) {
 			updateJointAndVelocity(true, ref LTgrabbing, ref LTobj, ref LTjoint, -1);
 		}
 		else {
 			updateJointAndVelocity(false, ref LTgrabbing, ref LTobj, ref LTjoint, -1);
 		}
 		
-		if (XCI.GetAxis(XboxAxis.RightTrigger) != 0 || Input.GetKey(KeyCode.S)) {
+		if (gameInputManager.getButton("RT") || Input.GetKey(KeyCode.S)) {
 			updateJointAndVelocity(true, ref RTgrabbing, ref RTobj, ref RTjoint, -1);
 		}
 		else {
@@ -180,9 +181,9 @@ public class PlayerMultiJoint : MonoBehaviour {
 		
 		float xForce = 0;
 		float yForce = 0;
-		if (XCI.GetNumPluggedCtrlrs() > 0) {
-			xForce = XCI.GetAxis(XboxAxis.LeftStickX);
-			yForce = XCI.GetAxis(XboxAxis.LeftStickY);
+		if (gameInputManager.controller) {
+			xForce = Input.GetAxis("Horizontal");
+			yForce = Input.GetAxis("Vertical");
 		}
 		else {
 			if (Input.GetKey(KeyCode.RightArrow)) {
@@ -200,7 +201,6 @@ public class PlayerMultiJoint : MonoBehaviour {
 			}
 		}
 		
-		Debug.Log(yForce);
 		Vector3 movement;
 
 		if (sideGrabL) {
