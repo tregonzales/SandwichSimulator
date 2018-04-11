@@ -8,13 +8,15 @@ public class GameInputManager : MonoBehaviour {
 	public bool controller;
 	// Use this for initialization
 	void Start () {
+		//made false for testing
+		//change as needed to test, this will need to be prompted to user at start
 		Windows = false;
 		controller = Input.GetJoystickNames().Length > 0;
 	}
 
 	public bool getButton(string button) {
 		if (Windows) {
-			return false;
+			return getButtonHelperWindows(button);
 		}
 		else {
 			return getButtonHelperMac(button);
@@ -23,7 +25,7 @@ public class GameInputManager : MonoBehaviour {
 
 	public float getStick(string stick) {
 			if (Windows) {
-				return 0;
+				return getStickHelperWindows(stick);
 			}
 			else {
 				return getStickHelperMac(stick);
@@ -89,12 +91,81 @@ public class GameInputManager : MonoBehaviour {
 
 	public float getStickHelperMac(string stick) {
 		if (stick == "RightStickX") {
-			Debug.Log("x " + Input.GetAxisRaw("RightStickMacX"));
 			return Input.GetAxis("RightStickMacX");
 		}
 		else if (stick == "RightStickY") {
-			Debug.Log("y " + Input.GetAxisRaw("RightStickMacY"));
 			return Input.GetAxis("RightStickMacY");
+		}
+		else {
+			return 0;
+		}
+	}
+
+	public bool getButtonHelperWindows(string button) {
+		switch (button){
+			case "RB":
+				return Input.GetKey("joystick button 5");
+				
+			case "LB":
+				return Input.GetKey("joystick button 4");
+				
+			case "RT":
+				return Input.GetAxis("RTwindows") > 0;
+				
+			case "LT":
+				return Input.GetAxis("RTwindows") > 0;
+				
+			case "DpadLeft":
+				return Input.GetAxis("DpadX") < 0;
+
+			case "DpadTop":
+				return Input.GetAxis("DpadY") > 0;
+			
+			case "DpadRight":
+				return Input.GetAxis("DpadX") > 0;
+			
+			case "DpadBottom":
+				return Input.GetAxis("DpadY") < 0;
+			
+			case "back":
+				return Input.GetKeyDown("joystick button 6");
+			
+			case "middle":
+				//no mapping
+				return false;
+			
+			case "start":
+				return Input.GetKeyDown("joystick button 7");
+			
+			case "X":
+				return Input.GetKeyDown("joystick button 2");
+			
+			case "Y":
+				return Input.GetKeyDown("joystick button 3");
+			
+			case "A":
+				return Input.GetKeyDown("joystick button 0");
+			
+			case "B":
+				return Input.GetKeyDown("joystick button 1");
+			
+			case "LeftStick":
+				return Input.GetKeyDown("joystick button 8");
+
+			case "RightStick":
+				return Input.GetKeyDown("joystick button 9");
+			
+			default:
+				return false;
+		}
+	}
+
+	public float getStickHelperWindows(string stick) {
+		if (stick == "RightStickX") {
+			return Input.GetAxis("RightStickWindowsX");
+		}
+		else if (stick == "RightStickY") {
+			return Input.GetAxis("RightStickWindowsY");
 		}
 		else {
 			return 0;
