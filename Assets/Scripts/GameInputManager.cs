@@ -113,7 +113,7 @@ public class GameInputManager : MonoBehaviour {
 				return Input.GetAxis("RTwindows") > 0;
 				
 			case "LT":
-				return Input.GetAxis("RTwindows") > 0;
+				return Input.GetAxis("LTwindows") > 0;
 				
 			case "DpadLeft":
 				return Input.GetAxis("DpadX") < 0;
