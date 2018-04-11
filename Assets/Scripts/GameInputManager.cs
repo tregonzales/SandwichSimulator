@@ -1,25 +1,50 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameInputManager : MonoBehaviour {
 
-	public bool Windows;
 	public bool controller;
+	public bool Windows;
+	public bool WebGL;
+	public bool Mac;
 	// Use this for initialization
 	void Start () {
-		//made false for testing
-		//change as needed to test, this will need to be prompted to user at start
-		Windows = false;
+		//mac driver here:
+		//https://github.com/360Controller/360Controller
 		controller = Input.GetJoystickNames().Length > 0;
+		Windows = false;
+		Mac = false;
+		WebGL = false;
+		if (RuntimePlatform.OSXEditor == Application.platform) {
+			Mac = true;
+		}
+		else if (RuntimePlatform.WindowsEditor == Application.platform) {
+			Windows = true;
+		}
+		else {
+			WebGL = true;
+		}
+	}
+
+	void Update() {
+		foreach(KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
+     {
+         if (Input.GetKeyDown(kcode))
+             Debug.Log("KeyCode down: " + kcode);
+     }
 	}
 
 	public bool getButton(string button) {
 		if (Windows) {
 			return getButtonHelperWindows(button);
 		}
-		else {
+		else if (Mac) {
 			return getButtonHelperMac(button);
+		}
+		else {
+			return getButtonHelperWeb(button);
 		}
 	}
 
@@ -27,10 +52,107 @@ public class GameInputManager : MonoBehaviour {
 			if (Windows) {
 				return getStickHelperWindows(stick);
 			}
-			else {
+			else if (Mac) {
 				return getStickHelperMac(stick);
 			}	
+			else {
+				return getStickHelperWeb(stick);
+			}
 		}
+
+	public bool getButtonHelperWeb(string button) {
+		switch (button){
+			case "RB":
+				return Input.GetKey("joystick button 5");
+				
+			case "LB":
+				return Input.GetKey("joystick button 4");
+				
+			case "RT":
+			Debug.Log("rt " + Input.GetAxis("RTweb"));
+				return Input.GetAxis("RTweb") > 0;
+				
+			case "LT":
+			Debug.Log("lt " + Input.GetAxis("LTweb"));
+				return Input.GetAxis("LTweb") > 0;
+				
+			case "DpadLeft":
+				return Input.GetKeyDown("joystick button 14");
+
+			case "DpadTop":
+				return Input.GetKeyDown("joystick button 12");
+			
+			case "DpadRight":
+				return Input.GetKeyDown("joystick button 15");
+			
+			case "DpadBottom":
+				return Input.GetKeyDown("joystick button 13");
+			
+			case "back":
+				return Input.GetKeyDown("joystick button 6");
+			
+			case "middle":
+				return Input.GetKeyDown("joystick button 16");
+			
+			case "start":
+				return Input.GetKeyDown("joystick button 7");
+			
+			case "X":
+				return Input.GetKeyDown("joystick button 2");
+			
+			case "Y":
+				return Input.GetKeyDown("joystick button 3");
+			
+			case "A":
+				return Input.GetKeyDown("joystick button 0");
+			
+			case "B":
+				return Input.GetKeyDown("joystick button 1");
+			
+			case "LeftStick":
+				return Input.GetKeyDown("joystick button 8");
+
+			case "RightStick":
+				return Input.GetKeyDown("joystick button 9");
+			
+			default:
+				return false;
+		}
+	}
+	//web button test:
+	/*
+	a: 0
+	b: 1
+	x: 2
+	y: 3
+	rb: 5
+	lb: 4
+	rt: no button, axis 9
+	lt: no button, axis 9
+	left click: 8
+	right click: 9
+	back: 6
+	middle: none
+	start: 7
+	top: 12
+	left: 14
+	bottom: 13
+	right: 15
+
+	 */
+
+	public float getStickHelperWeb(string stick) {
+		if (stick == "RightStickX") {
+			return Input.GetAxis("RightStickWebX");
+		}
+		else if (stick == "RightStickY") {
+			return Input.GetAxis("RightStickWebY");
+		}
+		else {
+			return 0;
+		}
+	}
+
 	public bool getButtonHelperMac(string button) {
 		switch (button){
 			case "RB":
@@ -116,16 +238,16 @@ public class GameInputManager : MonoBehaviour {
 				return Input.GetAxis("LTwindows") > 0;
 				
 			case "DpadLeft":
-				return Input.GetAxis("DpadX") < 0;
+				return Input.GetAxis("DpadWindowsX") < 0;
 
 			case "DpadTop":
-				return Input.GetAxis("DpadY") > 0;
+				return Input.GetAxis("DpadWindowsY") > 0;
 			
 			case "DpadRight":
-				return Input.GetAxis("DpadX") > 0;
+				return Input.GetAxis("DpadWindowsX") > 0;
 			
 			case "DpadBottom":
-				return Input.GetAxis("DpadY") < 0;
+				return Input.GetAxis("DpadWindowsY") < 0;
 			
 			case "back":
 				return Input.GetKeyDown("joystick button 6");

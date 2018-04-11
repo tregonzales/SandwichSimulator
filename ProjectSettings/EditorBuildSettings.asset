@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Jeremy Testing/Jeremy_Kitchen.unity
-    guid: b66bd8aed1ea3274392668222c9b7d90
+    path: Assets/Scenes/kitchen_new_input.unity
+    guid: bacec0046eb45470db21213461944997
