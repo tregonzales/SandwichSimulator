@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Tre_2.unity
-    guid: b6efafe91d23a41cbb87b9886e655272
+    path: Assets/Scenes/Jeremy Testing/Jeremy_Kitchen.unity
+    guid: b66bd8aed1ea3274392668222c9b7d90

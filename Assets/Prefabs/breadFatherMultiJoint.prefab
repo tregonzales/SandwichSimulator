@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4086562290632174
 Transform:
   m_ObjectHideFlags: 1
@@ -522,16 +522,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98aacef78d021466f8e721a70d231739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RBforcePoint: {fileID: 1281227024973972}
-  LBforcePoint: {fileID: 1809387224696042}
-  RTforcePoint: {fileID: 1521683582937218}
-  LTforcePoint: {fileID: 1184281358434180}
+  buttonsTrans: {fileID: 0}
   RBgrabbing: 0
   LBgrabbing: 0
   RTgrabbing: 0
   LTgrabbing: 0
-  force: 50
-  maxVelocity: 1
+  velocity: 1
 --- !u!114 &114652542217542126
 MonoBehaviour:
   m_ObjectHideFlags: 1
