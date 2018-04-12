@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class buttonController : MonoBehaviour {
 
@@ -27,24 +28,24 @@ public class buttonController : MonoBehaviour {
 	}
 
 	public void colorCanGrab (bool rb, bool lb, bool lt, bool rt) {
-		RB.GetComponent<SpriteRenderer>().color = rb ? canGrab : cantGrab;
-		LB.GetComponent<SpriteRenderer>().color = lb ? canGrab : cantGrab;
-		LT.GetComponent<SpriteRenderer>().color = lt ? canGrab : cantGrab;
-		RT.GetComponent<SpriteRenderer>().color = rt ? canGrab : cantGrab;
+		RB.GetComponent<Image>().color = rb ? canGrab : cantGrab;
+		LB.GetComponent<Image>().color = lb ? canGrab : cantGrab;
+		LT.GetComponent<Image>().color = lt ? canGrab : cantGrab;
+		RT.GetComponent<Image>().color = rt ? canGrab : cantGrab;
 	}
 
 	public void colorGrabbing (bool rb, bool lb, bool lt, bool rt) {
 		if (rb) {
-			RB.GetComponent<SpriteRenderer>().color = grabbing;
+			RB.GetComponent<Image>().color = grabbing;
 		}
 		if (lb) {
-			LB.GetComponent<SpriteRenderer>().color = grabbing;
+			LB.GetComponent<Image>().color = grabbing;
 		}
 		if (lt) {
-			LT.GetComponent<SpriteRenderer>().color = grabbing;
+			LT.GetComponent<Image>().color = grabbing;
 		}
 		if (rt) {
-			RT.GetComponent<SpriteRenderer>().color = grabbing;
+			RT.GetComponent<Image>().color = grabbing;
 		}
 	}
 	
