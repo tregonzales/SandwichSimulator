@@ -55,3 +55,5 @@ MonoBehaviour:
   itemBarTrans: {fileID: 0}
   paused: 0
   mainMenu: 0
+  controlPanel: {fileID: 0}
+  pauseMenu: {fileID: 0}

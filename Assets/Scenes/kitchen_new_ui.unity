@@ -357,6 +357,16 @@ Prefab:
       propertyPath: itemBarTrans
       value: 
       objectReference: {fileID: 1200649539}
+    - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
+        type: 2}
+      propertyPath: controlPanel
+      value: 
+      objectReference: {fileID: 447737732}
+    - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
+        type: 2}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 282703373}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50d472d82271e46b1ac3cd69171df15a, type: 2}
   m_IsPrefabParent: 0
@@ -464,6 +474,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87936910eaeebc241ab0460a7cac9a14, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &282703373 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1530862789259778, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+    type: 2}
+  m_PrefabInternal: {fileID: 659217935}
 --- !u!1 &342738277
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +643,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 22.15, y: 0, z: 0}
+--- !u!1 &447737732 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1923401858232374, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+    type: 2}
+  m_PrefabInternal: {fileID: 659217935}
 --- !u!1 &536198416 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1725144736072810, guid: 66d75c2fa73a8cb4b874487f9ffc9ba3,
