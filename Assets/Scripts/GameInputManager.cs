@@ -5,7 +5,6 @@ using System;
 
 public class GameInputManager : MonoBehaviour {
 
-	public bool controller;
 	public bool Windows;
 	public bool WebGL;
 	public bool Mac;
@@ -13,7 +12,6 @@ public class GameInputManager : MonoBehaviour {
 	void Start () {
 		//mac driver here:
 		//https://github.com/360Controller/360Controller
-		controller = Input.GetJoystickNames().Length > 0;
 		Windows = false;
 		Mac = false;
 		WebGL = false;

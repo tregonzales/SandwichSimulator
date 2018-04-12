@@ -183,7 +183,6 @@ public class PlayerMultiJoint : MonoBehaviour {
 		float yForce = 0;
 		xForce = Input.GetAxis("Horizontal");
 		yForce = Input.GetAxis("Vertical");
-
 		
 		Vector3 movement;
 
