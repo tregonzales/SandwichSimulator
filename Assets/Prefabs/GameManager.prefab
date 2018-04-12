@@ -53,3 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemHolder: {fileID: 0}
   itemBarTrans: {fileID: 0}
+  paused: 0
+  mainMenu: 0

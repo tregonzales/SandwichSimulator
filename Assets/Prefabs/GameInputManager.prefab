@@ -52,4 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Windows: 0
-  controller: 0
+  WebGL: 0
+  Mac: 0
