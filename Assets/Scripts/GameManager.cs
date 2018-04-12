@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour {
 	public Transform itemBarTrans;
 	itemBarController itemBar;
 	GameInputManager gameInputManager;
+	public bool paused;
+	public bool mainMenu;
 	
 	int oldInd;
 
@@ -20,16 +23,31 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		mainCamera = Camera.main.GetComponent<CameraController>();
 		curItemIndex = 0;
-		curItem = itemHolder.GetChild(curItemIndex);
-		childCount = itemHolder.childCount;
-		curItem.GetComponent<PlayerMultiJoint>().enabled = true;
-		itemBar = itemBarTrans.GetComponent<itemBarController>();
+		if (itemHolder != null) {
+			curItem = itemHolder.GetChild(curItemIndex);
+			childCount = itemHolder.childCount;
+			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
+		}
+		if (itemBarTrans!= null) {
+			itemBar = itemBarTrans.GetComponent<itemBarController>();
+		}
 		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameInputManager.getButton("DpadRight") || Input.GetKeyDown(KeyCode.Space)) {
+		if (!mainMenu) {
+			if (gameInputManager.getButton("DpadRight") || Input.GetKeyDown(KeyCode.Space)) {
+				changeBar(true);
+			}
+			else if (gameInputManager.getButton("DpadLeft")) {
+				changeBar(false);
+			}
+		}
+	}
+
+	public void changeBar(bool right) {
+		if (right) {
 			oldInd = curItemIndex;
 			curItem.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = (curItemIndex + 1) % childCount;
@@ -38,7 +56,7 @@ public class GameManager : MonoBehaviour {
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
 			itemBar.updateBar(oldInd, curItemIndex);
 		}
-		else if (gameInputManager.getButton("DpadLeft")) {
+		else {
 			oldInd = curItemIndex;
 			curItem.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = curItemIndex == 0 ? childCount - 1 : (curItemIndex - 1) % childCount;
@@ -46,6 +64,37 @@ public class GameManager : MonoBehaviour {
 			mainCamera.target = curItem;
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
 			itemBar.updateBar(oldInd, curItemIndex);
+		}
+	}
+
+	public void RestartTheGameAfterSeconds(float seconds){
+		Time.timeScale = 1.0f;
+		StartCoroutine (LoadSceneAfterSeconds (seconds, SceneManager.GetActiveScene ().name));
+	}
+
+	public void LoadScene(float seconds, string sceneName){
+		StartCoroutine (LoadSceneAfterSeconds (seconds, sceneName));
+	}
+
+	public void LoadSceneByIndex(int i){
+		SceneManager.LoadScene(i);
+	}
+
+	public void LoadMainMenu() {
+		SceneManager.LoadScene("Main_Menu");
+	}
+
+	public void LoadNextScene(float seconds) {
+		StartCoroutine (LoadSceneAfterSeconds (seconds, null));
+	}
+
+	IEnumerator LoadSceneAfterSeconds(float seconds, string sceneName){
+		yield return new WaitForSeconds (seconds);
+		if (sceneName == null) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
+		}
+		else {
+			SceneManager.LoadScene (sceneName);
 		}
 	}
 }

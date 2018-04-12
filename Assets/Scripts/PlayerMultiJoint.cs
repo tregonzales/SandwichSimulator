@@ -181,26 +181,9 @@ public class PlayerMultiJoint : MonoBehaviour {
 		
 		float xForce = 0;
 		float yForce = 0;
-		// if (gameInputManager.controller) {
-			xForce = Input.GetAxis("Horizontal");
-			yForce = Input.GetAxis("Vertical");
-			
-		// }
-		// else {
-		// 	if (Input.GetKey(KeyCode.RightArrow)) {
-		// 		xForce = 1;
-		// 	}
-		// 	else if (Input.GetKey(KeyCode.LeftArrow)) {
-		// 		xForce = -1;
-		// 	}
+		xForce = Input.GetAxis("Horizontal");
+		yForce = Input.GetAxis("Vertical");
 
-		// 	if (Input.GetKey(KeyCode.UpArrow)) {
-		// 		yForce = 1;
-		// 	}
-		// 	else if (Input.GetKey(KeyCode.DownArrow)) {
-		// 		yForce = -1;
-		// 	}
-		// }
 		
 		Vector3 movement;
 
