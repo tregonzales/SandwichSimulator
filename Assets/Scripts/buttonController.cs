@@ -10,6 +10,7 @@ public class buttonController : MonoBehaviour {
 	private GameObject LT;
 	private GameObject RT;
 	public Color canGrab;
+	public Color canGrabItem;
 	public Color cantGrab;
 	public Color grabbing;
 	// Use this for initialization
@@ -27,11 +28,38 @@ public class buttonController : MonoBehaviour {
 		RT.GetComponent<RectTransform>().anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, rt);
 	}
 
-	public void colorCanGrab (bool rb, bool lb, bool lt, bool rt) {
-		RB.GetComponent<Image>().color = rb ? canGrab : cantGrab;
-		LB.GetComponent<Image>().color = lb ? canGrab : cantGrab;
-		LT.GetComponent<Image>().color = lt ? canGrab : cantGrab;
-		RT.GetComponent<Image>().color = rt ? canGrab : cantGrab;
+	public void colorCanGrab (Rigidbody rbGrabbable, Rigidbody lbGrabbable, Rigidbody ltGrabbable, Rigidbody rtGrabbable) {
+		if (rbGrabbable != null) {
+			RB.GetComponent<Image>().color = rbGrabbable.tag == "item" ? canGrabItem : canGrab;
+		}
+		else {
+			RB.GetComponent<Image>().color = cantGrab;
+		}
+
+		if (lbGrabbable != null) {
+			LB.GetComponent<Image>().color = lbGrabbable.tag == "item" ? canGrabItem : canGrab;
+		}
+		else {
+			LB.GetComponent<Image>().color = cantGrab;
+		}
+
+		if (ltGrabbable != null) {
+			LT.GetComponent<Image>().color = ltGrabbable.tag == "item" ? canGrabItem : canGrab;
+		}
+		else {
+			LT.GetComponent<Image>().color = cantGrab;
+		}
+
+		if (rtGrabbable != null) {
+			RT.GetComponent<Image>().color = rtGrabbable.tag == "item" ? canGrabItem : canGrab;
+		}
+		else {
+			RT.GetComponent<Image>().color = cantGrab;
+		}
+		// RB.GetComponent<Image>().color = rb ? canGrab : cantGrab;
+		// LB.GetComponent<Image>().color = lb ? canGrab : cantGrab;
+		// LT.GetComponent<Image>().color = lt ? canGrab : cantGrab;
+		// RT.GetComponent<Image>().color = rt ? canGrab : cantGrab;
 	}
 
 	public void colorGrabbing (bool rb, bool lb, bool lt, bool rt) {

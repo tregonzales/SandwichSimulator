@@ -73,7 +73,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 	void Update () {
 
 		buttons.updatePositions(RB.transform.position, LB.transform.position, LT.transform.position, RT.transform.position);
-		buttons.colorCanGrab(RBobj.canGrab, LBobj.canGrab, LTobj.canGrab, RTobj.canGrab);
+		buttons.colorCanGrab(RBobj.grabbableBody, LBobj.grabbableBody, LTobj.grabbableBody, RTobj.grabbableBody);
 		buttons.colorGrabbing(RBgrabbing, LBgrabbing, LTgrabbing, RTgrabbing);
 
 		if (gameInputManager.getButton("RB") || Input.GetKey(KeyCode.W)) {

@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canGrab: {r: 0.22068954, g: 1, b: 0, a: 1}
+  canGrabItem: {r: 0.32352942, g: 1, b: 0.9760651, a: 1}
   cantGrab: {r: 1, g: 0, b: 0, a: 1}
   grabbing: {r: 1, g: 0.9724138, b: 0, a: 1}
 --- !u!114 &114575237722679650

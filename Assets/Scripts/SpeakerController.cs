@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SpeakerController : MonoBehaviour {
 
+	Vector3 bounce;
+	public int force;
 	// Use this for initialization
 	void Start () {
-		
+		bounce = transform.up + (-1*transform.forward);
 	}
 	
 	// Update is called once per frame
@@ -15,6 +17,9 @@ public class SpeakerController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		
+		if (other.GetComponent<Rigidbody>() != null) {
+			Debug.Log("enter");
+			other.GetComponent<Rigidbody>().velocity +=  transform.TransformDirection(bounce) * force;
+		}
 	}
 }
