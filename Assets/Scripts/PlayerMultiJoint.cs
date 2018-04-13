@@ -112,6 +112,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		bool run = true;
 		bool sideGrabL = false;
 		bool sideGrabR = false;
+		float curVel = velocity;
 		if (!pressed && grab) {
 				grab = false;
 				joint.connectedBody = null;
@@ -163,7 +164,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 				}
 			}
 			if (run) {
-				applyMovement(sideGrabL, sideGrabR, YaxisFix);
+				applyMovement(sideGrabL, sideGrabR, curVel, YaxisFix);
 			}
 		}
 	}
@@ -177,7 +178,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		}
 	}
 
-	public void applyMovement(bool sideGrabL, bool sideGrabR, int YaxisFix = 1) {
+	public void applyMovement(bool sideGrabL, bool sideGrabR, float curVel, int YaxisFix = 1) {
 		
 		float xForce = 0;
 		float yForce = 0;
@@ -203,7 +204,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		// Vector3 newVelocity = Vector3.ClampMagnitude(body.velocity + worldForce, velocity);
 		// body.velocity = newVelocity;
 		
-		//now regular velocity changing with bigger items
-		body.velocity += worldVelocity*velocity;
+		// now regular velocity changing with bigger items
+		body.velocity += worldVelocity*curVel;
 	}
 }

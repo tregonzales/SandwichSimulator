@@ -2028,6 +2028,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1001 &2044533709
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4668276828362944, guid: b0420d6da1e3c48c082977db2411ab66, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.303
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668276828362944, guid: b0420d6da1e3c48c082977db2411ab66, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.058
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668276828362944, guid: b0420d6da1e3c48c082977db2411ab66, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.454
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668276828362944, guid: b0420d6da1e3c48c082977db2411ab66, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668276828362944, guid: b0420d6da1e3c48c082977db2411ab66, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668276828362944, guid: b0420d6da1e3c48c082977db2411ab66, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668276828362944, guid: b0420d6da1e3c48c082977db2411ab66, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668276828362944, guid: b0420d6da1e3c48c082977db2411ab66, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 23862620300255698, guid: b0420d6da1e3c48c082977db2411ab66,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b0420d6da1e3c48c082977db2411ab66, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &2054117003
 Prefab:
   m_ObjectHideFlags: 0
