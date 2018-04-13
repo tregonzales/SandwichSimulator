@@ -59,11 +59,9 @@ public class GameInputManager : MonoBehaviour {
 				return Input.GetKey("joystick button 4");
 				
 			case "RT":
-			Debug.Log("rt " + Input.GetAxis("RTweb"));
 				return Input.GetAxis("RTweb") > 0;
 				
 			case "LT":
-			Debug.Log("lt " + Input.GetAxis("LTweb"));
 				return Input.GetAxis("LTweb") > 0;
 				
 			case "DpadLeft":

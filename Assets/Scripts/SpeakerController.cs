@@ -13,7 +13,7 @@ public class SpeakerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		gameObject.GetComponent<Renderer>().material.color = Color.Lerp(Color.yellow, Color.clear, Mathf.PingPong(Time.time, 2));
 	}
 
 	void OnTriggerEnter(Collider other){
