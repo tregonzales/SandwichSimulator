@@ -25,12 +25,12 @@ public class playerChildren : MonoBehaviour {
 	private void OnTriggerStay(Collider other) {
 		if (grabbableBody == null || !canGrab) {	
 			canGrab = true;	
-			grabbableBody = other.GetComponent<Rigidbody>();
+			grabbableBody = other.GetComponentInParent<Rigidbody>();
 		}
 	}
 
 	private void OnTriggerExit(Collider other) {
-		if (other.GetComponent<Rigidbody>() == grabbableBody) {
+		if (other.GetComponentInParent<Rigidbody>() == grabbableBody) {
 			canGrab = false;
 			grabbableBody = null;
 		}

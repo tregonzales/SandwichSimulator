@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class itemBarController : MonoBehaviour {
 
 	// Use this for initialization
+	public Color active;
+	public Color inactive;
 	void Start () {
-		transform.GetChild(0).GetComponent<Image>().enabled = true;
+		transform.GetChild(0).GetComponent<Image>().color = active;
 	}
 
 	public void updateBar(int oldInd, int curInd) {
-		transform.GetChild(oldInd).GetComponent<Image>().enabled = false;
-		transform.GetChild(curInd).GetComponent<Image>().enabled = true;
+		transform.GetChild(oldInd).GetComponent<Image>().color = inactive;
+		transform.GetChild(curInd).GetComponent<Image>().color = active;;
 	}
 }

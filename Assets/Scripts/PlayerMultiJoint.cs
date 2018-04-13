@@ -112,6 +112,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		bool run = true;
 		bool sideGrabL = false;
 		bool sideGrabR = false;
+		float curVel = velocity;
 		if (!pressed && grab) {
 				grab = false;
 				joint.connectedBody = null;
@@ -128,42 +129,19 @@ public class PlayerMultiJoint : MonoBehaviour {
 			}
 		else if (grab) {
 			//first check top, bottom, and side grabs
-			if (LTjoint == joint || LBjoint == joint) {
-				if (LTgrabbing && LBgrabbing) {
-					run = checkGrab(joint);
-					sideGrabL = checkGrab(LTjoint) && checkGrab(LBjoint);
-				}
+			if (LTgrabbing && LBgrabbing) {
+				// run = checkGrab(joint);
+				sideGrabL = checkGrab(LTjoint) && checkGrab(LBjoint);
 			}
-			else if (RTjoint == joint || RBjoint == joint) {
-				if (RTgrabbing && RBgrabbing) {
-					run = checkGrab(joint);
-					sideGrabR = checkGrab(RTjoint) && checkGrab(RBjoint);
-				}
+			if (RTgrabbing && RBgrabbing) {
+				// run = checkGrab(joint);
+				sideGrabR = checkGrab(RTjoint) && checkGrab(RBjoint);
 			}
-			else if (LBjoint == joint || RBjoint == joint) {
-				if (LBgrabbing && RBgrabbing) {
-					run = checkGrab(joint);
-				}
-			}
-			else if (LTjoint == joint || RTjoint == joint) {
-				if (LTgrabbing && RTgrabbing) {
-					run = checkGrab(joint);
-				}
-			}
+			run = checkGrab(joint);
 			
-			//next check diagonal grabs
-			if (RBjoint == joint || LTjoint == joint) {
-				if (RBgrabbing && LTgrabbing) {
-					run = checkGrab(joint);
-				}
-			}
-			else if (LBjoint == joint || RTjoint == joint) {
-				if (LBgrabbing && RTgrabbing) {
-					run = checkGrab(joint);
-				}
-			}
+			//as of now does not apply any velocity if grabbing item
 			if (run) {
-				applyMovement(sideGrabL, sideGrabR, YaxisFix);
+				applyMovement(sideGrabL, sideGrabR, curVel, YaxisFix);
 			}
 		}
 	}
@@ -177,7 +155,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		}
 	}
 
-	public void applyMovement(bool sideGrabL, bool sideGrabR, int YaxisFix = 1) {
+	public void applyMovement(bool sideGrabL, bool sideGrabR, float curVel, int YaxisFix = 1) {
 		
 		float xForce = 0;
 		float yForce = 0;
@@ -203,7 +181,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		// Vector3 newVelocity = Vector3.ClampMagnitude(body.velocity + worldForce, velocity);
 		// body.velocity = newVelocity;
 		
-		//now regular velocity changing with bigger items
-		body.velocity += worldVelocity*velocity;
+		// now regular velocity changing with bigger items
+		body.velocity += worldVelocity*curVel;
 	}
 }
