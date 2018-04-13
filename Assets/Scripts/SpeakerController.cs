@@ -13,13 +13,12 @@ public class SpeakerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		gameObject.GetComponent<Renderer>().material.color = Color.Lerp(Color.yellow, Color.clear, Mathf.PingPong(Time.time, 2));
+		gameObject.GetComponentInParent<Renderer>().material.color = Color.Lerp(Color.yellow, Color.clear, Mathf.PingPong(Time.time, 2));
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.GetComponent<Rigidbody>() != null) {
-			Debug.Log("enter");
-			other.GetComponent<Rigidbody>().velocity +=  transform.TransformDirection(bounce) * force;
+		if (other.gameObject.GetComponentInParent<Rigidbody>() != null) {
+			other.gameObject.GetComponentInParent<Rigidbody>().velocity +=  transform.TransformDirection(bounce) * force;
 		}
 	}
 }

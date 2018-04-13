@@ -129,40 +129,17 @@ public class PlayerMultiJoint : MonoBehaviour {
 			}
 		else if (grab) {
 			//first check top, bottom, and side grabs
-			if (LTjoint == joint || LBjoint == joint) {
-				if (LTgrabbing && LBgrabbing) {
-					run = checkGrab(joint);
-					sideGrabL = checkGrab(LTjoint) && checkGrab(LBjoint);
-				}
+			if (LTgrabbing && LBgrabbing) {
+				// run = checkGrab(joint);
+				sideGrabL = checkGrab(LTjoint) && checkGrab(LBjoint);
 			}
-			else if (RTjoint == joint || RBjoint == joint) {
-				if (RTgrabbing && RBgrabbing) {
-					run = checkGrab(joint);
-					sideGrabR = checkGrab(RTjoint) && checkGrab(RBjoint);
-				}
+			if (RTgrabbing && RBgrabbing) {
+				// run = checkGrab(joint);
+				sideGrabR = checkGrab(RTjoint) && checkGrab(RBjoint);
 			}
-			else if (LBjoint == joint || RBjoint == joint) {
-				if (LBgrabbing && RBgrabbing) {
-					run = checkGrab(joint);
-				}
-			}
-			else if (LTjoint == joint || RTjoint == joint) {
-				if (LTgrabbing && RTgrabbing) {
-					run = checkGrab(joint);
-				}
-			}
+			run = checkGrab(joint);
 			
-			//next check diagonal grabs
-			if (RBjoint == joint || LTjoint == joint) {
-				if (RBgrabbing && LTgrabbing) {
-					run = checkGrab(joint);
-				}
-			}
-			else if (LBjoint == joint || RTjoint == joint) {
-				if (LBgrabbing && RTgrabbing) {
-					run = checkGrab(joint);
-				}
-			}
+			//as of now does not apply any velocity if grabbing item
 			if (run) {
 				applyMovement(sideGrabL, sideGrabR, curVel, YaxisFix);
 			}
