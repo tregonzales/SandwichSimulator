@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: a9d7252b96ee040cda0cc7c670c22051
+timeCreated: 1523627976
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 7f82c9a7e6fc68dd198d25cfd4f8f1f9
+  longitude: -105.242139
+  latitude: 40.018309
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -0.109030545, y: 0.37706858, z: -1.1833173}
+      lookAt: {x: 0.6379428, y: 0.35533425, z: 0.225799}
+      up: {x: 0.00638213, y: 0.9999072, z: 0.0120394705}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Component#395
+    100004: Component#396
+    100006: Super Bock
+    100008: Super Bock Abadia
+    100010: Super Bock Classic
+    100012: Super Bock green
+    100014: Super Bock sem Alcool
+    100016: Super Bock STOUT
+    400000: //RootNode
+    400002: Component#395
+    400004: Component#396
+    400006: Super Bock
+    400008: Super Bock Abadia
+    400010: Super Bock Classic
+    400012: Super Bock green
+    400014: Super Bock sem Alcool
+    400016: Super Bock STOUT
+    2100000: _100
+    2100002: _106
+    2300000: Component#395
+    2300002: Super Bock
+    2300004: Super Bock Abadia
+    2300006: Super Bock Classic
+    2300008: Super Bock green
+    2300010: Super Bock sem Alcool
+    2300012: Super Bock STOUT
+    3300000: Component#395
+    3300002: Super Bock
+    3300004: Super Bock Abadia
+    3300006: Super Bock Classic
+    3300008: Super Bock green
+    3300010: Super Bock sem Alcool
+    3300012: Super Bock STOUT
+    4300000: Mesh Super Bock STOUT
+    4300002: Mesh Super Bock
+    4300004: Mesh Super Bock green
+    4300006: Mesh Super Bock Classic
+    4300008: Mesh Super Bock Abadia
+    4300010: Mesh Component#395
+    4300012: Mesh Super Bock sem Alcool
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _100
+    second: {fileID: 2100000, guid: d64fdcd55cdcb4534a7b05cf2a74bc8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _106
+    second: {fileID: 2100000, guid: edc804824a51d432bb21897ee67164f2, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: D__Documentos_images
+    second: {fileID: 2800000, guid: 9d6a5781741a440f0b88be4067e2913e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: D__Documentos_super-bock
+    second: {fileID: 2800000, guid: fec5d80b6279e4344941719fd159e329, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.2
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
