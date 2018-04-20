@@ -19,6 +19,9 @@ public class buttonController : MonoBehaviour {
 		LB = transform.GetChild(1).gameObject;
 		LT = transform.GetChild(2).gameObject;
 		RT = transform.GetChild(3).gameObject;
+		GameObject.Find("UIholder").GetComponent<CanvasScaler>().referenceResolution = 
+		new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
+		Debug.Log(Camera.main.pixelHeight);
 	}
 
 	public void updatePositions (Vector3 rb, Vector3 lb, Vector3 lt, Vector3 rt) {
@@ -26,6 +29,8 @@ public class buttonController : MonoBehaviour {
 		LB.GetComponent<RectTransform>().anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, lb);
 		LT.GetComponent<RectTransform>().anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, lt);
 		RT.GetComponent<RectTransform>().anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, rt);
+		
+		;
 	}
 
 	public void colorCanGrab (Rigidbody rbGrabbable, Rigidbody lbGrabbable, Rigidbody ltGrabbable, Rigidbody rtGrabbable) {

@@ -38,7 +38,10 @@ public class PlayerMultiJoint : MonoBehaviour {
 	public bool LTgrabbing;
 
 	//velocity to apply to body
-	public float velocity;
+	public float MaxVelocity;
+
+	//vector 3 fling force to apply to bread once user lets go so they don't just spin in place
+	Vector3 flingForce;
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +51,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		RT = gameObject.transform.GetChild(4).gameObject;
 
 		body = gameObject.transform.GetComponent<Rigidbody>();
+		body.maxAngularVelocity = MaxVelocity;
 
 		joints = GetComponents(typeof(ConfigurableJoint));
 		RBjoint = (ConfigurableJoint)joints[0];
@@ -112,13 +116,18 @@ public class PlayerMultiJoint : MonoBehaviour {
 		bool run = true;
 		bool sideGrabL = false;
 		bool sideGrabR = false;
-		float curVel = velocity;
+		bool fling = false;
 		if (!pressed && grab) {
 				grab = false;
 				joint.connectedBody = null;
 				joint.xMotion = ConfigurableJointMotion.Free;
 				joint.yMotion = ConfigurableJointMotion.Free;
 				joint.zMotion = ConfigurableJointMotion.Free;
+				//need to make some ratio of angular velocity
+				flingForce = flingForce.normalized * 3;
+				fling = true;
+				applyMovement(false, false, 1, fling);
+				
 		}
 		else if (!grab && obj.canGrab && pressed) {
 				grab = true;
@@ -132,16 +141,22 @@ public class PlayerMultiJoint : MonoBehaviour {
 			if (LTgrabbing && LBgrabbing) {
 				// run = checkGrab(joint);
 				sideGrabL = checkGrab(LTjoint) && checkGrab(LBjoint);
+
+				//angular
+				sideGrabL = (checkGrab(LTjoint) && checkGrab(LBjoint)) || LTjoint.connectedBody == LBjoint.connectedBody;
 			}
 			if (RTgrabbing && RBgrabbing) {
 				// run = checkGrab(joint);
 				sideGrabR = checkGrab(RTjoint) && checkGrab(RBjoint);
+
+				//angular
+				sideGrabR = (checkGrab(RTjoint) && checkGrab(RBjoint)) || RTjoint.connectedBody == RBjoint.connectedBody;
 			}
-			run = checkGrab(joint);
+			// run = checkGrab(joint);
 			
 			//as of now does not apply any velocity if grabbing item
 			if (run) {
-				applyMovement(sideGrabL, sideGrabR, curVel, YaxisFix);
+				applyMovement(sideGrabL, sideGrabR, YaxisFix);
 			}
 		}
 	}
@@ -155,33 +170,54 @@ public class PlayerMultiJoint : MonoBehaviour {
 		}
 	}
 
-	public void applyMovement(bool sideGrabL, bool sideGrabR, float curVel, int YaxisFix = 1) {
+	public void applyMovement(bool sideGrabL, bool sideGrabR, int YaxisFix = 1, bool fling = false) {
 		
 		float xForce = 0;
 		float yForce = 0;
 		xForce = Input.GetAxis("Horizontal");
 		yForce = Input.GetAxis("Vertical");
 		
+		//for angular y axis fix always -1 for side
 		Vector3 movement;
 
 		if (sideGrabL) {
 			YaxisFix = -1;
-			movement = new Vector3(0.0f, xForce*YaxisFix, yForce);
+			flingForce = fling ? flingForce : new Vector3(0.0f, xForce*YaxisFix, yForce);
+
+			//angular style
+			YaxisFix = -1;
+			movement = new Vector3(yForce, 0.0f, xForce*YaxisFix);
 		}
 		else if (sideGrabR) {
 			YaxisFix = 1;
-			movement = new Vector3(0.0f, xForce*YaxisFix, yForce);
+			flingForce = fling ? flingForce : new Vector3(0.0f, xForce*YaxisFix, yForce);
+
+			//angular style
+			YaxisFix = -1;
+			movement = new Vector3(yForce, 0.0f, xForce*YaxisFix);
 		}
 		else {
-			movement = new Vector3(xForce, yForce*YaxisFix, 0.0f);
+			flingForce = fling ? flingForce : new Vector3(xForce, yForce*YaxisFix, 0.0f);
+
+			//angular style, yaxis fix always 1 bc depends on rotating around simple axis, not direction of force
+			YaxisFix = 1;
+			movement = new Vector3(yForce, xForce*YaxisFix, 0.0f);
 		}
 
-		//just a direction for velocity
+		//just a direction in world space for velocity
 		Vector3 worldVelocity = transform.TransformDirection(movement).normalized;
-		// Vector3 newVelocity = Vector3.ClampMagnitude(body.velocity + worldForce, velocity);
-		// body.velocity = newVelocity;
 		
 		// now regular velocity changing with bigger items
-		body.velocity += worldVelocity*curVel;
+		// body.velocity += worldVelocity*1;
+
+		//angular velocity prevents flying, but is slow af
+		
+		if (fling) {
+			body.velocity += transform.TransformDirection(flingForce);
+			body.angularVelocity *= .5f;
+		}
+		else {
+			body.angularVelocity += (worldVelocity*5);
+		}
 	}
 }
