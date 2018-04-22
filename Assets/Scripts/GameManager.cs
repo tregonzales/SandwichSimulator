@@ -64,12 +64,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void changeBar(bool right) {
+		mainCamera.isSwitching = true;
 		if (right) {
 			oldInd = curItemIndex;
 			curItem.GetComponent<PlayerMultiJoint>().enabled = false;
 			curItemIndex = (curItemIndex + 1) % childCount;
 			curItem = itemHolder.GetChild(curItemIndex);
 			mainCamera.target = curItem;
+//			mainCamera.updateToSwitchObjects ();
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
 			itemBar.updateBar(oldInd, curItemIndex);
 		}
@@ -79,9 +81,12 @@ public class GameManager : MonoBehaviour {
 			curItemIndex = curItemIndex == 0 ? childCount - 1 : (curItemIndex - 1) % childCount;
 			curItem = itemHolder.GetChild(curItemIndex);
 			mainCamera.target = curItem;
+//			mainCamera.updateToSwitchObjects ();
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
 			itemBar.updateBar(oldInd, curItemIndex);
 		}
+		mainCamera.isSwitching = false;
+
 	}
 
 	public void RestartTheGameAfterSeconds(float seconds){
