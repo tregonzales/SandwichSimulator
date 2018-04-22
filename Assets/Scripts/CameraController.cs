@@ -55,14 +55,14 @@ public class CameraController : MonoBehaviour {
 //					transform.position = Vector3.MoveTowards(transform.position, target.position + offset,Time.deltaTime);
 
 			//smooths the movement, has some momentum after
-					transform.position = Vector3.Slerp(transform.position, offset, Time.deltaTime); //changed to Lerp instead of Slerp
+					transform.position = Vector3.Lerp(transform.position, offset, Time.deltaTime); //changed to Lerp instead of Slerp
 
 //			transform.rotation = Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0));
 			//		transform.rotation = Quaternion.Slerp(transform.rotation, target.position - transform.position, Time.deltaTime);
 
 
 		//changed to Lerp instead of Slerp
-					transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0)), Time.deltaTime);
+					transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0)), Time.deltaTime);
 //		} else {
 //			Debug.Log ("else");
 //		}
