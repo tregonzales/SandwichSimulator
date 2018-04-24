@@ -54,6 +54,11 @@ public class CameraController : MonoBehaviour {
 		angleX += gameInputManager.getStick ("RightStickY") * Time.deltaTime * verticalSpeed * -1;
 		angleY += gameInputManager.getStick ("RightStickX") * Time.deltaTime * verticalSpeed * -1;
 
+		if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
+			angleX += Input.GetAxis("Vertical") * Time.deltaTime * verticalSpeed * -1;
+			angleY += Input.GetAxis("Horizontal") * Time.deltaTime * verticalSpeed * -1;
+		}
+
 		angleX = Mathf.Clamp (angleX, minVerticalAngle, maxVerticalAngle);
 		angleY %= 360;
 
