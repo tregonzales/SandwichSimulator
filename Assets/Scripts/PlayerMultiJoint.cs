@@ -170,7 +170,6 @@ public class PlayerMultiJoint : MonoBehaviour {
 		yForce = Input.GetAxis("Vertical");
 		
 		//for angular y axis fix always -1 for side
-		Debug.Log(body.angularVelocity);
 		Vector3 movement;
 
 		if (sideGrabL) {

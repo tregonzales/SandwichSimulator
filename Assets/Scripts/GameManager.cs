@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,9 +14,16 @@ public class GameManager : MonoBehaviour {
 
 	void Start () {
 		if (!mainMenu) {
+			GameObject.Find("UIholder").GetComponent<CanvasScaler>().referenceResolution = 
+			new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
 			paused = false;
 			Time.timeScale = 1.0f;
 			pauseMenu.SetActive(paused);
+		}
+		else {
+			GameObject.Find("MainMenu").GetComponent<CanvasScaler>().referenceResolution = 
+			new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
+			paused = true;	
 		}
 		controlPanel.SetActive(false);
 		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();

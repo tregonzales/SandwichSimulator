@@ -19,9 +19,6 @@ public class buttonController : MonoBehaviour {
 		LB = transform.GetChild(1).gameObject;
 		LT = transform.GetChild(2).gameObject;
 		RT = transform.GetChild(3).gameObject;
-		GameObject.Find("UIholder").GetComponent<CanvasScaler>().referenceResolution = 
-		new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
-		Debug.Log(Camera.main.pixelHeight);
 	}
 
 	public void updatePositions (Vector3 rb, Vector3 lb, Vector3 lt, Vector3 rt) {
