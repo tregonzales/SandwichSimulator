@@ -10,10 +10,15 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 
+	public enum CamState
+	{
+		Follow, Switch
+	}
+
+	private CamState state = CamState.Follow;
 
     public Transform target;
 
-	public bool isSwitching = false;
 	public LayerMask obstacleLayerMask;
 
 	public float distance;
@@ -27,45 +32,100 @@ public class CameraController : MonoBehaviour {
     private float angleY;
 	GameInputManager gameInputManager;
 
+	Vector3 offset;
+	Coroutine switchRoutine;
+
 	void Start () {
 	    angleX = -45;
         angleY = 0;
 		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
 	}
-	
+
+	public void SwitchTarget(Transform newTarget){
+		target = newTarget;
+		state = CamState.Switch;
+		if (switchRoutine != null) {
+			StopCoroutine (switchRoutine);
+		}
+		switchRoutine = StartCoroutine(lerpSwitch(1f));
+	}
+
 	void Update () {
-//		if (!isSwitching) {
-			Debug.Log ("normal movement");
-			angleX += gameInputManager.getStick ("RightStickY") * Time.deltaTime * verticalSpeed * -1;
-			angleY += gameInputManager.getStick ("RightStickX") * Time.deltaTime * verticalSpeed * -1;
+		angleX += gameInputManager.getStick ("RightStickY") * Time.deltaTime * verticalSpeed * -1;
+		angleY += gameInputManager.getStick ("RightStickX") * Time.deltaTime * verticalSpeed * -1;
 
-			angleX = Mathf.Clamp (angleX, minVerticalAngle, maxVerticalAngle);
-			angleY %= 360;
+		angleX = Mathf.Clamp (angleX, minVerticalAngle, maxVerticalAngle);
+		angleY %= 360;
 
-			Quaternion xRotation = Quaternion.AngleAxis (angleX, new Vector3 (1, 0, 0));
-			Quaternion yRotation = Quaternion.AngleAxis (angleY, new Vector3 (0, 1, 0));
-			Vector3 offset = new Vector3 (0, 0, 1);
-			offset = xRotation * offset;
-			offset = yRotation * offset;
-			offset *= distance;
+		Quaternion xRotation = Quaternion.AngleAxis (angleX, new Vector3 (1, 0, 0));
+		Quaternion yRotation = Quaternion.AngleAxis (angleY, new Vector3 (0, 1, 0));
+		offset = new Vector3 (0, 0, 1);
+		offset = xRotation * offset;
+		offset = yRotation * offset;
+		offset *= distance;
 
-			offset = AddObstacleAvoidance (offset);
+		offset = AddObstacleAvoidance (offset);
+			
+		switch (state) {
+		case CamState.Follow:
+			transform.position = offset;
+			transform.rotation = Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0));
+			break;
+		case CamState.Switch:
+			break;
+		}
+			
 
-//			transform.position = offset;
-//					transform.position = Vector3.MoveTowards(transform.position, target.position + offset,Time.deltaTime);
+////			transform.position = offset;
+////					transform.position = Vector3.MoveTowards(transform.position, target.position + offset,Time.deltaTime);
+//
+//			//smooths the movement, has some momentum after
+//					transform.position = Vector3.Lerp(transform.position, offset, Time.deltaTime); //changed to Lerp instead of Slerp
+//
+////			transform.rotation = Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0));
+//			//		transform.rotation = Quaternion.Slerp(transform.rotation, target.position - transform.position, Time.deltaTime);
+//
+//
+//		//changed to Lerp instead of Slerp
+//					transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0)), Time.deltaTime);
+	}
 
-			//smooths the movement, has some momentum after
-					transform.position = Vector3.Lerp(transform.position, offset, Time.deltaTime); //changed to Lerp instead of Slerp
+	public IEnumerator lerpSwitch(float duration) {
+		float startTime = 0;
+		float currentTime = 0;
+		float endTime = duration;
+		Vector3 startPos = transform.position;
+//		float tt = 0f;
+		while (true) {
+			currentTime += Time.deltaTime;
+			float normalizedTime = currentTime / endTime;
+			float easedTime = EasingFunction.EaseOutCubic (0, 1, normalizedTime);
+			transform.position = Vector3.Lerp(startPos, offset, easedTime); //changed to Lerp instead of Slerp
+			transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0)), easedTime);
+//			tt += Time.deltaTime;
+			yield return null;
+			if (currentTime > endTime) {
+				break;
+			}
+//			Debug.Log ("transform " + (transform.position - target.position).magnitude + 0.04f);
+//
+//			Debug.Log("offset " + (offset - target.position).magnitude);
 
-//			transform.rotation = Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0));
-			//		transform.rotation = Quaternion.Slerp(transform.rotation, target.position - transform.position, Time.deltaTime);
+//			if ((((transform.position - target.position).magnitude) <= (offset - target.position).magnitude + 0.04) && (Quaternion.Dot(transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0))) > 0.99f)) {
+////			if ((Mathf.Approximately((transform.position - target.position).magnitude, (offset - target.position).magnitude))) {
+//				break;
+//			}
 
 
-		//changed to Lerp instead of Slerp
-					transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0)), Time.deltaTime);
-//		} else {
-//			Debug.Log ("else");
-//		}
+//			if(Quaternion.Dot(transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0))) > 0.9999f) {
+//				// Now we're within 1 degree of the target rotation.
+//				// Put your "arrived" code here.
+//				Debug.Log ("broken");
+//				break;
+//			}
+		}
+		state = CamState.Follow;
+//		Debug.Log ("no longer switching " + isSwitching);
 	}
 
 	public void updateToSwitchObjects() {
@@ -74,7 +134,7 @@ public class CameraController : MonoBehaviour {
 		//so as of rn we don't use this method
 		//keeping in case we decide to somewhere
 
-		Debug.Log ("updating to swtich objects");
+//		Debug.Log ("updating to swtich objects");
 		angleX += gameInputManager.getStick("RightStickY") * Time.deltaTime * verticalSpeed * -1;
 		angleY += gameInputManager.getStick("RightStickX") * Time.deltaTime * verticalSpeed * -1;
 
