@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	GameInputManager gameInputManager;
+	public static GameManager instance;
 	public bool paused;
 	public bool mainMenu;
 	public GameObject controlPanel;
 	public GameObject pauseMenu;
 
 	void Start () {
+		instance = this;
 		if (!mainMenu) {
 			GameObject.Find("UIholder").GetComponent<CanvasScaler>().referenceResolution = 
 			new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
@@ -63,10 +65,12 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void showControls(bool show) {
+		Debug.Log("click this control");
 		controlPanel.SetActive(show);
 	}
 
 	public void TogglePauseMenu() {
+		Debug.Log("click menu");
 		if (paused)
         {
             pauseMenu.SetActive(!paused);
