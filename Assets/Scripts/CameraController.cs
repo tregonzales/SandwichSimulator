@@ -74,20 +74,6 @@ public class CameraController : MonoBehaviour {
 		case CamState.Switch:
 			break;
 		}
-			
-
-////			transform.position = offset;
-////					transform.position = Vector3.MoveTowards(transform.position, target.position + offset,Time.deltaTime);
-//
-//			//smooths the movement, has some momentum after
-//					transform.position = Vector3.Lerp(transform.position, offset, Time.deltaTime); //changed to Lerp instead of Slerp
-//
-////			transform.rotation = Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0));
-//			//		transform.rotation = Quaternion.Slerp(transform.rotation, target.position - transform.position, Time.deltaTime);
-//
-//
-//		//changed to Lerp instead of Slerp
-//					transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0)), Time.deltaTime);
 	}
 
 	public IEnumerator lerpSwitch(float duration) {
@@ -95,74 +81,23 @@ public class CameraController : MonoBehaviour {
 		float currentTime = 0;
 		float endTime = duration;
 		Vector3 startPos = transform.position;
-//		float tt = 0f;
+
 		while (true) {
 			currentTime += Time.deltaTime;
 			float normalizedTime = currentTime / endTime;
 			float easedTime = EasingFunction.EaseOutCubic (0, 1, normalizedTime);
+
 			transform.position = Vector3.Lerp(startPos, offset, easedTime); //changed to Lerp instead of Slerp
 			transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0)), easedTime);
-//			tt += Time.deltaTime;
+
 			yield return null;
 			if (currentTime > endTime) {
 				break;
 			}
-//			Debug.Log ("transform " + (transform.position - target.position).magnitude + 0.04f);
-//
-//			Debug.Log("offset " + (offset - target.position).magnitude);
-
-//			if ((((transform.position - target.position).magnitude) <= (offset - target.position).magnitude + 0.04) && (Quaternion.Dot(transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0))) > 0.99f)) {
-////			if ((Mathf.Approximately((transform.position - target.position).magnitude, (offset - target.position).magnitude))) {
-//				break;
-//			}
-
-
-//			if(Quaternion.Dot(transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0))) > 0.9999f) {
-//				// Now we're within 1 degree of the target rotation.
-//				// Put your "arrived" code here.
-//				Debug.Log ("broken");
-//				break;
-//			}
 		}
 		state = CamState.Follow;
-//		Debug.Log ("no longer switching " + isSwitching);
 	}
 
-	public void updateToSwitchObjects() {
-		//i don't think this works but i thought maybe if we do the smooth chanigng thing only when switching objects it would work better
-		//but instead it just doesn't seem to be calling either this or the normal update method
-		//so as of rn we don't use this method
-		//keeping in case we decide to somewhere
-
-//		Debug.Log ("updating to swtich objects");
-		angleX += gameInputManager.getStick("RightStickY") * Time.deltaTime * verticalSpeed * -1;
-		angleY += gameInputManager.getStick("RightStickX") * Time.deltaTime * verticalSpeed * -1;
-
-		angleX = Mathf.Clamp(angleX, minVerticalAngle, maxVerticalAngle);
-		angleY %= 360;
-
-		Quaternion xRotation = Quaternion.AngleAxis(angleX, new Vector3(1,0,0));
-		Quaternion yRotation = Quaternion.AngleAxis(angleY, new Vector3(0,1,0));
-		Vector3 offset = new Vector3(0,0,1);
-		offset = xRotation * offset;
-		offset = yRotation * offset;
-		offset *= distance;
-
-		offset = AddObstacleAvoidance (offset);
-
-		//        transform.position = offset;
-		//		transform.position = Vector3.MoveTowards(transform.position, target.position + offset,Time.deltaTime);
-
-		//smooths the movement, has some momentum after
-		transform.position = Vector3.Slerp(transform.position, offset, Time.deltaTime);
-
-		//        transform.rotation = Quaternion.LookRotation(target.position - transform.position, new Vector3(0,1,0));
-		//		transform.rotation = Quaternion.Slerp(transform.rotation, target.position - transform.position, Time.deltaTime);
-
-
-		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position, new Vector3 (0, 1, 0)), Time.deltaTime);
-
-	}
 
 	Vector3 AddObstacleAvoidance(Vector3 targetToCamera){
 		RaycastHit hit;
