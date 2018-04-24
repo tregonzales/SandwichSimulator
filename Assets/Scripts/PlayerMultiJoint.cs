@@ -113,20 +113,14 @@ public class PlayerMultiJoint : MonoBehaviour {
 
 	private void updateJointAndVelocity(bool pressed, ref bool grab, ref playerChildren obj, ref ConfigurableJoint joint, int YaxisFix = 1) {
 
-		bool run = true;
 		bool sideGrabL = false;
 		bool sideGrabR = false;
-		bool fling = false;
 		if (!pressed && grab) {
 				grab = false;
 				joint.connectedBody = null;
 				joint.xMotion = ConfigurableJointMotion.Free;
 				joint.yMotion = ConfigurableJointMotion.Free;
 				joint.zMotion = ConfigurableJointMotion.Free;
-				//need to make some ratio of angular velocity
-				flingForce = flingForce.normalized * 3;
-				fling = true;
-				applyMovement(false, false, 1, fling);
 				
 		}
 		else if (!grab && obj.canGrab && pressed) {
@@ -155,9 +149,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 			// run = checkGrab(joint);
 			
 			//as of now does not apply any velocity if grabbing item
-			if (run) {
-				applyMovement(sideGrabL, sideGrabR, YaxisFix);
-			}
+			applyMovement(sideGrabL, sideGrabR, YaxisFix);
 		}
 	}
 
@@ -170,7 +162,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		}
 	}
 
-	public void applyMovement(bool sideGrabL, bool sideGrabR, int YaxisFix = 1, bool fling = false) {
+	public void applyMovement(bool sideGrabL, bool sideGrabR, int YaxisFix = 1) {
 		
 		float xForce = 0;
 		float yForce = 0;
@@ -178,27 +170,20 @@ public class PlayerMultiJoint : MonoBehaviour {
 		yForce = Input.GetAxis("Vertical");
 		
 		//for angular y axis fix always -1 for side
+		Debug.Log(body.angularVelocity);
 		Vector3 movement;
 
 		if (sideGrabL) {
-			YaxisFix = -1;
-			flingForce = fling ? flingForce : new Vector3(0.0f, xForce*YaxisFix, yForce);
-
 			//angular style
 			YaxisFix = -1;
 			movement = new Vector3(yForce, 0.0f, xForce*YaxisFix);
 		}
 		else if (sideGrabR) {
-			YaxisFix = 1;
-			flingForce = fling ? flingForce : new Vector3(0.0f, xForce*YaxisFix, yForce);
-
 			//angular style
 			YaxisFix = -1;
 			movement = new Vector3(yForce, 0.0f, xForce*YaxisFix);
 		}
 		else {
-			flingForce = fling ? flingForce : new Vector3(xForce, yForce*YaxisFix, 0.0f);
-
 			//angular style, yaxis fix always 1 bc depends on rotating around simple axis, not direction of force
 			YaxisFix = 1;
 			movement = new Vector3(yForce, xForce*YaxisFix, 0.0f);
@@ -208,16 +193,8 @@ public class PlayerMultiJoint : MonoBehaviour {
 		Vector3 worldVelocity = transform.TransformDirection(movement).normalized;
 		
 		// now regular velocity changing with bigger items
-		// body.velocity += worldVelocity*1;
-
-		//angular velocity prevents flying, but is slow af
+		// body.velocity += worldVelocity*1;		
 		
-		if (fling) {
-			body.velocity += transform.TransformDirection(flingForce);
-			body.angularVelocity *= .5f;
-		}
-		else {
-			body.angularVelocity += (worldVelocity*5);
-		}
+		body.angularVelocity += (worldVelocity*5);
 	}
 }
