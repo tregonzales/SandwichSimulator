@@ -71,8 +71,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224253905231639224}
   - component: {fileID: 222076949031037900}
-  - component: {fileID: 114110341945108654}
   - component: {fileID: 114800275721085330}
+  - component: {fileID: 114110341945108654}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -275,8 +275,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224914987322754052}
   - component: {fileID: 222256274175321512}
-  - component: {fileID: 114629329429742960}
   - component: {fileID: 114424870915902890}
+  - component: {fileID: 114629329429742960}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -483,8 +483,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.36078432}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -794,8 +794,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.36078432}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
