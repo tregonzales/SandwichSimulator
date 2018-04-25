@@ -398,9 +398,47 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114862505119679162, guid: e3e318df3186f4a328d32c3973e4a0a8,
+        type: 2}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 407145962}
+    - target: {fileID: 114233235910715474, guid: e3e318df3186f4a328d32c3973e4a0a8,
+        type: 2}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 407145963}
+    - target: {fileID: 114391243935678112, guid: e3e318df3186f4a328d32c3973e4a0a8,
+        type: 2}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 407145961}
+    - target: {fileID: 114629659328013132, guid: e3e318df3186f4a328d32c3973e4a0a8,
+        type: 2}
+      propertyPath: m_Text
+      value: Start Game (skip tutorial)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3e318df3186f4a328d32c3973e4a0a8, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &407145961 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114501251489596490, guid: e3e318df3186f4a328d32c3973e4a0a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 407145960}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &407145962 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114813874413125230, guid: e3e318df3186f4a328d32c3973e4a0a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 407145960}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &407145963 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114390509025666304, guid: e3e318df3186f4a328d32c3973e4a0a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 407145960}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &619820117
 Prefab:
   m_ObjectHideFlags: 0
