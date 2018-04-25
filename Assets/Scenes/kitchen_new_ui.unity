@@ -337,19 +337,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
         type: 2}
-      propertyPath: itemHolder
-      value: 
-      objectReference: {fileID: 79709846}
-    - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
-        type: 2}
-      propertyPath: itemBarTrans
-      value: 
-      objectReference: {fileID: 1200649539}
-    - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
-        type: 2}
       propertyPath: controlPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1143336555}
     - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
         type: 2}
       propertyPath: pauseMenu
@@ -899,6 +889,26 @@ Prefab:
       propertyPath: itemHolder
       value: 
       objectReference: {fileID: 79709846}
+    - target: {fileID: 114266080692442496, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 224542691}
+    - target: {fileID: 114424870915902890, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114800275721085330, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266080692442496, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cd93a98bc18b4f049ff53cf5906cd90, type: 2}
   m_IsPrefabParent: 0
@@ -1223,7 +1233,7 @@ Prefab:
         type: 2}
       propertyPath: m_FirstSelected
       value: 
-      objectReference: {fileID: 1957814036}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 784f4ec284d9941ddb91aca6cc322f05, type: 2}
   m_IsPrefabParent: 0
@@ -1385,6 +1395,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1143336555 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1116278247381642, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+    type: 2}
+  m_PrefabInternal: {fileID: 792454205}
 --- !u!1001 &1170230164
 Prefab:
   m_ObjectHideFlags: 0
@@ -1473,11 +1488,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3510702f1451d4e81a381ef1b88a889b, type: 2}
   m_IsPrefabParent: 0
---- !u!224 &1200649539 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224604958192080698, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
-    type: 2}
-  m_PrefabInternal: {fileID: 792454205}
 --- !u!1001 &1340590478
 Prefab:
   m_ObjectHideFlags: 0
@@ -1953,11 +1963,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!1 &1957814036 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1851849836902994, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
-    type: 2}
-  m_PrefabInternal: {fileID: 792454205}
 --- !u!1 &2025700876
 GameObject:
   m_ObjectHideFlags: 0

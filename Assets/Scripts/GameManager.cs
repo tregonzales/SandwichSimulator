@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour {
 
@@ -36,12 +37,10 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKeyDown(KeyCode.Escape) || (gameInputManager.getButton("B") && paused) || gameInputManager.getButton("start")) {
-			if (mainMenu) {
-				if (controlPanel.activeSelf) {
-					showControls(false);
-				}
+			if (controlPanel.activeSelf) {
+				showControls(false);
 			}
-			else {
+			else if(!mainMenu) {
 				TogglePauseMenu();
 			}
 		}
@@ -69,20 +68,20 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void showControls(bool show) {
-		Debug.Log("click this control");
 		controlPanel.SetActive(show);
 	}
 
 	public void TogglePauseMenu() {
-		Debug.Log("click menu");
 		if (paused)
         {
+			EventSystem.current.SetSelectedGameObject(null);
             pauseMenu.SetActive(!paused);
             Time.timeScale = 1.0f;
         }
         else
         {
             pauseMenu.SetActive(!paused);
+			EventSystem.current.SetSelectedGameObject(pauseMenu.transform.GetChild(0).gameObject);
             Time.timeScale = 0f;
         }
         paused = !paused;
