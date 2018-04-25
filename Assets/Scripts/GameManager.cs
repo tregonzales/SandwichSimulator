@@ -27,17 +27,21 @@ public class GameManager : MonoBehaviour {
 			new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
 			paused = true;	
 		}
-		controlPanel.SetActive(false);
+		if (controlPanel != null) {
+			controlPanel.SetActive(false);
+		}
 		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
 	}
 	
 	void Update () {
 
-		if (Input.GetKeyDown("escape") || (gameInputManager.getButton("B") && paused) || gameInputManager.getButton("start")) {
-			if (controlPanel.activeSelf) {
-				showControls(false);
+		if (Input.GetKeyDown(KeyCode.Escape) || (gameInputManager.getButton("B") && paused) || gameInputManager.getButton("start")) {
+			if (mainMenu) {
+				if (controlPanel.activeSelf) {
+					showControls(false);
+				}
 			}
-			else if (!mainMenu) {
+			else {
 				TogglePauseMenu();
 			}
 		}

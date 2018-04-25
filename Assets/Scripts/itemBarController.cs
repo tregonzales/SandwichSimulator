@@ -49,7 +49,7 @@ public class itemBarController : MonoBehaviour {
 	}
 	public void updateBar(int oldInd, int curInd) {
 		transform.GetChild(oldInd).GetComponent<Image>().color = inactive;
-		transform.GetChild(curInd).GetComponent<Image>().color = active;;
+		transform.GetChild(curInd).GetComponent<Image>().color = active;
 	}
 
 	public void changeBar(bool right) {
@@ -59,7 +59,7 @@ public class itemBarController : MonoBehaviour {
 			curItemIndex = (curItemIndex + 1) % childCount;
 			curItem = itemHolder.GetChild(curItemIndex);
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
-			itemBar.updateBar(oldInd, curItemIndex);
+			updateBar(oldInd, curItemIndex);
 		}
 		else {
 			oldInd = curItemIndex;
@@ -67,7 +67,7 @@ public class itemBarController : MonoBehaviour {
 			curItemIndex = curItemIndex == 0 ? childCount - 1 : (curItemIndex - 1) % childCount;
 			curItem = itemHolder.GetChild(curItemIndex);
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
-			itemBar.updateBar(oldInd, curItemIndex);
+			updateBar(oldInd, curItemIndex);
 		}
 		mainCamera.SwitchTarget( curItem);
 	}

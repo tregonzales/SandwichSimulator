@@ -9,11 +9,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Menu.unity
     guid: 05940755afdc249d3a5dc278ad557299
   - enabled: 1
-    path: Assets/Scenes/tutorial_1.unity
-    guid: 71a48559aabfd49d68b8fac4b18bfb86
+    path: Assets/Scenes/tutorial_1_movement.unity
+    guid: 47d465d1aa2714a3eb7df0c8e31a2de0
   - enabled: 1
-    path: Assets/Scenes/tutorial_2.unity
-    guid: 98808574b1f2046b78927fc9a34f4bf9
+    path: Assets/Scenes/tutorial_2_climbing.unity
+    guid: ce1bd603fd80a41f6af37cbf0da6c45c
+  - enabled: 1
+    path: Assets/Scenes/tutorial_3_gap.unity
+    guid: 9fed6cc9bf3f84b368e77ce3ab643805
+  - enabled: 1
+    path: Assets/Scenes/tutorial_4_item.unity
+    guid: 877b63a7f0b4240cfac571b4ac75cf48
+  - enabled: 1
+    path: Assets/Scenes/tutorial_5_interact.unity
+    guid: c0d470f6db445475386402d59fe0009a
+  - enabled: 1
+    path: Assets/Scenes/tutorial_6_plate.unity
+    guid: 6f91e1bf29f7d4fc681ea4f891259623
   - enabled: 1
     path: Assets/Scenes/kitchen_new_ui.unity
     guid: 3f22c8bacb57d4c7d978253280e101af
