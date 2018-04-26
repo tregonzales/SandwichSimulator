@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour {
 
 	GameInputManager gameInputManager;
+	public static GameManager instance;
 	public bool paused;
 	public bool mainMenu;
 	public GameObject controlPanel;
 	public GameObject pauseMenu;
 
 	void Start () {
+		instance = this;
 		if (!mainMenu) {
 			GameObject.Find("UIholder").GetComponent<CanvasScaler>().referenceResolution = 
 			new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
@@ -25,17 +28,19 @@ public class GameManager : MonoBehaviour {
 			new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
 			paused = true;	
 		}
-		controlPanel.SetActive(false);
+		if (controlPanel != null) {
+			controlPanel.SetActive(false);
+		}
 		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
 	}
 	
 	void Update () {
 
-		if (Input.GetKeyDown("escape") || (gameInputManager.getButton("B") && paused) || gameInputManager.getButton("start")) {
+		if (Input.GetKeyDown(KeyCode.Escape) || (gameInputManager.getButton("B") && paused) || gameInputManager.getButton("start")) {
 			if (controlPanel.activeSelf) {
 				showControls(false);
 			}
-			else if (!mainMenu) {
+			else if(!mainMenu) {
 				TogglePauseMenu();
 			}
 		}
@@ -69,12 +74,14 @@ public class GameManager : MonoBehaviour {
 	public void TogglePauseMenu() {
 		if (paused)
         {
+			EventSystem.current.SetSelectedGameObject(null);
             pauseMenu.SetActive(!paused);
             Time.timeScale = 1.0f;
         }
         else
         {
             pauseMenu.SetActive(!paused);
+			EventSystem.current.SetSelectedGameObject(pauseMenu.transform.GetChild(0).gameObject);
             Time.timeScale = 0f;
         }
         paused = !paused;
