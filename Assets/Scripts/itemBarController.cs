@@ -10,7 +10,6 @@ public class itemBarController : MonoBehaviour {
 	private Transform curItem;
 	private int curItemIndex;
 	private int childCount;
-	itemBarController itemBar;
 	GameInputManager gameInputManager;
 	public bool mainMenu;
 	int oldInd;
@@ -21,7 +20,6 @@ public class itemBarController : MonoBehaviour {
 	void Start () {
 		transform.GetChild(0).GetComponent<Image>().color = active;
 
-		itemBar = transform.GetComponent<itemBarController> ();
 
 		mainCamera = Camera.main.GetComponent<CameraController>();
 
