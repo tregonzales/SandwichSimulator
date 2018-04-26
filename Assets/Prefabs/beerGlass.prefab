@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 65467503448437396}
   - component: {fileID: 23289970588546238}
   - component: {fileID: 54999330763160182}
+  - component: {fileID: 64162256420352040}
   m_Layer: 0
   m_Name: beerGlass
   m_TagString: item
@@ -55,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1756716830235490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.32, y: 2.47, z: 9.97}
-  m_LocalScale: {x: 0.41, y: 1.33, z: 0.45}
+  m_LocalScale: {x: 0.40999997, y: 0.69, z: 0.45}
   m_Children:
   - {fileID: 4381882525278604}
   m_Father: {fileID: 0}
@@ -68,8 +69,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1052994407697308}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -3.1251096e-15}
-  m_LocalPosition: {x: 0.53170735, y: -0.53157896, z: 0.5053817}
-  m_LocalScale: {x: 0.044862293, y: 0.013829729, z: 0.040874533}
+  m_LocalPosition: {x: 0.5317072, y: -1.0246377, z: 0.5053817}
+  m_LocalScale: {x: 0.0448623, y: 0.026657304, z: 0.040874533}
   m_Children: []
   m_Father: {fileID: 4370638182446350}
   m_RootOrder: 0
@@ -155,7 +156,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756716830235490}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54999330763160182
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -171,6 +172,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64162256420352040
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1756716830235490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65467503448437396
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -179,7 +194,7 @@ BoxCollider:
   m_GameObject: {fileID: 1756716830235490}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2.0603604, z: 1}
+  m_Center: {x: 0, y: -0.0015892844, z: 0}
