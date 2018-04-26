@@ -13,6 +13,7 @@ public class GamePlate : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        itemsColected = new List<GameObject>();
 		actualColor = gameObject.GetComponentInParent<Renderer>().material.color;
 		count = 0;
 	}
