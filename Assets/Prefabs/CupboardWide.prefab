@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4919561304779472}
   - component: {fileID: 33526743086153050}
   - component: {fileID: 23196782797793684}
-  - component: {fileID: 64817014770890638}
   m_Layer: 0
   m_Name: pg caiss 1
   m_TagString: Surface
@@ -58,7 +57,6 @@ GameObject:
   - component: {fileID: 4563246304385026}
   - component: {fileID: 33630725684750752}
   - component: {fileID: 23277884863248770}
-  - component: {fileID: 64392575969327742}
   m_Layer: 0
   m_Name: pd caiss 1
   m_TagString: Surface
@@ -86,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1521072717708566}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.85, y: 12.16, z: -25.01}
+  m_LocalPosition: {x: -15.75, y: 31.25, z: -14.100696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4563246304385026}
@@ -247,34 +245,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &64392575969327742
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1988634828542906}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300064, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
---- !u!64 &64817014770890638
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1354817503910840}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300066, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
 --- !u!65 &65903419326769434
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -285,5 +255,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.951377, y: 1.9999998, z: 3.4108353}
-  m_Center: {x: 0, y: -1.0106953, z: 1.7150071}
+  m_Size: {x: 5.951377, y: 2.2309668, z: 3.438005}
+  m_Center: {x: 0, y: -0.98392063, z: 1.7285975}

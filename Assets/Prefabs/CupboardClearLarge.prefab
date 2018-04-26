@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 4205810100850744}
   - component: {fileID: 33564631176383188}
   - component: {fileID: 23944758485305696}
-  - component: {fileID: 64638513569802644}
   m_Layer: 0
   m_Name: pg caiss.001
   m_TagString: Surface
@@ -68,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217529694086186}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -3.9977489, y: 10.24, z: -25.01}
+  m_LocalPosition: {x: -24.712357, y: 29.309864, z: -14.100695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4205810100850744}
@@ -174,20 +173,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &64638513569802644
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1685671466608350}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300042, guid: bc43aad90ddb7be4f8c47c6c3288de00, type: 3}
 --- !u!65 &65048855856928174
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -198,5 +183,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9501486, y: 1.9999998, z: 5.3489347}
-  m_Center: {x: 1.5006142, y: -1.0106953, z: 2.6840565}
+  m_Size: {x: 2.9501486, y: 2.1343968, z: 5.3589296}
+  m_Center: {x: 1.5006142, y: -1.0779029, z: 2.6890721}
