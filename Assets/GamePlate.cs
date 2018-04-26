@@ -25,17 +25,18 @@ public class GamePlate : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (!itemsColected.Contains(other.gameObject)) {
 			itemsColected.Add(other.gameObject);
+			count++;
+			counter.text = count.ToString();
 		}
 		count++;
 		counter.text = count.ToString();
 	}
 	
 	void OnTriggerExit(Collider other) {
-		itemsColected.Remove(other.gameObject);
-		count--;
-		counter.text = count.ToString();
 		if (itemsColected.Contains(other.gameObject)) {
 			itemsColected.Remove(other.gameObject);
+			count--;
+			counter.text = count.ToString();
 		}
 	}
 }
