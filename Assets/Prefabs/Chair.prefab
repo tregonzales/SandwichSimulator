@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4939338215360364}
   - component: {fileID: 65267611777798602}
-  - component: {fileID: 54848913966014216}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -74,7 +73,6 @@ GameObject:
   - component: {fileID: 4019643133243196}
   - component: {fileID: 65905916458488188}
   - component: {fileID: 65050652107121116}
-  - component: {fileID: 54742395295611642}
   m_Layer: 0
   m_Name: backLeg
   m_TagString: Untagged
@@ -101,8 +99,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238754429390190}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.085178, y: 1.89, z: -11.44}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -24.86, y: 20.35, z: 1.8541753}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4640540125291116}
@@ -110,7 +108,7 @@ Transform:
   - {fileID: 4939338215360364}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4640540125291116
 Transform:
   m_ObjectHideFlags: 1
@@ -178,36 +176,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662546195653090}
   m_Mesh: {fileID: 4300000, guid: 356323afbc2ef4945a31fd5474ae5969, type: 3}
---- !u!54 &54742395295611642
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1971989348617400}
-  serializedVersion: 2
-  m_Mass: 500
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &54848913966014216
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1200958328923290}
-  serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &54883652346149504
 Rigidbody:
   m_ObjectHideFlags: 1

@@ -88,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 1106495790847692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.609375, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3.48, z: 1}
   m_Children: []
   m_Father: {fileID: 4046792174266972}
   m_RootOrder: 0
@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1491430925538524}
   m_LocalRotation: {x: 0, y: -0.08715578, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 15.79, y: 20.8, z: -17.1}
+  m_LocalPosition: {x: -25.63, y: 38.722, z: 6.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4046792174266972}
@@ -206,7 +206,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 94
   m_CollisionDetection: 0
 --- !u!65 &65088104413696762
 BoxCollider:
@@ -218,8 +218,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5969164, y: 2.353569, z: 8.824398}
-  m_Center: {x: 1.0043826, y: -0.3086319, z: 2.882465}
+  m_Size: {x: 1.5969164, y: 0.94976044, z: 8.824398}
+  m_Center: {x: 1.0043826, y: 0.9522133, z: 2.882465}
 --- !u!65 &65186363557742138
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -230,8 +230,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.220868, y: 2.655117, z: 1.3666745}
-  m_Center: {x: -3.6104512, y: -0.3367977, z: 1.0465}
+  m_Size: {x: 8.220868, y: 1.0788803, z: 1.3666745}
+  m_Center: {x: -3.6104512, y: 0.90607834, z: 1.0465}
 --- !u!65 &65756403555954778
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -242,8 +242,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.042797, y: 2.2297592, z: 1.2712152}
-  m_Center: {x: 3.521421, y: -0.20010757, z: -0.8326046}
+  m_Size: {x: 8.042797, y: 0.91867065, z: 1.2712152}
+  m_Center: {x: 3.521421, y: 0.9711304, z: -0.8326046}
 --- !u!65 &65928022138114754
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -254,8 +254,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.50319, y: 2.6297379, z: 8.091821}
-  m_Center: {x: -0.7547828, y: -0.19273376, z: -3.5458975}
+  m_Size: {x: 1.50319, y: 0.81995773, z: 8.091821}
+  m_Center: {x: -0.7547828, y: 1.0601406, z: -3.5458975}
 --- !u!114 &114299475482905668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -267,4 +267,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c261a3326f49f459191eaa88b807cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 50

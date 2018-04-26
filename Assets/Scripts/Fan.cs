@@ -11,10 +11,14 @@ public class Fan : MonoBehaviour {
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+
     }
 
-    void Update () {
+    private void Update()
+    {
         rb.angularVelocity = Vector3.up * speed;
     }
-	
+
+
+
 }
