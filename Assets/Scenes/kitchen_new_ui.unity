@@ -2195,6 +2195,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1802615346 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114976433420925336, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+    type: 2}
+  m_PrefabInternal: {fileID: 792454205}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1824153083 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1019339975604292, guid: ffa2b729337ce0447a4dc5e34a274942,
@@ -2244,15 +2250,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4825144043229150, guid: 31a7afde5521f4d51af2fca330b5d6f9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 21.276
+      value: 16.68
       objectReference: {fileID: 0}
     - target: {fileID: 4825144043229150, guid: 31a7afde5521f4d51af2fca330b5d6f9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.319758
+      value: 8.247
       objectReference: {fileID: 0}
     - target: {fileID: 4825144043229150, guid: 31a7afde5521f4d51af2fca330b5d6f9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -8.337585
+      value: -22.42
       objectReference: {fileID: 0}
     - target: {fileID: 4825144043229150, guid: 31a7afde5521f4d51af2fca330b5d6f9, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2274,6 +2280,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 32
       objectReference: {fileID: 0}
+    - target: {fileID: 114973373073695414, guid: 31a7afde5521f4d51af2fca330b5d6f9,
+        type: 2}
+      propertyPath: counter
+      value: 
+      objectReference: {fileID: 1802615346}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31a7afde5521f4d51af2fca330b5d6f9, type: 2}
   m_IsPrefabParent: 0
