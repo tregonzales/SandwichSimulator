@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 14fbe2779e7474c7ba537f5fd67020a9
+timeCreated: 1524731935
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
+  assetHash:
+    serializedVersion: 2
+    Hash: c17ae8b29e6f46a37508cecc399c0cc2
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -0.3092129, y: 1.1522403, z: -1.8374075}
+      lookAt: {x: 0.3757782, y: 0.40043768, z: 0.21172884}
+      up: {x: 0.08427399, y: 0.9442495, z: 0.31826204}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Group 1
+    100004: Group 2
+    100006: Group 3
+    100008: Group 4
+    100010: Group 5
+    100012: Group 7
+    100014: Group 9
+    400000: //RootNode
+    400002: Group 1
+    400004: Group 2
+    400006: Group 3
+    400008: Group 4
+    400010: Group 5
+    400012: Group 7
+    400014: Group 9
+    2100000: _defaultMat
+    2100002: 02floor-souplabel-blog480 copy
+    2100004: '[Metal_Corrogated_Shiny]'
+    2100006: '[0132_LightGray]'
+    2100008: Can Lid
+    2300000: Group 5
+    2300002: Group 7
+    2300004: Group 9
+    3300000: Group 5
+    3300002: Group 7
+    3300004: Group 9
+    4300000: Mesh Group 5
+    4300002: Mesh Group 7
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02floor-souplabel-blog480 copy
+    second: {fileID: 2100000, guid: 8a9288df4b39c4fcb9bfe825f416cdfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Can Lid
+    second: {fileID: 2100000, guid: e4db3bdee27b14da896d110724e40c29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[0132_LightGray]'
+    second: {fileID: 2100000, guid: 854f80196e3f04523bb470ca7d8455de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Metal_Corrogated_Shiny]'
+    second: {fileID: 2100000, guid: cb679d636d2444f26848a760c6fe29aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 5cd374f310a364f07adaaeef2f5363e6, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: D__MY DOCUMENTS_Dropbox_Sketchup_MATERIALS_Labels_02floor-souplabel-blog480
+        copy
+    second: {fileID: 2800000, guid: 3594ce12e2c2a4fd992da76d0d0aac11, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: D__MY DOCUMENTS_Dropbox_Sketchup_WAREHOUSE_Kitchen_FOOD_Can Lid
+    second: {fileID: 2800000, guid: 229b2b035759944daa2e5adafe815e08, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Corrogated_Shiny
+    second: {fileID: 2800000, guid: a8f051f189433440498beec37a17cb86, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.3
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
