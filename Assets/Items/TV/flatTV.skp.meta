@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: 608b88f83dd1a41f48bb8c210a9487af
+timeCreated: 1524728310
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 7dd0e823b97eea334122466ba980f5ad
+  longitude: -47.917
+  latitude: -15.783
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 5.71392, y: 24.67768, z: -25.5718}
+      lookAt: {x: 250.4916, y: -448.58713, z: 780.33545}
+      up: {x: 0.14236389, y: 0.8717995, z: 0.46871963}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes:
+    - camera:
+        position: {x: 14.671402, y: 2.1379142, z: -1.7598568}
+        lookAt: {x: 127.98349, y: -446.61746, z: 846.27386}
+        up: {x: 0.06151774, y: 0.8855764, z: 0.46040207}
+        fov: 35
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "Cena\_1"
+    - camera:
+        position: {x: -8.195617, y: 26.066135, z: -36.18267}
+        lookAt: {x: 517.03314, y: -389.51245, z: 660.1013}
+        up: {x: 0.259043, y: 0.9027558, z: 0.34340748}
+        fov: 35
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "Cena\_2"
+    - camera:
+        position: {x: 36.867214, y: 26.336868, z: 31.523432}
+        lookAt: {x: -420.4157, y: -445.68994, z: -676.61865}
+        up: {x: -0.26504374, y: 0.87251836, z: -0.41044313}
+        fov: 35
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "Cena\_3"
+    - camera:
+        position: {x: 28.55455, y: 1.6413791, z: 2.623026}
+        lookAt: {x: -296.48117, y: -428.95462, z: -798.8263}
+        up: {x: -0.16750565, y: 0.8951837, z: -0.4130232}
+        fov: 35
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "Cena\_4"
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Image 2
+    400000: //RootNode
+    400002: Image 2
+    2100000: _defaultMat
+    2100002: '[0135_DarkGray]'
+    2100004: '[0136_Charcoal]'
+    2100006: '[0137_Black]'
+    2100008: '[Color_I06]'
+    2100010: '[Color_E01]'
+    2100012: '[Color_A01]'
+    2100014: '[0020_Red]'
+    2100016: Material 8
+    2300000: //RootNode
+    2300002: Image 2
+    3300000: //RootNode
+    3300002: Image 2
+    4300000: Mesh flatTV
+    4300002: Mesh flatTV
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material 8
+    second: {fileID: 2100000, guid: 82f23dd1feed249fda0891496a39a8d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[0020_Red]'
+    second: {fileID: 2100000, guid: 31c5273d0cf9a4c88ab98bc8edbde161, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[0135_DarkGray]'
+    second: {fileID: 2100000, guid: d9e82dcb7cc9e41ccb6647d807e5ed6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[0136_Charcoal]'
+    second: {fileID: 2100000, guid: d92128cc446294e7aa8a2476474a0f5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[0137_Black]'
+    second: {fileID: 2100000, guid: b1d91605d756d4b8abad3ed574ba76dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color_A01]'
+    second: {fileID: 2100000, guid: 83fe38100faea43789918658d4030362, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color_E01]'
+    second: {fileID: 2100000, guid: 41205b1eaab5546d98a90140cf318361, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color_I06]'
+    second: {fileID: 2100000, guid: 16f76008ff4e147aabd0f5204af11fc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 300ec7bceb1674d0fa034b7c8a72eec0, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

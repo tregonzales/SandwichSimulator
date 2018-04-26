@@ -38,7 +38,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 	public bool LTgrabbing;
 
 	//velocity to apply to body
-	public float MaxVelocity;
+	public float MaxAngularVelocity;
 
 	//vector 3 fling force to apply to bread once user lets go so they don't just spin in place
 	Vector3 flingForce;
@@ -51,7 +51,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		RT = gameObject.transform.GetChild(4).gameObject;
 
 		body = gameObject.transform.GetComponent<Rigidbody>();
-		body.maxAngularVelocity = MaxVelocity;
+		body.maxAngularVelocity = MaxAngularVelocity;
 
 		joints = GetComponents(typeof(ConfigurableJoint));
 		RBjoint = (ConfigurableJoint)joints[0];

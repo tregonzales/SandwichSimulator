@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: c3d6ab2de9941e64db980986f740f0eb
-timeCreated: 1523629720
+guid: 14fbe2779e7474c7ba537f5fd67020a9
+timeCreated: 1524731935
 licenseType: Free
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
-  selectedNodes: 00000000010000000200000003000000040000000500000006000000
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
   assetHash:
     serializedVersion: 2
-    Hash: c59b390a284a00ac97c1880babba6cd1
+    Hash: 528dee7b92481319728f46f1dfa8a00d
   longitude: -105.283
   latitude: 40.017
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: 2.0752947, y: 2.8429687, z: -1.5725371}
-      lookAt: {x: -14.635591, y: 1.7278525, z: 16.363007}
-      up: {x: -0.030977154, y: 0.998967, z: 0.033247314}
+      position: {x: -0.039270036, y: 0.14633451, z: -0.23335075}
+      lookAt: {x: 0.04772383, y: 0.050855584, z: 0.026889563}
+      up: {x: 0.08427399, y: 0.9442495, z: 0.31826204}
       fov: 35
       aspectRatio: 0
       orthoSize: 1
@@ -26,41 +26,34 @@ SketchUpImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Image 2
-    100004: Image 3
-    100006: Image 4
-    100008: Image 5
-    100010: Image 6
+    100002: Group 1
+    100004: Group 2
+    100006: Group 3
+    100008: Group 4
+    100010: Group 5
+    100012: Group 7
+    100014: Group 9
     400000: //RootNode
-    400002: Image 2
-    400004: Image 3
-    400006: Image 4
-    400008: Image 5
-    400010: Image 6
+    400002: Group 1
+    400004: Group 2
+    400006: Group 3
+    400008: Group 4
+    400010: Group 5
+    400012: Group 7
+    400014: Group 9
     2100000: _defaultMat
-    2100002: Material 1
-    2100004: Material 2
-    2100006: Material 3
-    2100008: Material 4
-    2100010: Material 5
-    2300000: //RootNode
-    2300002: Image 2
-    2300004: Image 3
-    2300006: Image 4
-    2300008: Image 5
-    2300010: Image 6
-    3300000: //RootNode
-    3300002: Image 2
-    3300004: Image 3
-    3300006: Image 4
-    3300008: Image 5
-    3300010: Image 6
-    4300000: Mesh cereal
-    4300002: Mesh cereal
-    4300004: Mesh cereal
-    4300006: Mesh cereal
-    4300008: Mesh cereal
-    4300010: Mesh cereal
+    2100002: 02floor-souplabel-blog480 copy
+    2100004: '[Metal_Corrogated_Shiny]'
+    2100006: '[0132_LightGray]'
+    2100008: Can Lid
+    2300000: Group 5
+    2300002: Group 7
+    2300004: Group 9
+    3300000: Group 5
+    3300002: Group 7
+    3300004: Group 9
+    4300000: Mesh Group 5
+    4300002: Mesh Group 7
   externalObjects: {}
   materials:
     importMaterials: 1
