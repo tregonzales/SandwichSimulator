@@ -134,7 +134,7 @@ public class GameInputManager : MonoBehaviour {
 			return Input.GetAxis("RightStickWebX");
 		}
 		else if (stick == "RightStickY") {
-			return Input.GetAxis("RightStickWebY");
+			return -1*Input.GetAxis("RightStickWebY");
 		}
 		else {
 			return 0;
@@ -204,7 +204,7 @@ public class GameInputManager : MonoBehaviour {
 			return Input.GetAxis("RightStickMacX");
 		}
 		else if (stick == "RightStickY") {
-			return Input.GetAxis("RightStickMacY");
+			return -1*Input.GetAxis("RightStickMacY");
 		}
 		else {
 			return 0;
@@ -275,7 +275,7 @@ public class GameInputManager : MonoBehaviour {
 			return Input.GetAxis("RightStickWindowsX");
 		}
 		else if (stick == "RightStickY") {
-			return Input.GetAxis("RightStickWindowsY");
+			return -1*Input.GetAxis("RightStickWindowsY");
 		}
 		else {
 			return 0;
