@@ -7,6 +7,7 @@ public class LightController : MonoBehaviour {
 	public Light[] lighting;
 	private bool isColliding;
 	private GameObject lastCollider;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -20,32 +21,28 @@ public class LightController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-//		if (!isColliding) {
 		if (other.CompareTag("item") && !isColliding) {
+            lastCollider = other.GetComponentInParent<Rigidbody>().gameObject;
 			foreach (Light l in lighting) {
 				if (l.intensity == 1f) {
 					l.intensity = 0.3f;
 				} else {
 					l.intensity = 1f;
 				}
-				Debug.Log (l);
-			}
-//			lastCollider = other.gameObject;
+                Debug.Log(lighting[0].intensity);
+            }
+            Debug.Log(lastCollider);
 			isColliding = true;
 		}
 	}
 
-//	void OnTriggerStay(Collider other) {
-//		isColliding = true;
-//	}
-//
+
 	void OnTriggerExit(Collider other) {
-//		if (other.gameObject == lastCollider) {
-		if (other.CompareTag ("item")) {
+		if (other.CompareTag("item") && isColliding) {
+            lastCollider = null;
 			isColliding = false;
+            Debug.Log("HI");
 		}
 			
-//			lastCollider = null;
-//		}
 	}
 }
