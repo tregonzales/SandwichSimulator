@@ -29,8 +29,6 @@ public class GamePlate : MonoBehaviour {
 			count++;
 			counter.text = count.ToString();
 		}
-		count++;
-		counter.text = count.ToString();
 	}
 	
 	void OnTriggerExit(Collider other) {
