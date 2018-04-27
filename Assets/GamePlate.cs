@@ -24,8 +24,8 @@ public class GamePlate : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (!itemsColected.Contains(other.gameObject)) {
-			itemsColected.Add(other.gameObject);
+		if (!itemsColected.Contains(other.GetComponentInParent<Rigidbody>().gameObject)) {
+			itemsColected.Add(other.GetComponentInParent<Rigidbody>().gameObject);
 			count++;
 			counter.text = count.ToString();
 		}
@@ -34,8 +34,8 @@ public class GamePlate : MonoBehaviour {
 	}
 	
 	void OnTriggerExit(Collider other) {
-		if (itemsColected.Contains(other.gameObject)) {
-			itemsColected.Remove(other.gameObject);
+		if (itemsColected.Contains(other.GetComponentInParent<Rigidbody>().gameObject)) {
+			itemsColected.Remove(other.GetComponentInParent<Rigidbody>().gameObject);
 			count--;
 			counter.text = count.ToString();
 		}
