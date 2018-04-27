@@ -14,6 +14,7 @@ public class GameInputManager : MonoBehaviour {
 	void Start () {
 		//mac driver here:
 		//https://github.com/360Controller/360Controller
+		instance = this;
 		Windows = false;
 		Mac = false;
 		WebGL = false;

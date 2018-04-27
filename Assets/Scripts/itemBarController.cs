@@ -30,8 +30,7 @@ public class itemBarController : MonoBehaviour {
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
 		}
 
-		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
-
+		gameInputManager = GameInputManager.instance;
 
 	}
 

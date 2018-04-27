@@ -30,7 +30,7 @@ public class SwitchCameraController : MonoBehaviour {
 	void Start () {
 		angleX = -45;
 		angleY = 0;
-		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
+		gameInputManager = GameInputManager.instance;
 	}
 
 	void Update () {

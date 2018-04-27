@@ -30,15 +30,15 @@ public class CameraController : MonoBehaviour {
 
     private float angleX;
     private float angleY;
-	GameInputManager gameInputManager;
 
 	Vector3 offset;
 	Coroutine switchRoutine;
+	GameInputManager gameInputManager;
 
 	void Start () {
+		gameInputManager = GameInputManager.instance;
 	    angleX = -45;
         angleY = 0;
-		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
 	}
 
 	public void SwitchTarget(Transform newTarget){

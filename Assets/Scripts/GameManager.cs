@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
 		if (controlPanel != null) {
 			controlPanel.SetActive(false);
 		}
-		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
+		gameInputManager = GameInputManager.instance;
 	}
 	
 	void Update () {

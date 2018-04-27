@@ -70,7 +70,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		LTgrabbing = false;
 
 		buttons = buttonsTrans.GetComponent<buttonController>();
-		gameInputManager = GameObject.Find("GameInputManager").GetComponent<GameInputManager>();
+		gameInputManager = GameInputManager.instance;
 	}
 	
 	// Update is called once per frame
