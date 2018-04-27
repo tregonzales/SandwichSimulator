@@ -38,7 +38,7 @@ public class LightController : MonoBehaviour {
 
 
 	void OnTriggerExit(Collider other) {
-		if (other.CompareTag("item") && isColliding) {
+		if (other.CompareTag("item") && isColliding && lastCollider == other.GetComponentInParent<Rigidbody>().gameObject) {
             lastCollider = null;
 			isColliding = false;
             Debug.Log("HI");
