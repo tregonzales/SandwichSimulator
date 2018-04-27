@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour {
 	void Start () {
 		gameInputManager = GameInputManager.instance;
 	    angleX = -45;
-        angleY = 0;
+        angleY = 180;
 	}
 
 	public void SwitchTarget(Transform newTarget){

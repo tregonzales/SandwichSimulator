@@ -310,7 +310,7 @@ Prefab:
         type: 2}
       propertyPath: controlPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1814678429}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50d472d82271e46b1ac3cd69171df15a, type: 2}
   m_IsPrefabParent: 0
@@ -661,6 +661,26 @@ Prefab:
       propertyPath: buttonsTrans
       value: 
       objectReference: {fileID: 1250878378}
+    - target: {fileID: 114146624399977584, guid: f95a5fbe28b6641538a00902f29455a0,
+        type: 2}
+      propertyPath: MaxAngularVelocity
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114132793788959272, guid: f95a5fbe28b6641538a00902f29455a0,
+        type: 2}
+      propertyPath: MaxAngularVelocity
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114439797779891892, guid: f95a5fbe28b6641538a00902f29455a0,
+        type: 2}
+      propertyPath: MaxAngularVelocity
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114957791307948906, guid: f95a5fbe28b6641538a00902f29455a0,
+        type: 2}
+      propertyPath: MaxAngularVelocity
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f95a5fbe28b6641538a00902f29455a0, type: 2}
   m_IsPrefabParent: 0
@@ -1927,6 +1947,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cd93a98bc18b4f049ff53cf5906cd90, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1814678429 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1116278247381642, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+    type: 2}
+  m_PrefabInternal: {fileID: 1814678428}
 --- !u!1 &1945106601
 GameObject:
   m_ObjectHideFlags: 0
