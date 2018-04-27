@@ -8,6 +8,8 @@ public class GameInputManager : MonoBehaviour {
 	public bool Windows;
 	public bool WebGL;
 	public bool Mac;
+	public static GameInputManager instance;
+
 	// Use this for initialization
 	void Start () {
 		//mac driver here:
