@@ -82,7 +82,6 @@ public class CameraController : MonoBehaviour {
 	}
 
 	public IEnumerator lerpSwitch(float duration) {
-		float startTime = 0;
 		float currentTime = 0;
 		float endTime = duration;
 		Vector3 startPos = transform.position;
