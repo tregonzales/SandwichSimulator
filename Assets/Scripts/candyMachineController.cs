@@ -12,11 +12,13 @@ public class candyMachineController : MonoBehaviour {
 	Color randomColor;
 	GameObject instantiated;
 	private GameObject lastCollider;
+	private AudioSource coinDrop;
 
 	// Use this for initialization
 	void Start () {
 		actualColor = gameObject.GetComponentInChildren<Renderer>().material.color;
 		dispense = transform.up + (-1*transform.forward);
+		coinDrop = gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -26,6 +28,7 @@ public class candyMachineController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (lastCollider == null) {
+			coinDrop.Play();
 			lastCollider = other.GetComponentInParent<Rigidbody>().gameObject;
 			instantiated = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
 			randomColor = Random.ColorHSV();

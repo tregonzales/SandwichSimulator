@@ -7,10 +7,12 @@ public class remoteController : MonoBehaviour {
 	public Transform tvTransform;
 	public int force;
 	private Color actualColor;
+	private AudioSource click;
 	
 	// Use this for initialization
 	void Start () {
 		actualColor = gameObject.GetComponentInChildren<Renderer>().material.color;
+		click = gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +22,7 @@ public class remoteController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.GetComponentInParent<Rigidbody>() != null) {
+			click.Play();
 			other.GetComponentInParent<Rigidbody>().velocity +=  
 			transform.TransformDirection(tvTransform.position - transform.position).normalized * force;
 		}
