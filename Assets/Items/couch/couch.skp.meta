@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 7503065154d784d3bb4fb7462a20f9bf
+timeCreated: 1524921200
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+  assetHash:
+    serializedVersion: 2
+    Hash: f85a00db645b7f1554a1f4d65febb476
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 28.917294, y: 17.843168, z: -19.37146}
+      lookAt: {x: 3.9930265, y: -7.2707973, z: 19.660892}
+      up: {x: -0.25655642, y: 0.87906426, z: 0.40177715}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: back cushions
+    100002: back cushions 1
+    100004: //RootNode
+    100006: cushion
+    100008: cushion 1
+    100010: legs
+    100012: legs 1
+    100014: legs 2
+    100016: legs 3
+    400000: back cushions
+    400002: back cushions 1
+    400004: //RootNode
+    400006: cushion
+    400008: cushion 1
+    400010: legs
+    400012: legs 1
+    400014: legs 2
+    400016: legs 3
+    2100000: _defaultMat
+    2100002: '[Carpet_Loop_Pattern]'
+    2100004: '[Wood_Cherry_Original]'
+    2300000: back cushions
+    2300002: back cushions 1
+    2300004: //RootNode
+    2300006: cushion
+    2300008: cushion 1
+    2300010: legs
+    2300012: legs 1
+    2300014: legs 2
+    2300016: legs 3
+    3300000: back cushions
+    3300002: back cushions 1
+    3300004: //RootNode
+    3300006: cushion
+    3300008: cushion 1
+    3300010: legs
+    3300012: legs 1
+    3300014: legs 2
+    3300016: legs 3
+    4300000: Mesh couch
+    4300002: Mesh cushion
+    4300004: Mesh legs
+    4300006: Mesh back cushions
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Carpet_Loop_Pattern]'
+    second: {fileID: 2100000, guid: 94a4cf2989c224c7c8489c842d9f4021, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Wood_Cherry_Original]'
+    second: {fileID: 2100000, guid: cf1b7747262d7443eba89fa72be01347, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 5622df33049cf4a7cb08e20ee4b198ad, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Carpet_Loop_Pattern
+    second: {fileID: 2800000, guid: c38bcb441247c4f0a8afeb39dbfeafaa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood_Cherry_Original
+    second: {fileID: 2800000, guid: 6f0a95554c8804424ba6262744bf9a00, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.15
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
