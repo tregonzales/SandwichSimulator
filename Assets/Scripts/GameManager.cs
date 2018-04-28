@@ -11,8 +11,14 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 	public bool paused;
 	public bool mainMenu;
+	public bool end;
 	public GameObject controlPanel;
 	public GameObject pauseMenu;
+	public GameObject endGame;
+	public GameObject gamePlate;
+	public Text endGameCount;
+	public GameObject itemCounter;
+	private Transform cameraLastTransform;
 
 	void Start () {
 		instance = this;
@@ -31,6 +37,10 @@ public class GameManager : MonoBehaviour {
 		if (controlPanel != null) {
 			controlPanel.SetActive(false);
 		}
+		if (endGame != null) {
+			endGame.SetActive(false);
+		}
+		end = false;
 		gameInputManager = GameInputManager.instance;
 	}
 	
@@ -40,8 +50,13 @@ public class GameManager : MonoBehaviour {
 			if (controlPanel.activeSelf) {
 				showControls(false);
 			}
-			else if(!mainMenu) {
+			else if(!mainMenu && !end) {
 				TogglePauseMenu();
+			}
+		}
+		if (gameInputManager.getButton("Y") || Input.GetKeyDown(KeyCode.Y)) {
+			if (!mainMenu && !paused) {
+				ToggleEndGame();
 			}
 		}
 	}
@@ -70,6 +85,28 @@ public class GameManager : MonoBehaviour {
 	public void showControls(bool show) {
 		controlPanel.SetActive(show);
 	}
+
+	public void ToggleEndGame() {
+		if (end)
+        {
+			EventSystem.current.SetSelectedGameObject(null);
+			Camera.main.GetComponent<CameraController>().SwitchTarget(cameraLastTransform);
+            endGame.SetActive(!end);
+			itemCounter.SetActive(true);
+            Time.timeScale = 1.0f;
+        }
+        else
+        {
+            endGame.SetActive(!end);
+			cameraLastTransform = Camera.main.GetComponent<CameraController>().target;
+			endGameCount.text = itemCounter.transform.GetChild(1).GetComponent<Text>().text;
+			itemCounter.SetActive(false);
+			Camera.main.GetComponent<CameraController>().SwitchTarget(gamePlate.transform);
+			EventSystem.current.SetSelectedGameObject(endGame.transform.GetChild(0).gameObject);
+            Time.timeScale = 0f;
+        }
+        end = !end;
+    }
 
 	public void TogglePauseMenu() {
 		if (paused)

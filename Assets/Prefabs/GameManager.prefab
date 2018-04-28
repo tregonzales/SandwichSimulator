@@ -53,5 +53,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   mainMenu: 0
+  end: 0
   controlPanel: {fileID: 0}
   pauseMenu: {fileID: 0}
+  endGame: {fileID: 0}
+  gamePlate: {fileID: 0}
+  endGameCount: {fileID: 0}
+  itemCounter: {fileID: 0}
