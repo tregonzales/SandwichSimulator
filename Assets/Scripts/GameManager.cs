@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject gamePlate;
 	public Text endGameCount;
 	public GameObject itemCounter;
-	private Transform cameraLastTransform;
+	private GameObject cameraLast;
 
 	void Start () {
 		instance = this;
@@ -90,20 +90,20 @@ public class GameManager : MonoBehaviour {
 		if (end)
         {
 			EventSystem.current.SetSelectedGameObject(null);
-			Camera.main.GetComponent<CameraController>().SwitchTarget(cameraLastTransform);
+			Camera.main.GetComponent<CameraController>().SwitchTarget(cameraLast.transform);
             endGame.SetActive(!end);
 			itemCounter.SetActive(true);
-            Time.timeScale = 1.0f;
+            // Time.timeScale = 1.0f;
         }
         else
         {
             endGame.SetActive(!end);
-			cameraLastTransform = Camera.main.GetComponent<CameraController>().target;
+			cameraLast = Camera.main.GetComponent<CameraController>().target.gameObject;
 			endGameCount.text = itemCounter.transform.GetChild(1).GetComponent<Text>().text;
 			itemCounter.SetActive(false);
 			Camera.main.GetComponent<CameraController>().SwitchTarget(gamePlate.transform);
 			EventSystem.current.SetSelectedGameObject(endGame.transform.GetChild(0).gameObject);
-            Time.timeScale = 0f;
+            // Time.timeScale = 0f;
         }
         end = !end;
     }

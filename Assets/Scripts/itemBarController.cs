@@ -66,7 +66,7 @@ public class itemBarController : MonoBehaviour {
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
 			updateBar(oldInd, curItemIndex);
 		}
-		mainCamera.SwitchTarget( curItem);
+		mainCamera.SwitchTarget(curItem);
 	}
 
 }
