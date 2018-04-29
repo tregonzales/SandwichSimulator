@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpeakerController : MonoBehaviour {
 
+	//direction to throw item
 	Vector3 bounce;
 	public int force;
 	private Color actualColor;
@@ -17,6 +18,7 @@ public class SpeakerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//flashing yellow
 		gameObject.GetComponentInParent<Renderer>().material.color = Color.Lerp(Color.yellow, actualColor, Mathf.PingPong(Time.time, 2));
 	}
 

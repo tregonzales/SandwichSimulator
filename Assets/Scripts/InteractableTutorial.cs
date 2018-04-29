@@ -18,6 +18,7 @@ public class InteractableTutorial : MonoBehaviour {
 		else if (Input.GetKey(KeyCode.P)) {
 			GameManager.instance.LoadNextScene(0.2f);
 		}
+		//flashing yellow
 		gameObject.GetComponentInParent<Renderer>().material.color = Color.Lerp(Color.yellow, Color.clear, Mathf.PingPong(Time.time, 2));
 	}
 

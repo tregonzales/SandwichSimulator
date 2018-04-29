@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class buttonController : MonoBehaviour {
 
+	//the individual buttons on the item
 	private GameObject RB;
 	private GameObject LB;
 	private GameObject LT;
 	private GameObject RT;
+
+	//the colors for each possiblity 
 	public Color canGrab;
 	public Color canGrabItem;
 	public Color cantGrab;
@@ -22,6 +25,7 @@ public class buttonController : MonoBehaviour {
 	}
 
 	public void updatePositions (Vector3 rb, Vector3 lb, Vector3 lt, Vector3 rt) {
+		//get positions for each item 
 		RB.GetComponent<RectTransform>().anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, rb);
 		LB.GetComponent<RectTransform>().anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, lb);
 		LT.GetComponent<RectTransform>().anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, lt);
@@ -31,6 +35,7 @@ public class buttonController : MonoBehaviour {
 	}
 
 	public void colorCanGrab (Rigidbody rbGrabbable, Rigidbody lbGrabbable, Rigidbody ltGrabbable, Rigidbody rtGrabbable) {
+		//set the appropriate color
 		if (rbGrabbable != null) {
 			RB.GetComponent<Image>().color = rbGrabbable.tag == "item" ? canGrabItem : canGrab;
 		}
@@ -58,13 +63,10 @@ public class buttonController : MonoBehaviour {
 		else {
 			RT.GetComponent<Image>().color = cantGrab;
 		}
-		// RB.GetComponent<Image>().color = rb ? canGrab : cantGrab;
-		// LB.GetComponent<Image>().color = lb ? canGrab : cantGrab;
-		// LT.GetComponent<Image>().color = lt ? canGrab : cantGrab;
-		// RT.GetComponent<Image>().color = rt ? canGrab : cantGrab;
 	}
 
 	public void colorGrabbing (bool rb, bool lb, bool lt, bool rt) {
+		//show the locked and grabbing color
 		if (rb) {
 			RB.GetComponent<Image>().color = grabbing;
 		}

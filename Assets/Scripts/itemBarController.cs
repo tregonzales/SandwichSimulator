@@ -9,6 +9,7 @@ public class itemBarController : MonoBehaviour {
 	public Transform itemHolder;
 	private Transform curItem;
 	private int curItemIndex;
+	//how many items the user has access to
 	private int childCount;
 	GameInputManager gameInputManager;
 	public bool mainMenu;
@@ -23,6 +24,7 @@ public class itemBarController : MonoBehaviour {
 		mainCamera = Camera.main.GetComponent<CameraController>();
 
 		curItemIndex = 0;
+		//set first item of item holder as active controllable item
 		if (itemHolder != null) {
 			curItem = itemHolder.GetChild(curItemIndex);
 			childCount = itemHolder.childCount;
@@ -34,6 +36,7 @@ public class itemBarController : MonoBehaviour {
 	}
 
 	public void Update() {
+		//switching between items
 		if (!mainMenu) {
 			if (gameInputManager.getButton("DpadRight") || Input.GetKeyDown(KeyCode.Space)) {
 				changeBar(true);

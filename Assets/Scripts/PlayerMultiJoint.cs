@@ -37,7 +37,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 	public bool RTgrabbing;
 	public bool LTgrabbing;
 
-	//velocity to apply to body
+	//angular velocity to apply to body
 	public float MaxAngularVelocity;
 
 	//vector 3 fling force to apply to bread once user lets go so they don't just spin in place
@@ -76,10 +76,12 @@ public class PlayerMultiJoint : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//consistently update the ui for the buttons to tell user what is possible
 		buttons.updatePositions(RB.transform.position, LB.transform.position, LT.transform.position, RT.transform.position);
 		buttons.colorCanGrab(RBobj.grabbableBody, LBobj.grabbableBody, LTobj.grabbableBody, RTobj.grabbableBody);
 		buttons.colorGrabbing(RBgrabbing, LBgrabbing, LTgrabbing, RTgrabbing);
 
+		//send a button message depending if the user is trying to grab or release a corner or not
 		if (gameInputManager.getButton("RB") || Input.GetKey(KeyCode.W)) {
 			updateJointAndVelocity(true, ref RBgrabbing, ref RBobj, ref RBjoint);
 		}
@@ -111,10 +113,12 @@ public class PlayerMultiJoint : MonoBehaviour {
 		
 	}
 
+	//update the corner's joint and velocity
 	private void updateJointAndVelocity(bool pressed, ref bool grab, ref playerChildren obj, ref ConfigurableJoint joint, int YaxisFix = 1) {
 
 		bool sideGrabL = false;
 		bool sideGrabR = false;
+		//unlocking the grab if the user lets go of the button
 		if (!pressed && grab) {
 				grab = false;
 				joint.connectedBody = null;
@@ -123,32 +127,27 @@ public class PlayerMultiJoint : MonoBehaviour {
 				joint.zMotion = ConfigurableJointMotion.Free;
 				
 		}
+		//creating a new attached body when the user initially grabs a corner to a surface or item
 		else if (!grab && obj.canGrab && pressed) {
 				grab = true;
 				joint.connectedBody = obj.grabbableBody;
 				joint.xMotion = ConfigurableJointMotion.Locked;
 				joint.yMotion = ConfigurableJointMotion.Locked;
 				joint.zMotion = ConfigurableJointMotion.Locked;
-			}
+		}
+		//checking if the user is grabbing with the left or right side of the item
 		else if (grab) {
 			//first check top, bottom, and side grabs
 			if (LTgrabbing && LBgrabbing) {
-				// run = checkGrab(joint);
-				sideGrabL = checkGrab(LTjoint) && checkGrab(LBjoint);
-
 				//angular
 				sideGrabL = (checkGrab(LTjoint) && checkGrab(LBjoint)) || LTjoint.connectedBody == LBjoint.connectedBody;
 			}
 			if (RTgrabbing && RBgrabbing) {
-				// run = checkGrab(joint);
-				sideGrabR = checkGrab(RTjoint) && checkGrab(RBjoint);
-
 				//angular
 				sideGrabR = (checkGrab(RTjoint) && checkGrab(RBjoint)) || RTjoint.connectedBody == RBjoint.connectedBody;
 			}
-			// run = checkGrab(joint);
-			
-			//as of now does not apply any velocity if grabbing item
+	
+			//apply the correct oriented angular velocity
 			applyMovement(sideGrabL, sideGrabR, YaxisFix);
 		}
 	}
@@ -169,7 +168,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		xForce = Input.GetAxis("Horizontal");
 		yForce = Input.GetAxis("Vertical");
 		
-		//for angular y axis fix always -1 for side
+		//for angular y axis fix always -1 for side grab
 		Vector3 movement;
 
 		if (sideGrabL) {
@@ -189,10 +188,7 @@ public class PlayerMultiJoint : MonoBehaviour {
 		}
 
 		//just a direction in world space for velocity
-		Vector3 worldVelocity = transform.TransformDirection(movement).normalized;
-		
-		// now regular velocity changing with bigger items
-		// body.velocity += worldVelocity*1;		
+		Vector3 worldVelocity = transform.TransformDirection(movement).normalized;	
 		
 		body.angularVelocity += (worldVelocity*5);
 	}

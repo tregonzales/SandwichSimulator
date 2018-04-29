@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class candyMachineController : MonoBehaviour {
 
+	//spawn point for candy
 	public Transform spawnPoint;
 	public GameObject prefab;
+	//direction to throw items that spawn
 	Vector3 dispense;
 	public int force;
+	//original color of object
 	private Color actualColor;
 	Color randomColor;
 	GameObject instantiated;
@@ -23,6 +26,7 @@ public class candyMachineController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//yellow flashing
 		gameObject.GetComponentInChildren<Renderer>().material.color = Color.Lerp(Color.yellow, actualColor, Mathf.PingPong(Time.time, 2));
 	}
 

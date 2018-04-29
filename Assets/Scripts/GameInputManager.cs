@@ -10,7 +10,7 @@ public class GameInputManager : MonoBehaviour {
 	public bool Mac;
 	public static GameInputManager instance;
 
-	// Use this for initialization
+	//check what format we are in and use correct inputs
 	void Start () {
 		//mac driver here:
 		//https://github.com/360Controller/360Controller
@@ -29,6 +29,7 @@ public class GameInputManager : MonoBehaviour {
 		}
 	}
 
+	//throws button request to correct format 
 	public bool getButton(string button) {
 		if (Windows) {
 			return getButtonHelperWindows(button);
@@ -41,6 +42,7 @@ public class GameInputManager : MonoBehaviour {
 		}
 	}
 
+	//throws right stick request to correct format
 	public float getStick(string stick) {
 			if (Windows) {
 				return getStickHelperWindows(stick);
@@ -53,6 +55,7 @@ public class GameInputManager : MonoBehaviour {
 			}
 		}
 
+	
 	public bool getButtonHelperWeb(string button) {
 		switch (button){
 			case "RB":
@@ -110,27 +113,6 @@ public class GameInputManager : MonoBehaviour {
 				return false;
 		}
 	}
-	//web button test:
-	/*
-	a: 0
-	b: 1
-	x: 2
-	y: 3
-	rb: 5
-	lb: 4
-	rt: no button, axis 9
-	lt: no button, axis 9
-	left click: 8
-	right click: 9
-	back: 6
-	middle: none
-	start: 7
-	top: 12
-	left: 14
-	bottom: 13
-	right: 15
-
-	 */
 
 	public float getStickHelperWeb(string stick) {
 		if (stick == "RightStickX") {

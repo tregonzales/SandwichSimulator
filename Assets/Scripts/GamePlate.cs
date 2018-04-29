@@ -13,6 +13,7 @@ public class GamePlate : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//list of items the user collected
         itemsColected = new List<GameObject>();
 		actualColor = gameObject.GetComponentInParent<Renderer>().material.color;
 		count = 0;
@@ -20,6 +21,7 @@ public class GamePlate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//fashing yellow
 		gameObject.GetComponentInParent<Renderer>().material.color = Color.Lerp(Color.yellow, actualColor, Mathf.PingPong(Time.time, 2));
 	}
 
