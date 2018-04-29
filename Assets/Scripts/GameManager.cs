@@ -16,9 +16,13 @@ public class GameManager : MonoBehaviour {
 	public GameObject controlPanel;
 	public GameObject pauseMenu;
 	public GameObject endGame;
+	//plate that holds final items
 	public GameObject gamePlate;
+	//changing text for end game screen
 	public Text endGameCount;
+	//ui item counter on normal playing screen
 	public GameObject itemCounter;
+	//last object before end game screen is active
 	private GameObject cameraLast;
 
 	void Start () {
@@ -90,6 +94,7 @@ public class GameManager : MonoBehaviour {
 	public void ToggleEndGame() {
 		if (end)
         {
+			//focus the camera back on the last object before the end game screen was active
 			EventSystem.current.SetSelectedGameObject(null);
 			Camera.main.GetComponent<CameraController>().SwitchTarget(cameraLast.transform);
             endGame.SetActive(!end);
@@ -98,6 +103,7 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
+			//set camera target to the game plate to show the sandwich the user made and show end game screen
             endGame.SetActive(!end);
 			cameraLast = Camera.main.GetComponent<CameraController>().target.gameObject;
 			endGameCount.text = itemCounter.transform.GetChild(1).GetComponent<Text>().text;
