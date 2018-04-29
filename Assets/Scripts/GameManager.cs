@@ -24,18 +24,25 @@ public class GameManager : MonoBehaviour {
 	public GameObject itemCounter;
 	//last object before end game screen is active
 	private GameObject cameraLast;
+	//is the game in full screen
+	private bool fullScreen;
+	//current canvas system
+	private GameObject currentUI;
 
 	void Start () {
 		instance = this;
+		fullScreen = Screen.fullScreen;
 		if (!mainMenu) {
-			GameObject.Find("UIholder").GetComponent<CanvasScaler>().referenceResolution = 
+			currentUI = GameObject.Find("UIholder");
+			currentUI.GetComponent<CanvasScaler>().referenceResolution = 
 			new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
 			paused = false;
 			Time.timeScale = 1.0f;
 			pauseMenu.SetActive(paused);
 		}
 		else {
-			GameObject.Find("MainMenu").GetComponent<CanvasScaler>().referenceResolution = 
+			currentUI = GameObject.Find("MainMenu");
+			currentUI.GetComponent<CanvasScaler>().referenceResolution = 
 			new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
 			paused = true;	
 		}
@@ -50,7 +57,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void Update () {
-
+		
 		if (Input.GetKeyDown(KeyCode.Escape) || (gameInputManager.getButton("B") && paused) || gameInputManager.getButton("start")) {
 			if (controlPanel.activeSelf) {
 				showControls(false);
@@ -63,6 +70,11 @@ public class GameManager : MonoBehaviour {
 			if (!mainMenu && !paused && !tutorial) {
 				ToggleEndGame();
 			}
+		}
+		if (fullScreen != Screen.fullScreen) {
+			currentUI.GetComponent<CanvasScaler>().referenceResolution = 
+			new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight);
+			fullScreen = Screen.fullScreen;
 		}
 	}
 		
