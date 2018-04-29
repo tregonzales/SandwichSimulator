@@ -5,10 +5,13 @@ using UnityEngine;
 public class Toaster : MonoBehaviour {
 
     private Color actual_color;
+    private AudioSource coinDrop;
+
 
     private void Start()
     {
         actual_color = gameObject.GetComponentInParent<Renderer>().material.color;
+        coinDrop = gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -20,7 +23,7 @@ public class Toaster : MonoBehaviour {
     {
         if (other.gameObject.GetComponent<Rigidbody>() != null)
         {
-            Debug.Log("Enter");
+            coinDrop.Play();
             other.gameObject.GetComponent<Rigidbody>().velocity = (Vector3.up * 20f);
         }
     }
