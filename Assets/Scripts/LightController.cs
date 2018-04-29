@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour {
 
-	public Light[] lighting;
+    public Light light;
 	private bool isColliding;
 	private GameObject lastCollider;
-    private AudioSource coinDrop;
+    private AudioSource click;
 
     void Start () {
-		lighting = FindObjectsOfType (typeof(Light)) as Light[]; //finds all lights that exist in the current scene
 		isColliding = false;
-        coinDrop = gameObject.GetComponent<AudioSource>();
+        click = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,22 +26,22 @@ public class LightController : MonoBehaviour {
 		//this is so that other objects such as the corner colliders of the item don't cause repeat triggers
 		//and if it is not currently colliding, to avoid repeat triggers as well
 		if (other.CompareTag("item") && !isColliding ) {
-            coinDrop.Play(); //adds sound effect
+            click.Play(); //adds sound effect
             lastCollider = other.GetComponentInParent<Rigidbody>().gameObject; //keeps track of which item is caused the last trigger of this script
 
 			//turns the lights in the scene either dimmer or brighter based off of prior state
-			foreach (Light l in lighting) {
-				if (l.intensity == 1f) {
-					l.intensity = 0.3f;
-				} else {
-					l.intensity = 1f;
-				}
-                Debug.Log(lighting[0].intensity);
-            }
-            Debug.Log(lastCollider);
-			isColliding = true; //keeps track of if currently colliding
-		}
-	}
+			if (light.intensity == 1f) {
+                light.intensity = 0.3f;
+			} else {
+                light.intensity = 1f;
+			}
+
+            isColliding = true; //keeps track of if currently colliding
+
+        }
+
+    }
+	
 
 
 	void OnTriggerExit(Collider other) {

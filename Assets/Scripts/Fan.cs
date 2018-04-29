@@ -16,6 +16,7 @@ public class Fan : MonoBehaviour {
 
     private void Update()
     {
+        // Spins the fan constantly for items to hit
         rb.angularVelocity = Vector3.up * speed;
     }
 

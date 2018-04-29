@@ -519,6 +519,16 @@ Prefab:
       propertyPath: m_Center.y
       value: -0.0020980837
       objectReference: {fileID: 0}
+    - target: {fileID: 65004887514644218, guid: f95a5fbe28b6641538a00902f29455a0,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.5635173
+      objectReference: {fileID: 0}
+    - target: {fileID: 65004887514644218, guid: f95a5fbe28b6641538a00902f29455a0,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0.092252105
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f95a5fbe28b6641538a00902f29455a0, type: 2}
   m_IsPrefabParent: 0
@@ -3478,7 +3488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d921fed84a014a288b013d9eea86ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lighting: []
+  light: {fileID: 1128118478}
 --- !u!65 &1628735291
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3501,7 +3511,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5297f9db3ebfe43d9a31f7fd7e88725c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 191fc7d1b5a9243f8965350d0e03c417, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

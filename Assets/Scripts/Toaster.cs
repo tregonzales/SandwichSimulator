@@ -5,17 +5,18 @@ using UnityEngine;
 public class Toaster : MonoBehaviour {
 
     private Color actual_color;
-    private AudioSource coinDrop;
+    private AudioSource spring;
 
 
     private void Start()
     {
         actual_color = gameObject.GetComponentInParent<Renderer>().material.color;
-        coinDrop = gameObject.GetComponent<AudioSource>();
+        spring = gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
     {
+        //makes the lightswitch flash yellow to indicate that it's interactive
         gameObject.GetComponentInParent<Renderer>().material.color = Color.Lerp(Color.yellow, actual_color, Mathf.PingPong(Time.time, 2));
     }
 
@@ -23,7 +24,9 @@ public class Toaster : MonoBehaviour {
     {
         if (other.gameObject.GetComponent<Rigidbody>() != null)
         {
-            coinDrop.Play();
+            spring.Play();
+
+            // Launches the item up in the air
             other.gameObject.GetComponent<Rigidbody>().velocity = (Vector3.up * 20f);
         }
     }
