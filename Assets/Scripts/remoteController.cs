@@ -23,8 +23,8 @@ public class remoteController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.GetComponentInParent<Rigidbody>() != null) {
 			click.Play();
-			other.GetComponentInParent<Rigidbody>().velocity +=  
-			transform.TransformDirection(tvTransform.position - transform.position).normalized * force;
+			other.GetComponentInParent<Rigidbody>().velocity =  
+			(tvTransform.position - transform.position).normalized * force;
 		}
 	}
 }

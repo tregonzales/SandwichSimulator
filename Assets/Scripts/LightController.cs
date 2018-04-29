@@ -42,8 +42,6 @@ public class LightController : MonoBehaviour {
 
     }
 	
-
-
 	void OnTriggerExit(Collider other) {
 		//if the object exiting collision is tagged with item, and the object was currently colliding, and the object that was last colliding is in "other"
 		if (other.CompareTag("item") && isColliding && lastCollider == other.GetComponentInParent<Rigidbody>().gameObject) {
