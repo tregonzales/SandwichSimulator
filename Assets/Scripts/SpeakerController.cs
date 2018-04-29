@@ -23,7 +23,7 @@ public class SpeakerController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.GetComponentInParent<Rigidbody>() != null) {
+		if (other.GetComponentInParent<Rigidbody>() != null && other.CompareTag("item")) {
 			bass.Play();
 			other.GetComponentInParent<Rigidbody>().velocity +=  transform.TransformDirection(bounce) * force;
 		}
