@@ -3341,6 +3341,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 82383549065860892, guid: 01a6bb4c9092044e3a5b4f40012db214,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01a6bb4c9092044e3a5b4f40012db214, type: 2}
   m_IsPrefabParent: 0
@@ -4068,6 +4073,11 @@ Prefab:
     - target: {fileID: 1903972640524576, guid: 01a6bb4c9092044e3a5b4f40012db214, type: 2}
       propertyPath: m_Name
       value: SpeakerFather (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 82383549065860892, guid: 01a6bb4c9092044e3a5b4f40012db214,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01a6bb4c9092044e3a5b4f40012db214, type: 2}
