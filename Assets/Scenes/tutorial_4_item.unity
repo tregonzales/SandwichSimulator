@@ -305,12 +305,32 @@ Prefab:
         type: 2}
       propertyPath: pauseMenu
       value: 
-      objectReference: {fileID: 694421316}
+      objectReference: {fileID: 1814678432}
     - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
         type: 2}
       propertyPath: controlPanel
       value: 
       objectReference: {fileID: 1814678429}
+    - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
+        type: 2}
+      propertyPath: endGame
+      value: 
+      objectReference: {fileID: 694421316}
+    - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
+        type: 2}
+      propertyPath: endGameCount
+      value: 
+      objectReference: {fileID: 1814678431}
+    - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
+        type: 2}
+      propertyPath: itemCounter
+      value: 
+      objectReference: {fileID: 1814678430}
+    - target: {fileID: 114886625519876848, guid: 50d472d82271e46b1ac3cd69171df15a,
+        type: 2}
+      propertyPath: tutorial
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50d472d82271e46b1ac3cd69171df15a, type: 2}
   m_IsPrefabParent: 0
@@ -1863,7 +1883,7 @@ Prefab:
     - target: {fileID: 114424870915902890, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TogglePauseMenu
+      value: ToggleEndGame
       objectReference: {fileID: 0}
     - target: {fileID: 114300544886022478, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
         type: 2}
@@ -1938,12 +1958,68 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114266080692442496, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 781953694}
+    - target: {fileID: 114266080692442496, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartTheGameAfterSeconds
+      objectReference: {fileID: 0}
+    - target: {fileID: 114135375660533950, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 781953694}
+    - target: {fileID: 114135375660533950, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 114518637565168598, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 781953694}
+    - target: {fileID: 114518637565168598, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: showControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 114630770232567936, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 781953694}
+    - target: {fileID: 114630770232567936, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cd93a98bc18b4f049ff53cf5906cd90, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1814678429 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1116278247381642, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+    type: 2}
+  m_PrefabInternal: {fileID: 1814678428}
+--- !u!1 &1814678430 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1692783866341230, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+    type: 2}
+  m_PrefabInternal: {fileID: 1814678428}
+--- !u!114 &1814678431 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114662033601831354, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
+    type: 2}
+  m_PrefabInternal: {fileID: 1814678428}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1814678432 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1605872270921058, guid: 2cd93a98bc18b4f049ff53cf5906cd90,
     type: 2}
   m_PrefabInternal: {fileID: 1814678428}
 --- !u!1 &1945106601

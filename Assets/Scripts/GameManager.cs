@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	public bool paused;
 	public bool mainMenu;
 	public bool end;
+	public bool tutorial;
 	public GameObject controlPanel;
 	public GameObject pauseMenu;
 	public GameObject endGame;
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 		if (gameInputManager.getButton("Y") || Input.GetKeyDown(KeyCode.Y)) {
-			if (!mainMenu && !paused) {
+			if (!mainMenu && !paused && !tutorial) {
 				ToggleEndGame();
 			}
 		}

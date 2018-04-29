@@ -20,7 +20,6 @@ public class itemBarController : MonoBehaviour {
 	void Start () {
 		transform.GetChild(0).GetComponent<Image>().color = active;
 
-
 		mainCamera = Camera.main.GetComponent<CameraController>();
 
 		curItemIndex = 0;
