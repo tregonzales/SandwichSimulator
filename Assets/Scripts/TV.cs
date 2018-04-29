@@ -10,11 +10,9 @@ public class TV : MonoBehaviour {
     private bool isOn;
     private SpriteRenderer benno;
 
-    private 
-
-    void Start()
+    private void Start()
     {
-        isOn = true;
+        isOn = false;
         isColliding = false;
         click = gameObject.GetComponent<AudioSource>();
         benno = GetComponent<SpriteRenderer>();
@@ -24,7 +22,6 @@ public class TV : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
         //if the item that is being collided with is tagged with item, i.e. the piece of bread
         //this is so that other objects such as the corner colliders of the item don't cause repeat triggers
         //and if it is not currently colliding, to avoid repeat triggers as well
