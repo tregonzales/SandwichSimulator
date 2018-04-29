@@ -8,8 +8,10 @@ public class LightController : MonoBehaviour {
 	private bool isColliding;
 	private GameObject lastCollider;
     private AudioSource click;
+	private Color actual_color;
 
     void Start () {
+		actual_color = gameObject.GetComponentInParent<Renderer>().material.color;
 		isColliding = false;
         click = gameObject.GetComponent<AudioSource>();
     }
@@ -17,7 +19,7 @@ public class LightController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		//makes the lightswitch flash yellow to indicate that it's interactive
-		gameObject.GetComponentInParent<Renderer>().material.color = Color.Lerp(Color.yellow, Color.clear, Mathf.PingPong(Time.time, 2));
+		gameObject.GetComponentInParent<Renderer>().material.color = Color.Lerp(Color.yellow, actual_color, Mathf.PingPong(Time.time, 2));
 	}
 
 	void OnTriggerEnter(Collider other){
