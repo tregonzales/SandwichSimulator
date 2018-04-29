@@ -66,6 +66,9 @@ public class itemBarController : MonoBehaviour {
 			curItem.GetComponent<PlayerMultiJoint>().enabled = true;
 			updateBar(oldInd, curItemIndex);
 		}
+
+		//calls the SwitchTarget method on the camera controller with the item to switch to
+		//SwitchTarget will subsequently move the camera accordingly
 		mainCamera.SwitchTarget(curItem);
 	}
 
