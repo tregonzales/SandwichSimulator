@@ -2893,16 +2893,16 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0.0149278045
-      value: 1
-      inSlope: -1.3005198
-      outSlope: -1.3005198
+      time: 0
+      value: 0.45318604
+      inSlope: -0.56155235
+      outSlope: -0.56155235
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.8103409
+      time: 1
       value: 0
-      inSlope: -4.4258018
-      outSlope: -4.4258018
+      inSlope: -1.0526316
+      outSlope: -1.0526316
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2936,7 +2936,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.7710991
+      value: 0.9156052
       inSlope: 0
       outSlope: 0
       tangentMode: 0
