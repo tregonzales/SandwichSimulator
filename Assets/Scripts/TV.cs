@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 
 public class TV : MonoBehaviour {
 
@@ -9,7 +8,7 @@ public class TV : MonoBehaviour {
     private GameObject lastCollider;
     private AudioSource click;
     private bool isOn;
-    private VideoPlayer vs;
+    private SpriteRenderer benno;
 
     private 
 
@@ -18,15 +17,10 @@ public class TV : MonoBehaviour {
         isOn = true;
         isColliding = false;
         click = gameObject.GetComponent<AudioSource>();
-        vs = GetComponent<VideoPlayer>();
+        benno = GetComponent<SpriteRenderer>();
+        benno.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //makes the lightswitch flash yellow to indicate that it's interactive
-        //gameObject.GetComponentInParent<Renderer>().material.color = Color.Lerp(Color.yellow, Color.clear, Mathf.PingPong(Time.time, 2));
-    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -42,12 +36,12 @@ public class TV : MonoBehaviour {
 
             if (isOn)
             {
-                vs.Pause();
+                benno.enabled = false;
                 isOn = false;
             }
             else
             {
-                vs.Play();
+                benno.enabled = true;
                 isOn = true;
             }
 
