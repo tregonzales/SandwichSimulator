@@ -26,6 +26,7 @@ public class playerChildren : MonoBehaviour {
 	}
 
 	private void OnTriggerExit(Collider other) {
+		//if the object can be grabbed, then on exit it will no longer be grabbable because it is not colliding
 		if (other.GetComponentInParent<Rigidbody>() == grabbableBody) {
 			canGrab = false;
 			grabbableBody = null;

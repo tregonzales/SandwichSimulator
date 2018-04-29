@@ -6,7 +6,7 @@ public class remoteController : MonoBehaviour {
 
 	public Transform tvTransform;
 	public int force;
-	private Color actualColor;
+	private Color actualColor; //original color of the item prior to flashing
 	private AudioSource click;
 	
 	// Use this for initialization

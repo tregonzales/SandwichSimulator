@@ -7,7 +7,7 @@ public class SpeakerController : MonoBehaviour {
 	//direction to throw item
 	Vector3 bounce;
 	public int force;
-	private Color actualColor;
+	private Color actualColor; //original color of item prior to flashing yellow
 	AudioSource bass;
 	// Use this for initialization
 	void Start () {
@@ -24,8 +24,8 @@ public class SpeakerController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.GetComponentInParent<Rigidbody>() != null && other.CompareTag("item")) {
-			bass.Play();
-			other.GetComponentInParent<Rigidbody>().velocity +=  transform.TransformDirection(bounce) * force;
+			bass.Play(); //play sound effect
+			other.GetComponentInParent<Rigidbody>().velocity +=  transform.TransformDirection(bounce) * force; //push the colliding item with a velocity
 		}
 	}
 }

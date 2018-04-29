@@ -24,6 +24,7 @@ public class itemBarController : MonoBehaviour {
 		mainCamera = Camera.main.GetComponent<CameraController>();
 
 		curItemIndex = 0;
+
 		//set first item of item holder as active controllable item
 		if (itemHolder != null) {
 			curItem = itemHolder.GetChild(curItemIndex);
@@ -36,7 +37,7 @@ public class itemBarController : MonoBehaviour {
 	}
 
 	public void Update() {
-		//switching between items
+		//switching between items based off of input to the buttons
 		if (!mainMenu) {
 			if (gameInputManager.getButton("DpadRight") || Input.GetKeyDown(KeyCode.Space)) {
 				changeBar(true);
@@ -51,6 +52,8 @@ public class itemBarController : MonoBehaviour {
 		transform.GetChild(curInd).GetComponent<Image>().color = active;
 	}
 
+	//changes the item that is currently selected by updating the UI item bar, keeping track of the item index
+	//and disabling or enabling the current/old items
 	public void changeBar(bool right) {
 		if (right) {
 			oldInd = curItemIndex;

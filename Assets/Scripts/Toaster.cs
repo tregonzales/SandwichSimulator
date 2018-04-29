@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Toaster : MonoBehaviour {
 
-    private Color actual_color;
+    private Color actual_color; //original color prior to flashing yellow
     private AudioSource spring;
 
 
@@ -24,7 +24,7 @@ public class Toaster : MonoBehaviour {
     {
         if (other.gameObject.GetComponent<Rigidbody>() != null)
         {
-            spring.Play();
+            spring.Play(); //play sound effect
 
             // Launches the item up in the air
             other.gameObject.GetComponent<Rigidbody>().velocity = (Vector3.up * 20f);

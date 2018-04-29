@@ -25,7 +25,7 @@ public class GamePlate : MonoBehaviour {
 		gameObject.GetComponentInParent<Renderer>().material.color = Color.Lerp(Color.yellow, actualColor, Mathf.PingPong(Time.time, 2));
 	}
 
-	//count once
+	//increment count once and update the UI text to display it
 	void OnTriggerEnter(Collider other) {
 		if (!itemsColected.Contains(other.GetComponentInParent<Rigidbody>().gameObject)) {
 			itemsColected.Add(other.GetComponentInParent<Rigidbody>().gameObject);
@@ -33,7 +33,8 @@ public class GamePlate : MonoBehaviour {
 			counter.text = count.ToString();
 		}
 	}
-	
+
+	//decrement count once and update the UI text to display it
 	void OnTriggerExit(Collider other) {
 		if (itemsColected.Contains(other.GetComponentInParent<Rigidbody>().gameObject)) {
 			itemsColected.Remove(other.GetComponentInParent<Rigidbody>().gameObject);

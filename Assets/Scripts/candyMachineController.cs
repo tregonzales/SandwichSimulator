@@ -32,7 +32,7 @@ public class candyMachineController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (lastCollider == null) {
-			coinDrop.Play();
+			coinDrop.Play(); //play sound effect
 			lastCollider = other.GetComponentInParent<Rigidbody>().gameObject;
 			instantiated = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
 			randomColor = Random.ColorHSV();
@@ -44,7 +44,7 @@ public class candyMachineController : MonoBehaviour {
 
 	void OnTriggerExit(Collider other) {
 		if (other.GetComponentInParent<Rigidbody>().gameObject == lastCollider) {
-			lastCollider = null;
+			lastCollider = null; //there is no longer a collider currently colliding
 		}
 	}
 }
